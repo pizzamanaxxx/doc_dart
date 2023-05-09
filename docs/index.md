@@ -1,5 +1,7 @@
 # DART User's Manual (5.9.6)
 
+<img src="./media/logo.png">
+
 ## 1- Features
 
 - The 3 DART modes and 2 light modes
