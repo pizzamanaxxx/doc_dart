@@ -1,0 +1,2068 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Tutorials/T8/t8.html">
+      
+      
+        <link rel="prev" href="../T7/t7.html">
+      
+      
+        <link rel="next" href="../T9/t9.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>WP8 - LiDAR - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-horizontal-ground-surface-wp8a" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WP8 - LiDAR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WP8 - LiDAR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="t8.html" class="md-nav__link md-nav__link--active">
+        WP8 - LiDAR
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-horizontal-ground-surface-wp8a" class="md-nav__link">
+    1) Horizontal ground surface: WP8A
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-horizontal-ground-surface-and-atmosphere-wp8b" class="md-nav__link">
+    2) Horizontal ground surface and atmosphere: WP8B
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-urban-scene-wp8c" class="md-nav__link">
+    3) Urban scene: WP8C
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-topography-wp8d" class="md-nav__link">
+    4) Topography: WP8D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-homogeneous-turbid-vegetation-scene-wp8e" class="md-nav__link">
+    5) Homogeneous turbid vegetation scene: WP8E
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-3d-vegetation-wp8f" class="md-nav__link">
+    6) 3D vegetation: WP8F
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3d-triangle-tree-atmosphere-wp8g" class="md-nav__link">
+    7) 3D triangle tree + Atmosphere: WP8G
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-multi-pulse-als-acquisition-wp8h" class="md-nav__link">
+    8) Multi-pulse ALS acquisition: WP8H
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multi-pulse-tls-acquisition-wp8i" class="md-nav__link">
+    9) Multi-pulse TLS acquisition: WP8I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-single-pulse-lidar-waveform-with-solar-noise-wp8j" class="md-nav__link">
+    10) Single-pulse Lidar waveform with solar noise: WP8J
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-lidar-discrete-return-point-cloud-wp8k" class="md-nav__link">
+    11) Lidar discrete return (point cloud): WP8K
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-lidar-photon-counting-with-atmosphere-and-solar-noise-wp8l" class="md-nav__link">
+    12) Lidar photon counting with atmosphere and solar noise: WP8L
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-high-efficiency-lidar-simulation-wp8m" class="md-nav__link">
+    13) High-efficiency Lidar simulation: WP8M
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-horizontal-ground-surface-wp8a" class="md-nav__link">
+    1) Horizontal ground surface: WP8A
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-horizontal-ground-surface-and-atmosphere-wp8b" class="md-nav__link">
+    2) Horizontal ground surface and atmosphere: WP8B
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-urban-scene-wp8c" class="md-nav__link">
+    3) Urban scene: WP8C
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-topography-wp8d" class="md-nav__link">
+    4) Topography: WP8D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-homogeneous-turbid-vegetation-scene-wp8e" class="md-nav__link">
+    5) Homogeneous turbid vegetation scene: WP8E
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-3d-vegetation-wp8f" class="md-nav__link">
+    6) 3D vegetation: WP8F
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3d-triangle-tree-atmosphere-wp8g" class="md-nav__link">
+    7) 3D triangle tree + Atmosphere: WP8G
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-multi-pulse-als-acquisition-wp8h" class="md-nav__link">
+    8) Multi-pulse ALS acquisition: WP8H
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multi-pulse-tls-acquisition-wp8i" class="md-nav__link">
+    9) Multi-pulse TLS acquisition: WP8I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-single-pulse-lidar-waveform-with-solar-noise-wp8j" class="md-nav__link">
+    10) Single-pulse Lidar waveform with solar noise: WP8J
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-lidar-discrete-return-point-cloud-wp8k" class="md-nav__link">
+    11) Lidar discrete return (point cloud): WP8K
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-lidar-photon-counting-with-atmosphere-and-solar-noise-wp8l" class="md-nav__link">
+    12) Lidar photon counting with atmosphere and solar noise: WP8L
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-high-efficiency-lidar-simulation-wp8m" class="md-nav__link">
+    13) High-efficiency Lidar simulation: WP8M
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>WP8 - LiDAR</h1>
+
+<h3 id="1-horizontal-ground-surface-wp8a">1) Horizontal ground surface: WP8A</h3>
+<p><u><em>Objective:</em></u> waveform of a single Lidar pulse for an horizontal ground surface.</p>
+<p><center><img src="./media/parameters_wp8a.png"><p><em>Parameters for WP8A and WP8B. Lidar half reception angle is <span class="arithmatex">\(atan(\frac {R_{FOV}} {altitude})\)</span></em></p></img></center></p>
+<p><center><img src="./media/field_of_view.png"><p><em>The field of view (red) is larger than the footprint (orange).</em></p></img></center></p>
+<p><strong>Run DART and display the waveform (<code>View/ Lidar / Mono pulse</code>) and Lidar images (<code>View/ Image</code>)</strong></p>
+<p>1mJ pulse has <span class="arithmatex">\(N_{phot}=\frac {Pulse\:\:energy:\:1mJ} {Photon\:\:energy:\:h\nu=1.87048\times10^{-19}}=5.3462\times10^{15}\)</span> photons, simulated by <span class="arithmatex">\(N_{phot\:DART}=10^5\)</span> DART photons.</p>
+<p>File <code>stat_illumination_MC0.txt</code> (folder <code>output/BAND0</code>): scattering maximum order, number of DART photons emitted <span class="arithmatex">\((N_{phot})\)</span>, incident on the ground <span class="arithmatex">\((N_{ground})\)</span>, absorbed measured <span class="arithmatex">\((N_{mesured})\)</span>, etc.</p>
+<p><span class="arithmatex">\(N_{measured}=\int_{\Delta \Omega_{fp}} \frac {N_{phot}} {\Delta \Omega_{fp}}.\frac {\rho_{ground}} {\pi}.\frac{A_t cos^4(\theta)}{H^2}.d\Omega=N_{phot}.\frac {\rho_{ground}} {\pi}.\frac {A_t} {H^2}.\frac {\int_{0}^{2\pi} \int_{0}^{\theta_{fp}} cos^4(\theta).sin(\theta).d\theta.d\phi} {\int_{0}^{2\pi} \int_{0}^{\theta_{fp}} sin(\theta).d\theta.d\phi} = N_{phot}.\frac {\rho_{ground}} {\pi}.\frac {A_t} {H^2}.\frac {1 - cos^5(\theta_{fp})} {5.(1 - cos(\theta_{fp}))}\)</span></p>
+<p>with H=LiDAR altitude, <span class="arithmatex">\(A_t=LiDAR\)</span> aperture area, and <span class="arithmatex">\(\theta_{fp}\)</span>= half angle of beam divergence. Usually, the beam divergence is very small, that is <span class="arithmatex">\(\lim\limits_{\theta_{fp} \rightarrow 0} \frac {1 - cos^5(\theta_{fp})} {5.(1 - cos(\theta_{fp}))}=1\)</span>. We have: <span class="arithmatex">\(N_{measured} = N_{phot}.\frac {\rho_{ground}} {\pi}.\frac {A_t} {H^2}\)</span>.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Check: <span class="arithmatex">\(N_{ground}=N_{phot}=5.3462.10^{15}\)</span> and <span class="arithmatex">\(N_{measured}=68070\)</span> (it is divided by 100 if LiDAR altitude is multiplied by 10).</p>
+</div>
+<p><strong>"View / Lidar / Mono pulse"</strong></p>
+<ul>
+<li>Total and <span class="arithmatex">\(1^{st}\)</span> order non-convolved and convolved waveforms (see below): the horizontal axis shows the number of photons or the energy, the left vertical axis shows the absolute time or time relative to the ground, and the right vertical axis shows the absolute distance or distance relative to the ground.</li>
+</ul>
+<p><center><img src="./media/lidar_first_and_multiple_order.png"><p><em>Lidar <span class="arithmatex">\(1^{st}\)</span> and multiple order waveforms from ground. They are equal if there is no atmosphere.</em></p></img></center></p>
+<ul>
+<li>3D cloud of apparent and exact scatterer points (<img src="./media/per_scatterer_button.png"/> option) and scattering volumes (<img src="./media/per_volume_button.png"/> option) (see below). For flat bare ground, the apparent and exact 3D locations of last scattering location are identical since there is no multiple scattering. The histograms show the number of measured photons per energy value; a cursor can be slided to hide the least energetic photons (see the image d. and e. below). For flat bare ground, the 2D Ga</li>
+</ul>
+<p><center><img src="./media/per_scatterer_option.png"><p><em>Per scatterer option: a) Exact and b) apparent 3D location of last scattering; c) Histogram of photons in a,b). Per volume option: exact 3D location of last scattering d) without and e) with user specified energy threshold.</em></p></img></center></p>
+<p><strong>"View / Image".</strong> LiDAR images (see below) help to analyze LiDAR results. Their reference is the LiDAR frame (i.e., label 'Lidar') or the simulated scene (i.e., label 'MaketFrame'). Here, for a LiDAR at nadir, the 'MaketFrame' and 'Lidar' images are equal. LiDAR (incident) pulse image (see the image a. below) and LiDAR BOA image (see the image b. below) are the number of emitted <span class="arithmatex">\(N_{photons}^{\downarrow}\)</span> and received <span class="arithmatex">\(N_{photons}^{\uparrow}\)</span> photons in LiDAR frame. The LiDAR reflectance image (see the image c. below) is the ratio <span class="arithmatex">\(\frac {\pi N_{photons\:at\:BOA\:that\:head\:to\:the\:LiDAR\:within\:Min(\Delta \omega_{LiDAR}(x,y),\Delta \Omega_{LiDAR})}^{\uparrow}} {N_{photons\:at\:(x,y) \in footprint\:at\:BOA}.cos(\theta_{LiDAR\:(x,y)}).Min(\Delta \omega_{LiDAR}(x,y), \Delta \Omega_{LiDAR})}\)</span>, with LiDAR field of view <span class="arithmatex">\(\Delta \Omega_{LiDAR}\)</span>, solid angle <span class="arithmatex">\(\Delta \omega_{LiDAR}(x,y)\)</span> under which (x,y) sees the LiDAR aperture, and <span class="arithmatex">\(\theta_{LiDAR}\)</span> directions for (x,y).</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Central (9mx9m) LiDAR reflectance image <span class="arithmatex">\(\rho_{footprint} \in [0.00989, \:0.01009]\)</span>. It is not exactly 0.01:. Why?</p>
+</div>
+<p><center><img src="./media/lidar_images.png"><p><em>LiDAR images.</em></p></img></center></p>
+<p>Values change with simulations, except if option "Results are identical if…" is set.</p>
+<h3 id="2-horizontal-ground-surface-and-atmosphere-wp8b">2) Horizontal ground surface and atmosphere: WP8B</h3>
+<p><u><em>Objective:</em></u> waveform of a single Liadar pulse for an horizontal ground surface.</p>
+<p><strong>Save WP8A as WP8B</strong>. Then, define an atmosphere with mono-band (monospectral) parameters" (see below): optical depth of scattering gases equal to 4, no absorbing gases and no aerosols. The waveform (see below) is more or less the sum "Ground signal through the atmosphere" + "Signal from the atmosphere". It depends on the parameter “Advanced mode / LiDAR <span class="arithmatex">\(\rightarrow  N_{random} =\)</span> Number of random signals per interception in atmosphere”.</p>
+<p><center><img src="./media/atmosphere_parameters.png"><p><em>Parameters of the atmosphere</em></p></img></center></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The atmosphere signal increases with altitude conversely to atmosphere density? Why?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The waveform is "better" if <span class="arithmatex">\(N_{random} = 20\)</span> (see the image a. below) instead of 1 (see the image a. below). Why?</p>
+</div>
+<p><center><img src="./media/lidar_waveform.png"><p><em>Lidar waveform.</em></p></img></center></p>
+<h3 id="3-urban-scene-wp8c">3) Urban scene: WP8C</h3>
+<p><u><em>Objective:</em></u> waveform in presence of two horizontal surfaces at two different altitudes.</p>
+<p><center><img src="./media/parameters_wp8c.png"><p><em>Parameters for WP8C.</em></p></img></center></p>
+<p><center><img src="./media/simulated_scene.png"><p><em>Simulated scene: house and ground. a) 2D view. c) 3D view.</em></p></img></center></p>
+<p><strong>Run DART and display the waveform</strong></p>
+<p>In the image below, the 1D waveform (a, b) has 1 peak for the ground and 1 peak for the horizontal roof, with 17ns (i.e., 2.5 m distance) between the 2 peaks, and the 3D graphs display scattered energy:</p>
+<ul>
+<li><u>per scatterer:</u> per actual (d) and per perceived (e) location of the last scatterer. Each vertical bar of (f) represents "Total measured energy * <span class="arithmatex">\(10^{-3}\)</span>". The distance between the extreme bars gives the normalized energy range per scattering event in terms of actual photons. Its height is the associated number of scattering events (i.e., number of DART photons) in the simulation. The cursor cn be moved to hite least energetic photons in the 3D displays.</li>
+<li><u>per volume</u> (i.e., scene cell): per actual (g) and per perceived (h) location of cell. The histogram horizontal axis (i) shows the energy scattered per cell. The vertical axis shows the number of cells that scatter a given energy per cell.</li>
+</ul>
+<p><center><img src="./media/1d_raw_convolved_waveform.png"><p><em>a) 1D raw/ convolved waveform. b) 1D raw waveform (<code>lidar_dart_wave.txt</code>): bin number, time (ns) and number of photons. c) Data per measured photon (file phtonInformations.binary) are shown per scattering event (d,e,f) or cell volume (g,h,i), either per exact (d,g) or apparent (e,h) location of last scattering; a cursor manages the display of least energetic scatterers in 3D graphs (f, i).</em></p></img></center></p>
+<p><strong>Display LiDAR images with "View/ Images"</strong></p>
+<p>For a single pulse, the signal of usual LiDAR systems is a 1D data array (e.g., waveform). DART can display it as images (see below) in terms of number of photons / pixel in order to help in understanding simulation results.</p>
+<ul>
+<li>3 images in LiDAR reference (plane perpendicular to view direction). a) LiDAR emitted pulse at BOA level. c) Photons backscattered along LiDAR direction at BOA level. d) LiDAR reflectance image. It gives the reflectance of scene elements. This image can be useful for testing the accuracy of LiDAR simulations.</li>
+<li>1 image in scene reference (PhotonReachedGround_MaketFrame): photons that reached the ground b).</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Ground scatters more photons than the horizontal roof: <span class="arithmatex">\(N_{ground}^{\uparrow} \approx 4.787\times 10^5\)</span>, <span class="arithmatex">\(N_{roof}^{\uparrow} \approx 2.637 \times10^5\)</span>. Why?</p>
+</div>
+<p><center><img src="./media/lidar_images_single_pulse.png"><p><em>LiDAR images.</em></p></img></center></p>
+<h3 id="4-topography-wp8d">4) Topography: WP8D</h3>
+<p><u><em>Objective:</em></u> variation of the LiDAR waveform with the slope of a 40m x 40m bare ground plane surface.</p>
+<p><strong>Create 6 slopes (0°, 5°, 10°, 30°, 45°, 60°):</strong> use "DEMGenerator" (see the image b. below) and parameters in (see the image a. below).</p>
+<p><center><img src="./media/parameters_for_creating_6_dem.png"><p><em>a) Parameters for creating 6 DEMs. b) Menu with parameters for the 60° slope.</em></p></img></center></p>
+<p><strong>Run the 6 simulations with the 6 DEMs and display the resulting waveforms</strong> (see below).</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Verify that the peaks of the waveforms correspond to the DEM mean altitudes.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why waveforms with slopes &lt; 45° have discontinuous shapes?</p>
+</div>
+<p><center><img src="./media/lidar_waveform_of_slope.png"><p><em>Lidar waveform of a slope with 6 angles: 0°, 5°, 10°, 30°, 45° and 60°.</em></p></img></center></p>
+<h3 id="5-homogeneous-turbid-vegetation-scene-wp8e">5) Homogeneous turbid vegetation scene: WP8E</h3>
+<p><u><em>Objective:</em></u> LiDAR waveform of a 5m thick turbid vegetation layer (LAI = 5) over an horizontal ground (Fsee below).</p>
+<p><center><img src="./media/parameters_wp8e.png"><p><em>DART parameters for WP8E.</em></p></img></center></p>
+<p><center><img src="./media/vegetation_plot.png"><p><em>Vegetation plot over a horizontal bare ground.</em></p></img></center></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The waveform (see below) has 2 peaks. Why?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Apparent scatterer location:
+   <br> - there are scatterers 'below' the ground, but no above the plot. Why?
+   <br> - the waveform is nearly 100% 1st order at its upper part. Why?</p>
+</div>
+<p><center><img src="./media/first_order_total_waveforms.png"><p><em>a) 1st order and total waveforms, convolved and not convolved. b) 3D display of last scattering location.</em></p></img></center></p>
+<p><strong>Schematic inversion of 1st order lidar signal in terms of LAI and <span class="arithmatex">\(r_{ground}\)</span></strong></p>
+<p>Let a vegetation plot with LAI = LAI plot and ground reflectance ρground. The file <code>stat_illumination_MC0.txt</code> (<code>Photons_Order1.xls</code>) gives the number <span class="arithmatex">\(N_{phot,scene,in}\)</span> of incident photons in the footprint, and the numbers <span class="arithmatex">\(N_{phot,ground,mes,1}\)</span> and <span class="arithmatex">\(N_{phot,plot,mes,1}\)</span> of ground and plot 1st order photons measured by the LiDAR, respectively. Here, there is no atmosphere. The Lidar is at nadir <span class="arithmatex">\((θ=0°)\)</span>, at an altitude H=800km with an area <span class="arithmatex">\(A=1m^2\)</span>. It is viewed from the ground with the solid angle <span class="arithmatex">\(\Delta \Omega_{lidar}=\frac {A} {H^2}.cos^3(\theta_{lidar})\)</span>.</p>
+<p><u><em>Ground:</em></u> <span class="arithmatex">\(N_{phot,ground,mes,1} = N_{phot,scene,in}.e^{- G(\Omega_s).LAI_{plot}}.\frac {\rho_{ground}} {\pi}.\Delta \Omega_{lidar}\)</span> with <span class="arithmatex">\(G(\Omega_s) = \frac {total\:leaf\:area\:along\:direction\:\Omega_s} {total\:leaf\:area}\)</span>. For a spherical LAD: <span class="arithmatex">\(G(\Omega_s)=0.5\)</span>.</p>
+<p><u><em>Plot:</em></u> <span class="arithmatex">\(N_{phot,ground,mes,1} = N_{phot,scene,in}.(1 - e^{- G(\Omega_s).LAI_{plot}}).\frac {T(\Omega_s, \Omega_v)} {\Delta \Omega_{dart}}.\Delta \Omega_{lidar}\)</span>. Here: <span class="arithmatex">\(\frac {T(\Omega_s, \Omega_v)} {\Delta \Omega_{dart}} \approx 5.14\times10^{-2}\)</span>.<br />
+with <span class="arithmatex">\(T(\Omega_s, \Omega_v)=\)</span> leaf transfer function (lib_phase/0.grass_rye_ScatteringFunction) for incident direction <span class="arithmatex">\(\Omega_s=\Omega_{lidar}\)</span> to discrete direction (<span class="arithmatex">\(\Omega_v, \Delta \Omega_{dart}\)</span>) that comprises the LiDAR direction (<span class="arithmatex">\(\Omega_{lidar},\Delta \Omega_{lidar})\)</span>". Here: <span class="arithmatex">\(\theta_{lidar}=\theta_v=0\)</span>.</p>
+<p><span class="arithmatex">\(\implies LAI_{plot}= - \frac {1} {G(\Omega_s)}.ln(1- \frac {N_{phot,plot,mes,1}.\Delta \Omega_{dart}} {N_{phot,scene,in}.T(\Omega_s, \Omega_v).\Delta \Omega_{lidar}})\)</span> and <span class="arithmatex">\(\rho_{ground}=\frac {\pi} {\Delta \Omega_{lidar}}.\frac {N_{phot,ground,mes,1}} {N_{phot,scene,in}}.\frac {1} {e^{-G(\Omega_s).LAI_{plot}}}\)</span>.</p>
+<p>Here: </p>
+<ul>
+<li><code>stat_illumination_MC0.txt</code>: <span class="arithmatex">\(N_{phot,scene,in}=7.8\times10^{15}, N_{phot,ground,mes,1}=77.42\)</span> (theory 77.3), <span class="arithmatex">\(N_{phot,plot,mes,1} = 571.47\)</span> (theory: 574.09)</li>
+<li><span class="arithmatex">\(r_{ground}=0.243, T(\Omega_s, \Omega_v)=0.00648, \Delta \Omega_{dart}=0.1263, \Delta \Omega_{lidar}=1.56\times10^{-12}\)</span>.</li>
+</ul>
+<p>This schematic inversion gives: <span class="arithmatex">\(LAI_{plot} = 4.896\)</span> and <span class="arithmatex">\(r_{ground} = 0.243\)</span>. Here, its use with <span class="arithmatex">\(1^{st}\)</span> and multiple order photons (i.e., actual LiDAR) does not work. It is less accurate, because actual LiDARs contain multiple order. Here, there is no solution with all scattering order photons. A possible solution is to consider the shape of the waveform with <span class="arithmatex">\(\omega_{leaf}\)</span> being an unknown.</p>
+<h3 id="6-3d-vegetation-wp8f">6) 3D vegetation: WP8F</h3>
+<p><u><em>Objective:</em></u> waveform of "3D cherry tree + plane ground" is simulated with the tree crown simulated as a set of facets (see the image a. below), then as a set of turbid cells derived from the crown simulated with facets (see the image d. below).</p>
+<p><center><img src="./media/parameters_wp8f.png"><p><em>DART parameters for WP8F. The leaves and trunk of the tree are triangles.</em></p></img></center></p>
+<p>For the facet- and turbid-trees, the images below show the cloud of last scattering points (b,e), and the corresponding 3D (c,f) / 1D (g,h) waveforms and 2 Lidar FOV images: "ground incident photons" in scene reference (i.e., ellipse) and "BOA LiDAR signal" in Lidar reference (i.e., disk). The closeness of facet- and turbid-derived results illustrates the interest of the transformation 'facet <span class="arithmatex">\(\rightarrow\)</span> turbid'. Its use is advided or not depending on.</p>
+<p><center><img src="./media/fact_and_turbid_tree.png"><p><em>For the fact- and turbid- tree: 3D exact (b,e) and apparent (c,f) positions of last scatterers, 1st/total scattering order waveform (g,h), and LiDAR images.</em></p></img></center></p>
+<h3 id="7-3d-triangle-tree-atmosphere-wp8g">7) 3D triangle tree + Atmosphere: WP8G</h3>
+<p><u><em>Objective:</em></u> waveform with atmosphere (<u>Aerosol:</u> Rural V=5km; <u>Gas:</u> Mid-Latitude summer) above and in the Earth scene (see below).</p>
+<p><center><img src="./media/earth_scene.png"><p><em>a) Earth scene. Top view (b) and front view (c) of apparent location of last scattering events. d) Waveform.</em></p></img></center></p>
+<h3 id="8-multi-pulse-als-acquisition-wp8h">8) Multi-pulse ALS acquisition: WP8H</h3>
+<p><u><em>Objective:</em></u> Lidar scanner acquisition for the scene {bare ground, 3D triangle tree, no atmosphere}.</p>
+<p>The image below shows the ALS scan grid and the input parameters in order to simulate it:</p>
+<ul>
+<li>Swath begin and end positions (x, y) on the ground.</li>
+<li>Azimuth angle (squint angle): if sensor scan direction is not perpendicular to the flight direction.</li>
+<li>Control Point (CP): position (x, y) on the ground and look angle at CP.</li>
+<li>Grid: azimuth separation (meter) and range separation (rad or meter) of the acquisition grid.</li>
+<li>"Multithread" option. Indeed, pulse information is specific per pulse.</li>
+</ul>
+<p><center><img src="./media/menu_creating_als.png"><p><em>Menu for creating an ALS scanner acquisition.</em></p></img></center></p>
+<p>The image below shows the 3D multi-pulse "convolved waveform" (b) and its individual components (a).</p>
+<p><center><img src="./media/lidar_multi_pulse_graph.png"><p><em>"Lidar Multi-pulse" graph. a) Selection menu. Node (17, 16) is selected. b) Waveform of node (17,16). c) 3D convolved waveform for each Lidar pulse. Blue color is for lower energy levels.</em></p></img></center></p>
+<h3 id="9-multi-pulse-tls-acquisition-wp8i">9) Multi-pulse TLS acquisition: WP8I</h3>
+<p><u><em>Objective:</em></u> TLS simulation of same scene as WP8H.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The volume to store (file <code>LIDAR_IMAGE_FILE.binary</code>) depends on TLS range and angular resolutions. It can be huge</p>
+</div>
+<p><center><img src="./media/tls_simulation.png"><p><em>TLS simulation. Direction <span class="arithmatex">\((\theta=110°,\phi=180°)\)</span> is from target to TLS. a) Menus. b) TLS 3D view.</em></p></img></center></p>
+<h3 id="10-single-pulse-lidar-waveform-with-solar-noise-wp8j">10) Single-pulse Lidar waveform with solar noise: WP8J</h3>
+<p><u><em>Objective:</em></u> LiDAR signal with solar noise for a scene with 10 cherry trees and 1 classic building (see below).</p>
+<p><center><img src="./media/parameters_wp8j.png"><p><em>DART parameters for WP8J.</em></p></img></center></p>
+<p>Solar noise is computed by simulating the radiance of the LiDAR ground FOV due to the reflectance of sun radiation. It adds a constant number of photons to the LiDAR signal. Here, it is very small. It would be higher with a smaller sun zenith angle. Also, its relative importance would be larger with a smaller Lidar pulse energy.</p>
+<ul>
+<li>DART-FT simulation of solar time is slow compared to LiDAR simulation. It is greatly faster with DART-Lux.</li>
+</ul>
+<p><center><img src="./media/3d_scene.png"><p><em>a) 3D scene; b) LiDAR waveform with solar signal; c) Solar noise reflectance of total scene; d) LiDAR footprint in (c). e) Lidar (photons) BOA image without sun. f) Lidar (photons) BOA image with sun.</em></p></img></center></p>
+<h3 id="11-lidar-discrete-return-point-cloud-wp8k">11) Lidar discrete return (point cloud): WP8K</h3>
+<p><u><em>Objective:</em></u> ALS point cloud simulation of same scene as WP8J.</p>
+<p>DART-RC and DART-Lux LiDAR simulate waveforms and transform them into point cloud that they store to file <code>DetectedPoints.txt</code>. Two transformation methods are available: i) DART external process (script <code>DART2LAS.py</code> based on laspy library); ii) DART internal processing.</p>
+<p>!!question
+    Why are there very few points returned from the ground under the trees?</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why are there holes in the top view of point cloud? What factor affects the area of holes?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why are the apparent reflectance of two roofs different? What factor affects the apparent reflectance?</p>
+</div>
+<p><center><img src="./media/als_3d_point_cloud.png"><p><em>ALS 3D point cloud. a) Menus. b) CloudCompare display: color by intensity value (apparent reflectance).</em></p></img></center></p>
+<h3 id="12-lidar-photon-counting-with-atmosphere-and-solar-noise-wp8l">12) Lidar photon counting with atmosphere and solar noise: WP8L</h3>
+<p><u><em>Objective:</em></u> ALS photon counting simulation of MABEL instrument. Same scene as WP8J, with sun and atmosphere.</p>
+<p>Photon count (i.e., file <code>DetectedPoints.txt</code>) is internally simulated by DART or computed by applying the DART python script "photoncounting.py" to the DART simulated waveform binary file. Solar noise is computed with the "Pushbroom" option or "Camera" option (a solar noise image is computed per LiDAR node <span class="arithmatex">\(\implies\)</span> very time consuming).</p>
+<ul>
+<li>Solar noise is present in the entire vertical space. Why?</li>
+<li>Which factors do influence the density of solar photons?</li>
+</ul>
+<p><center><img src="./media/als_photon_counting.png"><p><em>ALS photon counting. a) Menus. b) 3D photon points in vertical ranges [-1000m 3000m] and [-5m 20m].</em></p></img></center></p>
+<h3 id="13-high-efficiency-lidar-simulation-wp8m">13) High-efficiency Lidar simulation: WP8M</h3>
+<p><u><em>Objective:</em></u> relative efficiency of DART-Lux LiDAR and DART-RC to simulate single-pulse waveforms (see below).</p>
+<p>First, the consistency of DART-Lux LiDAR and DART-RC is verified using a large number of photons: for <span class="arithmatex">\(N_{phot}=10^8\)</span>, their waveforms are nearly equal (<span class="arithmatex">\(R^2=1\)</span>, rRMSE=0.01; see the image b. below). Using them as a reference, DART-Lux LiDAR and DART-RC are run with increasing <span class="arithmatex">\(N_{phot}\)</span>: their resulting waveforms gradually converge to the reference (see the image c. below). However, for a same <span class="arithmatex">\(N_{phot}\)</span>, the DART-Lux waveform is closer to the reference (see the image d. below). For example, for <span class="arithmatex">\(N_{phot}=10^3\)</span>: <span class="arithmatex">\(R^2=0.991\)</span> and rRMSE=0.17 for DART-RC, whereas <span class="arithmatex">\(R^2=0.995\)</span> and rRMSE=0.1 for DART-Lux.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why does the waveform gradually converges if the photon number increases?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why is DART-Lux LiDAR mode more accurate than DART-RC with the same photon number?</p>
+</div>
+<p><center><img src="./media/scene_and_lidar_footprint.png"><p><em>a) Scene and LiDAR footprint and FOV. b) DART-Lux and DART-RC waveforms (Nphot=108). b) DART-Lux waveforms with various <span class="arithmatex">\(N_{phot}\)</span>. c) DART-Lux and DART-RC <span class="arithmatex">\((N_{phot}=10^3)\)</span> with reference waveform.</em></p></img></center></p>
+<p><strong><em>Lidar photon counting with atmosphere and solar noise</em></strong></p>
+<p>Photon counting can be simulated by applying a python script to DART simulated waveforms. Photon counting devices tend to have much smaller bin lengths (e.g., 0.1 ns) and higher pulse repetition frequencies that waveform LiDARs (bin length: 1-10ns; 20 points / <span class="arithmatex">\(m^2\)</span>). The provided python script has solar noise option. It processes waveforms to assess the probability to measure photons. Then, random pulling is used to state if a photon is detected in a given bin. If it is detected, its 3D position is stored. Then, 3D plotting gives the photon counting LiDAR beam.</p>
+<p>For a sensor with quantum efficiency = 0.015, detector dead time = 2.5ns and dark count rate = 100 kHz: <code>python photoncounting.py LIDAR_IMAGE_FILE.binary photons.txt 0.015 2.5 100</code></p>
+<p><center><img src="./media/lidar_multipulse_acquisition.png"><p><em>Lidar multi-pulse acquisition for the St Sernin district of Toulouse (France). a) Toulouse geometric database. b) DART-FT reflectance image. c) Multi-pulse Lidar image (800 x 520m). 560nm. <span class="arithmatex">\(10\mu J\)</span>. Footprint diameter: 50cm. Sensor area: <span class="arithmatex">\(0.15m^2\)</span>. Sensor height: 1km. Acquisition rate: 1ns. Resolution: 0.25x0.25m (16 points / <span class="arithmatex">\(m^2\)</span>). Platform azimuth: 0°. Look angle at swath center: 0°. <span class="arithmatex">\(6.656\times 10^6\)</span> Lidar pulses (<span class="arithmatex">\(10^3\)</span> photons/pulse). Lidar images process with SPDlib software.</em></p></img></center></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

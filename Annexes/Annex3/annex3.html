@@ -1,0 +1,2051 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Annexes/Annex3/annex3.html">
+      
+      
+        <link rel="prev" href="../Annex2/annex2.html">
+      
+      
+        <link rel="next" href="../Annex4/annex4.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>Annex 3: AERONET and ECMWF data - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aeronet-download-and-adaptation-to-dart" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Annex 3: AERONET and ECMWF data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Annex 3: AERONET and ECMWF data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="annex3.html" class="md-nav__link md-nav__link--active">
+        Annex 3: AERONET and ECMWF data
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aeronet-download-and-adaptation-to-dart" class="md-nav__link">
+    AERONET: download and adaptation to DART
+  </a>
+  
+    <nav class="md-nav" aria-label="AERONET: download and adaptation to DART">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-download-of-aeronet-data-aerosol-optical-depth-and-aerosol-inversions-sections" class="md-nav__link">
+    I. Download of AERONET data (Aerosol Optical Depth and Aerosol Inversions sections)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-adaptation-of-aeronet-data-to-dart" class="md-nav__link">
+    II. Adaptation of AERONET data to DART
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ecmwf-data-to-dart" class="md-nav__link">
+    ECMWF data to DART
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aeronet-download-and-adaptation-to-dart" class="md-nav__link">
+    AERONET: download and adaptation to DART
+  </a>
+  
+    <nav class="md-nav" aria-label="AERONET: download and adaptation to DART">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-download-of-aeronet-data-aerosol-optical-depth-and-aerosol-inversions-sections" class="md-nav__link">
+    I. Download of AERONET data (Aerosol Optical Depth and Aerosol Inversions sections)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-adaptation-of-aeronet-data-to-dart" class="md-nav__link">
+    II. Adaptation of AERONET data to DART
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ecmwf-data-to-dart" class="md-nav__link">
+    ECMWF data to DART
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Annex 3: AERONET and ECMWF data</h1>
+
+<p>This section informs how to import AERONET and ECMWF data. The 2 provided python scripts are not up-to date.</p>
+<p><strong>Atmosphere.py</strong></p>
+<p>Usage: </p>
+<ul>
+<li>
+<p>to read AERONET and ECMWF atmosphere data.</p>
+</li>
+<li>
+<p>to create files of atmosphere data and to insert them in the DART SQL atmosphere database.</p>
+</li>
+</ul>
+<p>Functions: </p>
+<ul>
+<li>
+<p>ECMWFTemperatureToAtmosphereDatabase ()</p>
+</li>
+<li>
+<p>temperatureInterpolation()</p>
+</li>
+<li>
+<p>createHG_Parameters()</p>
+</li>
+<li>
+<p>createAerosols_Parameters()</p>
+</li>
+<li>
+<p>createGasModel()</p>
+</li>
+</ul>
+<p><strong>SkinTemperature.py</strong>
+Usage: to interpolate ECMWF ground temperature over one day </p>
+<p>Function: skinTemperatureInterpolation()</p>
+<p><strong><em>Function: ECMWFTemperatureToAtmosphereDatabase()</em></strong> in the script <code>Atmosphere.py</code></p>
+<p><center><img src="./media/1.png"></center></p>
+<p><strong><em>Function: temperatureInterpolation()</em></strong>
+<center><img src="./media/2.png"></center></p>
+<p><strong><em>Function: createHG_Parameters()</em></strong> in the script <code>atmosphere.py</code>.
+<center><img src="./media/3.png"></center></p>
+<p><strong><em>Function: createAerosols_AOD()</em></strong> in the script <code>atmosphere.py</code>
+<center><img src="./media/4.png"></center></p>
+<p><strong><em>Function: createGasTrans()</em></strong> in the script <code>atmosphere.py</code>.
+<center><img src="./media/5.png"></center></p>
+<p><strong><em>Function: skinTemperatureInterpolation()</em></strong> in the script <code>skinTemperature.py</code>.
+<center><img src="./media/6.png"></center></p>
+<h2 id="aeronet-download-and-adaptation-to-dart">AERONET: download and adaptation to DART</h2>
+<p>AERONET <a href="https://aeronet.gsfc.nasa.gov">https://aeronet.gsfc.nasa.gov</a> provides the aerosol optical depth (AOD), inversion products, and precipitable water, including daily and monthly averages, derived from observations (CWL/BW: 340/2, 380/4, 440/10, 500/10, 675/10, 870/10, 937/10, 1020/10, 1640/25 nm) in hundreds world sites. AOD is computed for three data quality levels: 1.0 (unscreened), 1.5 (cloud-screened), and 2.0 (cloud screened and quality-assured). </p>
+<ul>
+<li>
+<p>Aerosol optical thickness/depth AOT depth (AOT_λ)</p>
+</li>
+<li>
+<p>Gas optical depth: AOT_λ-Rayleigh, AOT_λ-O3, 
+AOT_λ-NO2, AOT_λ-CH4, AOT_λ-CO2, AOT_λ-Water</p>
+</li>
+<li>
+<p>Aerosol single scattering albedo SSA (SSAλ_T)</p>
+</li>
+<li>
+<p>Asymmetry parameter g of the scattering phase function of aerosols (ASYMλ-T).</p>
+</li>
+</ul>
+<h3 id="i-download-of-aeronet-data-aerosol-optical-depth-and-aerosol-inversions-sections">I. Download of AERONET data (Aerosol Optical Depth and Aerosol Inversions sections)</h3>
+<p>Download (text file in a zip file) can be per measuring station, per product: 'aerosol optical thickness', 'gas and aerosol optical thickness' and 'SSA + asymmetry parameter', with site coordinates and altitude in the file header. Daily and monthly averages (not for "gas optical thickness"). </p>
+<ul>
+<li><strong><em>Aerosol Optical Depth for a given site</em></strong> <ul>
+<li>Click on "Data Display" and search for the site by clicking on the map. Click on the site name below the map.</li>
+<li>In the new page that shows data availability by level, choose a year and download data (Figure below).</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/7.png"><p><em>Selection of AERONET measuring site.</em></p></img></center></p>
+<p>In the downloaded zip file, measurements, specified by a specific date and time, are per line, with each column standing for the data: AOT_440, AOT_675, 440-870Angstrom,... The separator is a commas ",".</p>
+<p><center><img src="./media/8.png"><p><em>Structure of the downloaded file. Separators are commas ",".</em></p></img></center></p>
+<ul>
+<li><strong><em>Daily and monthly averages for a given site</em></strong><ul>
+<li>Click on "Download Tool", and then on the name of the desired site. Then, select the products for the level available over the entire period of availability of the measurements.</li>
+<li>Check the desired level for the line "Aerosol Optical Depth with Precipitable Water and Angstrom Parameter".</li>
+<li>Monthly averages: select "Monthly Averages" in Data Format to get a file (name ending with mon). Its columns store the averages derived from Daily averages, and the averages derived from daily averages weighted by the number of measurements in the day (Weighted Average). Each lines is a month of the year.</li>
+<li>Daily averages: select "Daily Averages" (name of the file ending with day).</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/9.png"><p><em>Download AERONET daily and monthly averages.</em></p></img></center></p>
+<ul>
+<li><strong><em>Gas and aerosol optical depth</em></strong> 
+<br>In the "Aerosol Optical Depth" section, select the site and desired level (line "Total Optical Depth with components"). The downloaded text file stores gas and aerosol optical thickness (no daily/monthly average).</li>
+</ul>
+<p><center><img src="./media/10.png"><p><em>Structure of the downloaded file. Separators are commas ",".</em></p></img></center></p>
+<ul>
+<li><strong><em>SSA and Asymmetry parameter g for a site</em></strong> <ul>
+<li>In the "Aerosol Inversion" section, click on "Data Display" and select the site by clicking on the map.</li>
+<li>Once the desired site has been found, click on its name below the map.</li>
+<li>Select the desired product (SSA or g). Note data availability according to the level: 1.0, 1.5 and 2.0.</li>
+<li>Choose a year, and click on “Level 2.0” (or another one) download link at the page bottom left.</li>
+</ul>
+</li>
+</ul>
+<p>SSA and g data are in the downloaded zip file: text file (ending in .ssa for SSA and .asy for asymmetry parameters). Each lie represents a measurement (specified by a specific date and time). Columns represent the data separated by commas ",": SSA441-T, SSA_675-T, ASYM441-T,... </p>
+<p>If the name of the site is known and if we want daily / monthly values and /or SSA / ASYM in the same file:</p>
+<ul>
+<li>
+<p>Click on "Download Tool", and then on the name of the desired site.</p>
+</li>
+<li>
+<p>Select the products for the level available over the entire period of availability of the measurements.</p>
+</li>
+<li>
+<p>Select the lines "Single Scattering Albedo" for the albedo and "Asymmetry Factor" for the asymmetry parameter (or any other desired parameter).</p>
+</li>
+<li>
+<p>To download all the products, select "Combined File (all products without phase functions)".</p>
+</li>
+<li>
+<p>Monthly averages: select "Monthly Averages" in Data Format. There is one row per month and per type of average (monthly average calculated from daily averages: Daily Average, calculated from daily averages weighted by the number of daily measurements: Weighted Average).</p>
+</li>
+<li>
+<p>Daily averages: select "Daily Averages".</p>
+</li>
+</ul>
+<p><center><img src="./media/11.png"><p><em>Menu for downloading SSA and Asymmetry parameter g for a site.</em></p></img></center></p>
+<p><center><img src="./media/12.png"><p><em>Downloaded file. Separators are commas ",". 1 type of data per text file (suffix .ssa for the albedo, and .asy for the asymmetry parameter), or data grouped in the same text file if you selected "Combined File".</em></p></img></center></p>
+<ul>
+<li><strong><em>Data for all sites</em></strong> 
+A given type of data can be downloaded (tar.gz file) for all AERONET sites (except gas optical thickness). 
+a) Aerosol AODs: section "Aerosol Optical Depth" &gt; "Download All Sites"
+Select All Points (<span class="arithmatex">\(\implies\)</span> all measurements) or Daily Average or Monthly Average (<span class="arithmatex">\(\implies\)</span> daily or monthly averages).
+b) SSA and g: section "Aerosol Inversions" &gt; "Download All Sites"</li>
+</ul>
+<h3 id="ii-adaptation-of-aeronet-data-to-dart">II. Adaptation of AERONET data to DART</h3>
+<p>The gas and aerosol models in the DART atmosphere database result from MODTRAN simulations at [10 - 40015cm-1] ([0.25 - 1000µm]). Since they are for a few wavelengths (e.g., AOD at 440nm, 675nm, 870nm and 1020nm), AERONET data (Figure below) must be interpolated / extrapolated to any wavelength of DART database.</p>
+<p><center><img src="./media/13.png"><p><em>AERONET data:</em></p></img></center></p>
+<p>Below, index A is for AERONET data, and index db is for DART database data. Some steps are identical for all parameters. For example, if AERONET <span class="arithmatex">\(AOD_{A,z’}(\lambda_0)\)</span> known at altitude z’, <span class="arithmatex">\(AOD_{A,0}(\lambda_0)\)</span> is extrapolated with given gas / aerosol model of DART database, and <span class="arithmatex">\(AOD_{A,0}(\lambda)\)</span> is extrapolated such that <span class="arithmatex">\(AOD_{A,0}(\lambda) = AOD_{A,0}(\lambda_0) . f(\lambda_0)\)</span>.</p>
+<ul>
+<li><strong><em>Asymmetry parameter g</em></strong> </li>
+</ul>
+<p>AERONET gives only 1 asymmetry parameter for the aerosol phase function. It is the "forward scattering" parameter <span class="arithmatex">\(g_1\)</span> of the DART atmospheric database (table aHG per aerosol model). Therefore, the “small” aerosol back-scatter peak is not considered: <span class="arithmatex">\(g_2=0\)</span> and multiplicative factor <span class="arithmatex">\(a=1\)</span>. In short, the module <code>phase.exe</code> of DART makes a linear spectral interpolation on <span class="arithmatex">\(g_A(440), g_A(675), g_A(870)\)</span> and <span class="arithmatex">\(g_A(1020)\)</span>, with constant values beyond the minimal and maximal wavelengths, with <span class="arithmatex">\(g_1(\lambda) = g_A(\lambda), g_2(\lambda)=0, a(\lambda)=1\)</span>.</p>
+<ul>
+<li>
+<p><strong><em>Aerosol optical depth (AOD)</em></strong> <br>AERONET gives <span class="arithmatex">\(AOD_{A,z}\)</span> at 440nm, 675nm, 870nm, 1020nm, and possibly 1640nm and 340nm; z = site altitude.</p>
+<ul>
+<li><strong>Angström coefficient</strong> <br> <span class="arithmatex">\(AOD(\lambda)=AOD(\lambda_0).(\frac{\lambda_0}{\lambda})^{\beta_{\lambda_1,\lambda_2}}\)</span> for <span class="arithmatex">\(\lambda\)</span>  and <span class="arithmatex">\(\lambda_0 \in [\lambda_1 \lambda_2]\)</span>  and <span class="arithmatex">\(\beta_{\lambda_1,\lambda_2}\)</span> the Angström coefficient over <span class="arithmatex">\([\lambda_1 \lambda_2]\)</span>.<br>The Angström coefficients given by AERONET are not directly used. Actually, we recalculate them. For example, for the interval [440 nm; 675 nm], we have: <br> <span class="arithmatex">\(AOD(675)=AOD(440)\times (\frac{440}{675})^{\beta_{440\ 675}}\)</span>  with  <span class="arithmatex">\(\beta_{440\ 675}= \frac{ln(\frac{AOD(675)}{AOD(440)})}{ln(\frac{440}{675})}\)</span> <br> It gives <span class="arithmatex">\(\beta_{440\ 675}, \beta_{675\ 870}, \beta_{870\ 1020}\)</span> and also <span class="arithmatex">\(\beta_{340\ 440}\)</span> and <span class="arithmatex">\(\beta_{1020\ 1640}\)</span> if <span class="arithmatex">\(AOD_A(1640)\)</span> and <span class="arithmatex">\(AOD_A(340)\)</span> exist.</li>
+<li><strong>Aerosol spectral optical depth at the site attitude z'</strong> </li>
+</ul>
+<p>If we have <span class="arithmatex">\(AOD_A(340)\)</span>, and consequently <span class="arithmatex">\(\beta_{340\ 440}\)</span>:</p>
+<ul>
+<li>
+<p>For <span class="arithmatex">\(λ \in [0 - 440 nm]\)</span>:  <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(340) \times (\frac{340}{\lambda})^{\beta_{340\ 440}}\)</span></p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(λ \in [440 - 675 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(440) \times (\frac{440}{\lambda})^{\beta_{440\ 675}}\)</span></p>
+</li>
+</ul>
+<p>If we do not have <span class="arithmatex">\(AOD_A(340)\)</span>:</p>
+<ul>
+<li>
+<p>For <span class="arithmatex">\(λ \in [0 - 675 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(440) \times (\frac{440}{\lambda})^{\beta_{440\ 675}}\)</span></p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(λ \in [675 - 870 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(675) \times (\frac{675}{\lambda})^{\beta_{675\ 870}}\)</span></p>
+</li>
+</ul>
+<p>If we do not have <span class="arithmatex">\(AOD_A(1640)\)</span>:</p>
+<ul>
+<li>For <span class="arithmatex">\(λ &gt; [ 870 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(1020) \times (\frac{1020}{\lambda})^{\beta_{870\ 1020}}\)</span></li>
+</ul>
+<p>If we do have <span class="arithmatex">\(AOD_A(1640)\)</span>, and consequently  <span class="arithmatex">\(\beta_{1020\ 1640}\)</span>:</p>
+<ul>
+<li>
+<p>For <span class="arithmatex">\(λ \in [870 - 1020 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(870) \times (\frac{870}{\lambda})^{\beta_{870\ 1020}}\)</span></p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(λ &gt; [ 1020 nm]\)</span>: <span class="arithmatex">\(AOD_{z'}(\lambda)=AOD_A(1640) \times (\frac{1640}{\lambda})^{\beta_{1020\ 1640}}\)</span></p>
+</li>
+<li>
+<p><strong>Aerosol spectral optical depth at z=0km</strong></p>
+</li>
+</ul>
+<p>The optical thickness of AERONET is for the altitude of the measuring site z '. However, the optical thickness at the input of DART (table aAOD) must be for the altitude z = 0km. In order to get it, we use: <br> <span class="arithmatex">\(AOD_{A,0}=AOD_{A,z'}.\frac{\int_0^\infty N(z).dz}{\int_0^{z'}f N(z).dz}=AOD_{A,z'}.\frac{N_{0,db}}{N_{z',db}}\)</span>
+<br><span class="arithmatex">\(N(z)\)</span> is the aerosol normalized vertical density profile (aECP table per aerosol model) for a finite number of altitudes (z integer in km) in the DART database. <span class="arithmatex">\(N_{0,db}=N(z=0km)\)</span>. $N_{z'}=N(z') is usually computed with an exponential law of scale factor Hi that links <span class="arithmatex">\(N_i\)</span> at level <span class="arithmatex">\(i\)</span>, to <span class="arithmatex">\(N_{i+1}\)</span> at level <span class="arithmatex">\(i + 1\)</span>.
+<br> <span class="arithmatex">\(N_{i+1}=N_i \times e^{\frac{z_{i+1}-z_i}{H_i}} \implies H_i= - \frac{z_{i+1}-z_i}{ln\frac{N_{i+1}}{N_i}}\)</span>
+<br>Therefore, there is no need to know scale factors in order to compute <span class="arithmatex">\(N_{z,db}\)</span> for <span class="arithmatex">\(z'\)</span> between levels <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(i+1\)</span>:
+<br> <span class="arithmatex">\(N_{z'}=N_{i,db} \times e^{- \frac{-(z'-z_i)}{H_i}} = N_{i,db} \times e^{\frac{- \frac{(z'-z_i)}{(z_{i+1}-z_i)}}{ln\frac{N_{i+1,db}}{N_{idb}}}} = N_{i,db} \times(\frac{N_{i+1,db}}{N_{idb}})^{\frac{-(z'-z_i)}{z_j-z_{i+1}}}\)</span>
+<br> Knowledge of <span class="arithmatex">\(N_{z’,db}\)</span>  leads to <span class="arithmatex">\(AOD_{A,0}\)</span> at any wavelength: <span class="arithmatex">\(AOD_{A,0}(λ) = AOD_{A,z’}(λ) \times \frac{N_{0,db}}{N_z}\)</span>.</p>
+<ul>
+<li>
+<p><strong>Aerosol SSA</strong> <br>SSA is computed for wavelengths of DART database with a linear interpolation between the AERONET SSA values (440nm, 675nm, 870nm, 1020nm), and as a constant value outside the interval [440.1020 nm].</p>
+<ul>
+<li><span class="arithmatex">\(\lambda &lt; 440 nm\)</span>: SSA(λ) = SSAA(440)</li>
+<li><span class="arithmatex">\(\lambda \in [440 - 675nm]\)</span>: linear interpolation between SSAA(440) and SSAA(675)</li>
+<li><span class="arithmatex">\(\lambda \in [675 – 870nm]\)</span>: linear interpolation between SSAA(675) and SSAA(870)</li>
+<li><span class="arithmatex">\(\lambda \in [870 - 1020nm]\)</span>: linear interpolation between SSAA(870) and SSAA(1020)</li>
+<li><span class="arithmatex">\(\lambda &gt; 1020 nm\)</span>: SSA(λ) = SSAA(1020)</li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(0_3\)</span> transmittance</strong> <br> <span class="arithmatex">\(O_3\)</span> transmittance <span class="arithmatex">\(T_{O_3} (\lambda)\)</span> at <span class="arithmatex">\(z=0km\)</span> is needed, whereas AERONET gives <span class="arithmatex">\(O_3\)</span> optical depth <span class="arithmatex">\(AOD_{O_3,A}(675)\)</span> at <span class="arithmatex">\(675nm\)</span> for the altitude <span class="arithmatex">\(z'\)</span> of the measuring site. <span class="arithmatex">\(T_{O_3} (\lambda)\)</span> is computed using <span class="arithmatex">\(O_3\)</span> normalized vertical profile <span class="arithmatex">\(N_{O_3,z}\)</span> (table gECP). As for the aerosols, between levels <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(i+1\)</span>: <br> <span class="arithmatex">\(N_{O_3,z'}=N_{O_3,i}\times \frac{N_{O_3,i+1}}{N_{O_3,i}}^{-\frac{z'-z_i}{z_i-z_{i+1}}}\)</span> <br>It leads to AODO3 at z=0km for λ=675 nm: <span class="arithmatex">\(AOD_{O_3,A,0}(675)=AOD_{O_3,A,z'}(675) \times (\frac{N_{O_3,0}}{N_{O_3,z'}})\)</span> <br>With the assumption that AOD is proportional to the total quantity of <span class="arithmatex">\(O_3\)</span>: <br> <span class="arithmatex">\(AOD_{O_3}(\lambda)=AOD_{O_3,db}(\lambda) \times \frac{AOD_{O_3,A,0}(675)}{AOD_{O_3,db}(675)}= AOD_{O_3,db}(\lambda) \times f_{O_3}(675)\)</span> <br> <br> with <span class="arithmatex">\(AOD_{O_3,db}(675) = - ln (T_{O_3,db} (675))\)</span> for a given gas model (table gTrans). <br> <br><span class="arithmatex">\(f_{O_3}(675)=frac{AOD_{O_3,A,0}(675)}{AOD_{O_3,db}(675)}\)</span> is the relative O3 proportion in AERONET compared to DART database. <br> <span class="arithmatex">\(\implies T_{O_3} (\lambda)= e^{-AOD_{O_3}(\lambda)}=e^{AOD_{O_3,db}(\lambda)}=T_{O_3,db}(\lambda)^{f_{O_3}(675)}\)</span></p>
+</li>
+<li>
+<p><strong>H2O transmittance</strong> <br>AERONET AODH2O,A(1020) is for the band 1015 - 1025nm] for altitude z' of the measuring site. In order to compute <span class="arithmatex">\(AOD_{H_2O,A}(1020)\)</span> at <span class="arithmatex">\(z=0\)</span>, we use the H2O height scale H_H2Odb (cf. DART Handbook).
+<br> <span class="arithmatex">\(AOD_{H_2O,A,0}(1020)=AOD_{H_2O,A,z'}(1020) \times e^{-\frac{z'}{H_{H_2O,db}}}\)</span> 
+<br>Due to the strong spectral variability of <span class="arithmatex">\(AOD_{H_2O}\)</span>, we use <span class="arithmatex">\(f_{H_2O}(1020)=\frac{AOD_{H_2O,A,0}(1020)\times \sum_i \delta\lambda_i}{\sum_i AOD_{H_2O,db,i}\times \delta\lambda_i}\)</span> with <span class="arithmatex">\(i \in [1015 - 1025]\)</span> and <span class="arithmatex">\(\delta\lambda_i\)</span> = interval per <span class="arithmatex">\(AOD_{H_2O,db,i}\)</span> in the DART data base and <span class="arithmatex">\(AOD_{H_2O,db,i}=-ln[T_{H_2O,db}(\lambda_i)]\)</span>. 
+<br> <span class="arithmatex">\(\implies AOD_{H_2O}(\lambda)=AOD_{db}(\lambda).f_{H_2O,db}(1020)\)</span>.
+<br> <span class="arithmatex">\(\implies T_{H_2O}(\lambda)=e^{-AOD_{H_2O}(\lambda)}=e^{-AOD_{H_2O,db}(\lambda) \times f_{H_2O}(1020)}=T_{H_2O,db,}(\lambda)^{f_{H_2O}(1020)}\)</span></p>
+</li>
+<li>
+<p><strong>Transmittance of scattering gasses</strong> <br> <span class="arithmatex">\(AOD\)</span> at <span class="arithmatex">\(z=0\)</span> is computed with <span class="arithmatex">\(AOD_{scat,A}(440), AOD_{scat,A}(675), AOD_{scat,A}(870), AOD_{scat,A}(1020)\)</span> at the site altitude z’, using the height factor <span class="arithmatex">\(H_{m,db}\)</span> of scattering gasses (cf. DART Handbook): <br> <span class="arithmatex">\(AOD_{scat,A,0}(\lambda_0)=AOD_{scat,A,z'}(\lambda_0)\times e^{-\frac{z'}{H_{m,db}}}\)</span>. <br> <br> <span class="arithmatex">\(f_{scat}(\lambda_0)=\frac{AOD_{scat,A,0}(\lambda_0)}{AOD_{scat,db}(\lambda_0)}\)</span>, <span class="arithmatex">\(AOD_{scat,db}(\lambda_0)=-ln[T_{scat,db}(\lambda_0)]\)</span> and <span class="arithmatex">\(\lambda_0 =440, 675, 870, 1020nm\)</span>. <span class="arithmatex">\(f_{scat}(\lambda_0)=1\)</span> if <span class="arithmatex">\(T_{scat,db}(\lambda_0)=1\)</span>.<br> <br> <span class="arithmatex">\(T_{scat}(\lambda)=e^{-AOD_{scat}(\lambda)}=e^{-AOD_{scat,db}(\lambda) \times f_{scat}(\lambda_0)}=T_{scat,db}(\lambda)^{f_{scat}(\lambda_0)}\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\lambda &lt; 440 nm: T_{scat}(λ) = T_{scat,db}(\lambda)^{f_{scat}(440)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in [440 - 675nm]: T_{scat}(\lambda) = T_{scat,db}(\lambda)^{f_{scat} [440,675](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in  [675 – 870nm]: T_{scat,db}(\lambda)^{f_{scat} [675,870](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in  [870 - 1020nm]: T_{scat,db}(\lambda)^{f_{scat} [870,1020](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda &gt; 1020 nm: T_{scat}(λ) = T_{scat,db}(\lambda)^{f_{scat}(1020)}\)</span> <br> with <span class="arithmatex">\(f_{scat} [\lambda_1,\lambda_2](\lambda)\)</span> the factor <span class="arithmatex">\(f_{scat}\)</span> linearly interpolated between <span class="arithmatex">\(f_{scat}(\lambda_1)\)</span> and <span class="arithmatex">\(f_{scat}(\lambda_2)\)</span> at <span class="arithmatex">\(\lambda\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transmittance of absorbing gasses</strong> (CO2, CH4, CO, N2O, O2, N2, other gases).<br> AERONET gives the optical thickness of CO2 and CH4. We assume that the variation of quantity of these gases compared to these same gases in the gas model chosen in the DART database is equal to the corresponding variation of the scattering gases between the DART model and the AERONET values. This assumption is based on the fact that <span class="arithmatex">\(CO2, CH4, CO, N2O, O2, N2,..\)</span> are well mixed with the scattering gases. Therefore, we use the same factors as for the scattering gasses:</p>
+<ul>
+<li><span class="arithmatex">\(\lambda &lt; 440 nm: T_g(\lambda) = T_{g,db}(\lambda)^{f_{scat}(440)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in [440 - 675nm]: T_g(\lambda) = T_{g,db}(\lambda)^{f_{scat} [440,675](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in [675 – 870nm]: TT_g(\lambda) = T_{g,db}(\lambda)^{f_{scat} [675,870](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda \in [870 - 1020nm]: T_g(\lambda) = T_{g,db}(\lambda)^{f_{scat} [870,1020](\lambda)}\)</span></li>
+<li><span class="arithmatex">\(\lambda &gt; 1020 nm: T_g(\lambda) = T_{g,db}(\lambda)^{f_{scat}(1020)}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>Upward – Downward transmittance</strong> (Trans Eq.)Using the above transmittance values: <span class="arithmatex">\(Trans\ eq = (T_{CO_2} . T_{CH_4} . T_{CO} . T_{O_3} . T_{H_2O} . T_{N_2O} . T_{O_2} . T_{N_2} . T_{other gases} . T_{scat})^2\)</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ecmwf-data-to-dart">ECMWF data to DART</h2>
+<p>(<a href="http://apps.ecmwf.int/datasets/data/macc_reanalysis/">http://apps.ecmwf.int/datasets/data/macc_reanalysis/</a>, <a href="http://data-portal.ecmwf.int/data/d/macc_reanalysis/levtype=ml/">http://data-portal.ecmwf.int/data/d/macc_reanalysis/levtype=ml/</a>)</p>
+<p>The ECMWF database stores climatological data at 3h time intervals in a day, on the whole globe (resolution 1.125° x 1.125°). The data is in .grib or NetCDF format. Here, we consider the retrieval of:</p>
+<ul>
+<li>
+<p>Atmospheric temperature profiles, given by atmospheric level: 60 atmospheric layers, up to 0.1hPa or about 35.6 km altitude (model level: temperature)</p>
+</li>
+<li>
+<p>Soil temperatures (surface: skin temperature)</p>
+</li>
+</ul>
+<p><center><img src="./media/14.png"></center></p>
+<p>Download method with "Model levels" (top left): </p>
+<ol>
+<li>
+<p>Select Date / Select a list of months</p>
+</li>
+<li>
+<p>Select time</p>
+</li>
+<li>
+<p>Select time step</p>
+</li>
+<li>
+<p>Select level and parameter. For profiles of atmosphere temperature, select the line "Temperature". </p>
+</li>
+<li>
+<p>Click on "Retrieve GRIB", and then on "Retrieve Now".</p>
+</li>
+</ol>
+<p>Read and extract an atmosphere temperature profile: </p>
+<ol>
+<li>
+<p>Open the free software "Integrated Data Viewer" (IDV) (<a href="www.unidata.ucar.edu/software/idv/#home">www.unidata.ucar.edu/software/idv/#home</a>), go the Dashboard and select "Data Choosers" to select the grib file downloaded from the database. </p>
+</li>
+<li>
+<p>Once the file open, go to "Field Selector", and for the field "Temperature" display General &gt; Grid Table. Select the expected date if the file has several dates, and then click on "Create Display".</p>
+</li>
+<li>
+<p>In "Displays", check "Show native coordinates". Data can be displayed per available date. They can be sorted per longitude (column "lon"), latitude ("lat"), atmosphere level ("hybrid"). The last column gives the corresponding temperature (K). </p>
+</li>
+<li>
+<p>A temperature profile of interest is copied (Ctrl + C) into a text file thatcan be converted by the function ECMWFTemperatureToAtmosphereDatabase() into a text file that the DART atmosphere database can import.</p>
+</li>
+</ol>
+<p>The procedure is identical for ground temperatures (skin temperature), except they are in the category "Surface". The function skinTemperatureInterpolation() uses the text files that store data extracted over 1 day (step of 3h).</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

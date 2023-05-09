@@ -1,0 +1,1977 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Annexes/Annex1/annex1.html">
+      
+      
+        <link rel="prev" href="../../Tutorials/T12/t12.html">
+      
+      
+        <link rel="next" href="../Annex2/annex2.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>Annex 1: DART Python modules / scripts - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-inversion-of-in-situ-irradiance-in-terms-of-aerosol-and-cloud-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Annex 1: DART Python modules / scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Annex 1: DART Python modules / scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="annex1.html" class="md-nav__link md-nav__link--active">
+        Annex 1: DART Python modules / scripts
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-inversion-of-in-situ-irradiance-in-terms-of-aerosol-and-cloud-parameters" class="md-nav__link">
+    a) Inversion of in-situ irradiance in terms of aerosol and cloud parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-satellite-image-inversion-urban-material-reflectance-op_inversionpy" class="md-nav__link">
+    b) Satellite image inversion (urban material reflectance): op_inversion.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-mapping-an-area-with-agricultural-fields-multi_field_generatorpy" class="md-nav__link">
+    c) Mapping an area with agricultural fields: multi_field_generator.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-change-the-size-of-all-or-part-of-3d-objects-changeobjsize_py" class="md-nav__link">
+    d) Change the size of all or part of 3D objects: changeObjSize_***.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-dart-dao-to-create-a-scene-from-a-lai-array-dartbinpython_scriptdao" class="md-nav__link">
+    e) DART DAO: to create a scene from a LAI array (DART\bin\python_script\DAO)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-inversion-of-in-situ-irradiance-in-terms-of-aerosol-and-cloud-parameters" class="md-nav__link">
+    a) Inversion of in-situ irradiance in terms of aerosol and cloud parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-satellite-image-inversion-urban-material-reflectance-op_inversionpy" class="md-nav__link">
+    b) Satellite image inversion (urban material reflectance): op_inversion.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-mapping-an-area-with-agricultural-fields-multi_field_generatorpy" class="md-nav__link">
+    c) Mapping an area with agricultural fields: multi_field_generator.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-change-the-size-of-all-or-part-of-3d-objects-changeobjsize_py" class="md-nav__link">
+    d) Change the size of all or part of 3D objects: changeObjSize_***.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-dart-dao-to-create-a-scene-from-a-lai-array-dartbinpython_scriptdao" class="md-nav__link">
+    e) DART DAO: to create a scene from a LAI array (DART\bin\python_script\DAO)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Annex 1: DART Python modules / scripts</h1>
+
+<p>Python modules are provided in folder <code>DART\bin\python_script</code> (see below), with usage in their code or Readme files.</p>
+<p><center><img src="./media/python_modules.png"><p><em>Python modules. Modules with label * are directly run from DART GUI. They are not described here.</em></p></img></center></p>
+<p>DART GUI with menu "Tools/Python Script Launcher' (i.e., python_script_runner.bat;image below) cn launch most Python modules. For that, select the module to run and set input parameters (i.e., folders, file names, options).</p>
+<p><center><img src="./media/python_script_runner.png"><p><em>Python_script_runner.bat.</em></p></img></center></p>
+<h3 id="a-inversion-of-in-situ-irradiance-in-terms-of-aerosol-and-cloud-parameters">a) Inversion of in-situ irradiance in terms of aerosol and cloud parameters</h3>
+<p><u><em>Goal:</em></u> to get a time series of aerosol and cloud parameters <span class="arithmatex">\(k_a\)</span> and <span class="arithmatex">\(k_c\)</span> so that DART BOA irradiance <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{DART}(t) \:\:(W/m^2)\)</span> or <span class="arithmatex">\(SKYL_{BOA,tot,\Delta \lambda}^{DART}(t)\)</span> matches measured <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}(t)\)</span> or <span class="arithmatex">\(SKYL_{BOA,tot,\Delta \lambda}^{measured}(t)\)</span>, with <span class="arithmatex">\(k_a(t).\Delta \tau_{a,\lambda}\)</span> and <span class="arithmatex">\(k_c(t).\Delta \tau_{c,\lambda}\)</span> the aerosol and cloud optical depths (<span class="arithmatex">\(\Delta \tau_{a,\lambda}\)</span> and <span class="arithmatex">\(\Delta \lambda_{c,\lambda}\)</span> are the aerosol and cloud spectral optical depths defined in the simulation).</p>
+<p><u><em>Method:</em></u></p>
+<ul>
+<li>bi-section algorithm: DART iterative run per date t until DART matches measurements. <span class="arithmatex">\(k_a\)</span> is first searched in <span class="arithmatex">\([0;\: k_{a,max}]\)</span> with <span class="arithmatex">\(k_c = 0\)</span>; if <span class="arithmatex">\(k_a\)</span> is not found, there may be a cloud, and DART is iteratively run with (<span class="arithmatex">\(k_{a,init},k_c\)</span> variable) starting from (<span class="arithmatex">\(k_{a,init},k_{c,init}\)</span>) to get <span class="arithmatex">\(k_c(t)\)</span>; <span class="arithmatex">\(k_a\)</span> or <span class="arithmatex">\(k_c = -9999\)</span> if there is no solution. <span class="arithmatex">\(k_c = 0\)</span> if <span class="arithmatex">\(k_{c,init} =0\)</span>.<br />
+It treats the <span class="arithmatex">\(1^{st}\)</span> aerosol and <span class="arithmatex">\(1^{st}\)</span> aerosol-cloud if there is an aerosol-cloud model; <span class="arithmatex">\(1^{st}\)</span> and <span class="arithmatex">\(2^{nd}\)</span> aerosol otherwise.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If "Coupling Gain" (i.e., <span class="arithmatex">\(\frac {E_{BOA,tot,\Delta \lambda}^{after\:coupling}} {E_{BOA,tot,\Delta \lambda}^{before\:coupling}}\)</span> in the <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}(t)\)</span> file)=1, <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{after\:coupling}\)</span> is adjusted to <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}(t)\)</span>, using DART computer intensive "atmosphere coupling" option; else, since Coupling Gain is usually slightly larger than 1, <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{before\:coupling}\)</span> is adjusted to <span class="arithmatex">\(\frac {E_{BOA,tot,\Delta \lambda}^{measured}} {Coupling\:\:Gain}\)</span>, using DART with the "No Coupling" option.</p>
+</div>
+<ul>
+<li>DART simulation (example): 1mx1m bare ground with reflectance close to the actual reflectance of the scene, <span class="arithmatex">\(N_{bands}\)</span> (<span class="arithmatex">\(E_{BOA,\Delta \lambda}^{.DART}\)</span> accuracy and computation time increase with <span class="arithmatex">\(N_{bands}\)</span>), <span class="arithmatex">\(N_{aerosol/cloud} \ge 2\)</span> (prefix 'cloud' in the 'aerosol optical properties' file name indicates an 'aerosol-cloud').</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No need to simulate DART products because the method uses <span class="arithmatex">\(E_{BOA,\lambda}^{DART}(t)\)</span> stored in <code>simulation.properties.txt</code>.</p>
+</div>
+<p><u><em>Parameters:</em></u> </p>
+<ul>
+<li>Folder of DART simulation (see previous image)</li>
+<li>Irradiance text file <span class="arithmatex">\(\mathcal{I}\)</span>.txt. Per line/time: <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}, E_{BOA,diff,\Delta \lambda}^{measured}\)</span> Year Month Day Hour Min. Sec. Coupling_Gain</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span class="arithmatex">\(\mathcal{I}\)</span> has too many data, you can create a new <span class="arithmatex">\(\mathcal{I}\)</span> {set of Mean(N successive data)} with {average_time_series.py, parameter N}.</p>
+</div>
+<ul>
+<li>Optional: <ul>
+<li>i <span class="arithmatex">\(k_a;k_c\)</span> <img src="./media/1.png" width=15/>: aerosol &amp; cloud initial multiplicative factors; default: <span class="arithmatex">\(k_{a,init}(t)\)</span> &amp; <span class="arithmatex">\(k_{c,init}(t)\)</span> in DART simulation</li>
+<li>t start time; end time: inversion over <span class="arithmatex">\([t_{start};\: t_{end}]\)</span>. Default: [0000 0 0 0 0 0 9999 0 0 0 0].</li>
+<li>m <span class="arithmatex">\(Iteration_{max}\)</span>: maximal number of iterations. Default: 20.</li>
+<li>s <span class="arithmatex">\(k_{a,max}\)</span> <img src="./media/3.png" width=15/>: maximal aerosol optical depth. Default: 2.</li>
+<li>e <span class="arithmatex">\(\epsilon_1\)</span> <img src="./media/2.png" width=15/>: maximal relative error <span class="arithmatex">\(\frac {|E_{BOA,\Delta \lambda}^{DART}(t) - E_{BOA,\Delta \lambda}^{measured}(t)|} {E_{BOA,\Delta \lambda}^{measured}(t)}\)</span>. Default: 0.05.</li>
+<li>ee <span class="arithmatex">\(\epsilon_2\)</span>: maximal relative error if upper ki was found. Default: 0.</li>
+<li>eee <span class="arithmatex">\(\epsilon_{SKYL}\)</span>: SKYL adjustement if <span class="arithmatex">\(SKYL_{measured} \in ]0;\: \epsilon_{SKYL}[\)</span>. Else <span class="arithmatex">\(E_{tot}\)</span> adjustment. Default: 0.1.</li>
+</ul>
+</li>
+</ul>
+<p><u>Result:</u> anywhere (option –d); default: <code>simulation_name.result.txt</code> in folder of the python module. It stores per line:</p>
+<p><span class="arithmatex">\(\frac {E_{BOA,tot,\Delta \lambda}^{measured}} {Coupling\:\:Gain}.E_{BOA,diff,\Delta \lambda}^{measured} - E_{BOA,tot,\Delta \lambda}^{measured}.\frac {coupling\:\:Gain\:-1} {coupling\:\:gain}\)</span> Year Month Day Hour Min Sec <span class="arithmatex">\(k_a \in [0; preset\:k_{a,max}]\:k_c \ge 0\)</span> <span class="arithmatex">\(E_{BOA,\Delta \lambda}^{DART}.E_{BOA,diff,\Delta \lambda}^{DART}.\frac {E_{BOA,\Delta \lambda}^{DART}} {E_{BOA,tot,\Delta \lambda}^{measured}}\)</span></p>
+<p><center><img src="./media/script_runner_running_factor_inversion.png"><p><em><code>Python_script_runner.bat</code>. Here, it runs the script <code>cloud_aod_factor_inversion.py</code> with DART simulation <code>Aerosol_Cloud_OpticalDepth</code> and irradiance file <code>cloud_aod_inversion_irradiance_example.txt</code> <span class="arithmatex">\(E_{BOA, \Delta \lambda}^{measured}(t)\)</span></em></p></img></center></p>
+<p><u><em>Example:</em></u></p>
+<ul>
+<li>Simulation <code>Aerosol_Cloud_OpticalDepth</code>: 10 bands, [250nm 2750nm]. z=149m, 35.18°E, 9.54°N. Atmosphere: USSTD76, Rural23, <span class="arithmatex">\(k_{H_2O} =0.3\)</span>. No coupling.</li>
+<li><span class="arithmatex">\(E_{BOA,\Delta \lambda}^{measured}\)</span>: file <code>cloud_aod_inversion_Irradiance_example.txt</code>: <span class="arithmatex">\(\Delta t=30mn\)</span>, 23-24/06/2014, Coupling_Gain=1.02.
+The image below shows that Coupling_Gain <span class="arithmatex">\(\approx\)</span> cst over a day with constant atmosphere conditions.</li>
+<li>Inversion done with a relative error error <span class="arithmatex">\(\epsilon=0.01\)</span> (option –e 0.01). It is much slower than if <span class="arithmatex">\(\epsilon=0.05\)</span>.</li>
+</ul>
+<p><center><img src="./media/hourly_before_and_after_coupling.png"></img></center></p>
+<p>Hourly <span class="arithmatex">\(E_{BOA}\)</span> before coupling (BC) and after coupling (AC) from morning to evening, for 3 atmosphere conditions: <span class="arithmatex">\((k_a,k_c)\)</span> = (1,0), (4,0), (4,0.3). The associated gains <span class="arithmatex">\(\frac {E_{BOA,AC}} {E_{BOA,BC}}\)</span> are nearly constant during the day with relatively low values: 1.017, 1.025, and 1.062. It explains that the ionversion is made with a gain equal to 1.02, and therefore without the "Atmosphere radiative coupling".</p>
+<p>The retrieved atmosphere parameters <span class="arithmatex">\(k_a(t)\)</span> and <span class="arithmatex">\(k_c(t)\)</span> lead to <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}(t) \approx E_{BOA,tot,\Delta \lambda}^{DART}(t)\)</span> (see below). A few abrupt <span class="arithmatex">\(k_a\)</span> changes occur early and late in the day with low irradiance values. They can be explained by experimental factors such as the time accuracy of measurements. <span class="arithmatex">\(k_a\)</span> changes during the day are probably due to cloud sudden occurrence. Basic knowledge of atmosphere conditions is useful to imptove results, for instance to pre-set a
+smaller range of <span class="arithmatex">\(k_a\)</span>.</p>
+<p><center><img src="./media/nasrallah_tunisia.png"><p><em><span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{measured}(t)\)</span> and <span class="arithmatex">\(E_{BOA,tot,\Delta \lambda}^{DART}(t)\)</span>. Nasrallah, Tunisia on 23-24/06/2014. The inversion is done with <span class="arithmatex">\(\epsilon=0.01\)</span> (option –e 0.01). It is much faster if <span class="arithmatex">\(\epsilon=0.05\)</span> ( ' instead of 90').</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Erroneous results may indicate:
+<br>- Incorrect DART parameters: atmosphere (aerosol optical depth, water vapor content,…) and/or site coordinates.
+<br>- Incorrect time of measurements (e.g., in case of an integration time <span class="arithmatex">\(\Delta t\)</span>, time should correspond to <span class="arithmatex">\(\Delta t/2\)</span>).</p>
+</div>
+<h3 id="b-satellite-image-inversion-urban-material-reflectance-op_inversionpy">b) Satellite image inversion (urban material reflectance): op_inversion.py</h3>
+<p><u><em>Goal.</em></u> To invert a satellite image <span class="arithmatex">\(S_{\lambda}(u,v)\)</span> of a city as reflectance maps <span class="arithmatex">\(F_{i,\lambda}(u,v).\rho_i,\lambda\)</span> at <span class="arithmatex">\(\Delta r_{sat}\)</span>, per chosen urban optical property <span class="arithmatex">\(OP_i\)</span> (material), using an urban geometric database. <span class="arithmatex">\(\rho_{i,\lambda} =\)</span> DART simulation initial <span class="arithmatex">\(OP_i\)</span>. In short, <span class="arithmatex">\(F_{i,\lambda}(u,v)\)</span> is assessed. It is noted <span class="arithmatex">\(k_{i,\lambda}(x,y)\)</span> at <span class="arithmatex">\(\Delta r_{DART}\)</span>. </p>
+<p><u><em>Geometric database.</em></u> basel river extracted.obj (10km x 11km. 6 groups i: DEM, roof,…). <img src="./media/basel_geometric_database.png"></p>
+<p><u><em>Sentinel 2 satellite image</em></u> <span class="arithmatex">\(S_{\lambda}(u,v)\)</span>: <code>sat.mp#</code> of Basel <img src="./media/empty_box_green.png" width=15/>: 7km x 6.5km. <span class="arithmatex">\(0.49\mu m, 0.56\mu m, 0.665\mu m\)</span>. <img src="./media/sentinel_2_image.png"></p>
+<p><u><em>Per band inversion method.</em></u> First, put <span class="arithmatex">\(S_{\lambda}(u,v)\)</span> in <code>workspace_name/iter1/input/bandx</code> (x=1: <span class="arithmatex">\(0.49\mu m\)</span>, 2: <span class="arithmatex">\(0.56\mu m, 3: 0.665\mu m\)</span>), and set DART to create images per type of scene element and to use factors <span class="arithmatex">\(k_{i,\lambda,n}(x,y)\)</span>. DART is run n times. A <span class="arithmatex">\(1^{st}\)</span> scattering order equation assesses <span class="arithmatex">\(k_{i,\lambda,n}(x,y)\)</span> at n=1, and a bisection / Newton method up-dates it at n&gt;1; the workspace stores it <span class="arithmatex">\(\forall n\)</span>.</p>
+<p><u><em>DART simulation.</em></u></p>
+<ol>
+<li>Basel 05082015.20m.3bands <img src="./media/empty_box_red.png" width=15/>: 5060mx5320mx160m, <span class="arithmatex">\(\Delta x=\Delta z=20m\)</span>. Tree file trees <code>updated*.txt</code> &amp; basel river extracted.obj; consistent coordinates) + workspace basel.</li>
+<li>Basel 05082015.20m.3bands SubZone (<img src="./media/empty_box_blue.png" width=15/>: 438mx417mx92.5m, <span class="arithmatex">\(\Delta x=\Delta z=0.5m\)</span>, <code>dsm.obj</code> created by "tools" ; (103, 88) - (120, 105) in satellite image) + workspace_sub_zone1. <img src="./media/dart_op_menu.png"></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the "Optical and temperatures" menu, set "<img src="./media/multiplicative_factor_button.png">", with default multiplicative factors equal to 1, and <img src="./media/use_extra_factor_button.png">. The inversion procedure automatically sets the option <img src="./media/use_extra_factor_button.png">.</p>
+</div>
+<p><u><em>Start.</em></u> Run op_inversion.bat in <code>DART\bin\python_script\OpticalPropertiesInversion</code> to run the GUI and specify input / output data (see below) in its 4 tabs (cf. below).</p>
+<p><u><em>Settings.</em></u> An existing workspace (<img src="./media/1.png" width=15/>) or data (<img src="./media/2.png" width=15/>: DART home, working simulation, DART &amp; satellite images; option: tree text file name, satellite image sub-zone coordinates) to create it are specified. File <code>.settings</code> stores it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to create a new inversion, first create an empty "workspace" folder using Windows or Unix, and then click on the “Select” button to choose it. Do not forget to click on “Create” button after selecting the simulation.</p>
+</div>
+<p><center><img src="./media/tab_settings_workspace_name.png"><p><em>Tab "Settings". Workspace name (<img src="./media/1.png" width=15/>) and data to create it if it does not exist (<img src="./media/2.png" width=15/>): names of DART simulation, satellite image, and tree text file, and sub-zone coordinates in the satellite image if needed.</em></p></img></center></p>
+<p><center><img src="./media/reflectance_images.png"><p><em>Reflectance images of a sub-zone (workspace_sub_zone1) at iteration n=3. a) Satellite: <span class="arithmatex">\(\Delta r=25m\)</span>. b) DART: <span class="arithmatex">\(\Delta r=25m\)</span>. c) DART: <span class="arithmatex">\(\Delta r=0.5m\)</span>; 25m resolution <span class="arithmatex">\(F_{\lambda,i}(u,v)\)</span> impacts it. Border effects <img src="./media/empty_box_red.png" width=15/> (i.e., larger errors) occur at bottom left &amp; right corners since the scene and DEM are not symmetric. d) 3D view of errors: <span class="arithmatex">\(\Delta r=1m\)</span>.</em></p></img></center></p>
+<p><u><em>Process.</em></u> DART simulation must be previously run, because the inversion procedure does not run it. Three tabs (<img src="./media/1.png" width=15/>) allow one to run a given iteration (<img src="./media/run_iteration_button.png">), all up to a given iteration (<img src="./media/run_all_button.png">) or to continue up to a given iteration (<img src="./media/continue_up_button.png">). At any iteration n, new maps Fm,x,n(u,v) per selected band x (<img src="./media/2.png" width=15/>) and OP m (<img src="./media/3.png" width=15/>; other OPs are constant) are derived from the comparison of satellite and DART images. They are stored in folder <code>Workspace/itern/output/bandx</code>. At iteration n+1, they are copied in DART input/bandx folder, and DART is run with "new OP = initial OP x <span class="arithmatex">\(F_{m,x,n}(u,v)\)</span>". At iteration n=0, <span class="arithmatex">\(F_{m,x,n}(u,v)=1 \forall u,v\)</span> (i.e., DART option "Use an array of multiplicative factors" is automatically unset).</p>
+<p>The procedure works with any user-selected numbers (<img src="./media/4.png" width=15/>) of iterations, and threads for the inversion (auto: available computer cores) and for DART (auto: number of cores set in DART). Three accuracy thresholds (<img src="./media/5.png" width=15/>) can be used per pixel (u,v): (1) a surface element with relative contribution &lt; threshold is neglected. (2) At iteration 1, a pixel inversion result is accepted only if <span class="arithmatex">\(F_{m,x,1}(u,v)\)</span> &lt; predefined Max{<span class="arithmatex">\(F_{m,x,1}(u,v)\)</span>}. (3) At iteration n &gt;1, a pixel is not treated if its relative error is smaller than a threshold.</p>
+<p>Spatial interpolations (<img src="./media/6.png" width=15/>) "DART <span class="arithmatex">\(\rightarrow\)</span> Satellite" and "Satellite <span class="arithmatex">\(\rightarrow\)</span> DART" are used since pixel sizes of DART and satellite images usually differ. Nearest neighbor method (index 0 of "Spline int…") is usually optimal.</p>
+<p><center><img src="./media/tab_process.png"><p><em>Tab "Process": operation mode (<img src="./media/1.png" width=15/>), spectral bands to process (<img src="./media/2.png" width=15/>), optical properties to invert (<img src="./media/3.png" width=15/>), computer threads and iteration number (<img src="./media/4.png" width=15/>), accuracy level (<img src="./media/5.png" width=15/>), and spatial interpolation mode (<img src="./media/6.png" width=15/>).</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The optical properties of elements that are not selected keep their initial value during the inversion procedure.</p>
+</div>
+<p><u><em>View.</em></u> Data (<img src="./media/1.png" width=15/>: error estimates, images,…) are viewed per iteration (<img src="./media/2.png" width=15/>) and band (<img src="./media/3.png" width=15/>), per type of product (<img src="./media/4.png" width=15/>):</p>
+<ul>
+<li>in: the DART image and the scene component images (e.g., River).</li>
+<li>out: maps of multiplicative factors. DART uses them for simulating images (in) t the following iteration.</li>
+</ul>
+<p>The workspace stores all products: satellite image, DART images at full or satellite image size, the absolute difference image "Satellite - DART", and the DART image and image difference histograms.</p>
+<p><center><img src="./media/tab_view.png"><p><em>Tab "View": satellite image and results (<img src="./media/1.png" width=15/>: Images / Histograms / Errors) per iteration (<img src="./media/2.png" width=15/>), per band (<img src="./media/3.png" width=15/>) and per DART output (<img src="./media/4.png" width=15/>). Options "Equalize" and "Clip" (<img src="./media/5.png" width=15/>) are for improving the visual aspect of images.</em></p></img></center></p>
+<p><u><em>Tools.</em></u></p>
+<ul>
+<li>Option <code>Match Obj/Trees/subzone to satellite image</code> (<img src="./media/1.png" width=15/>): to superimpose the 3D object and/or tree file to the satellite image. The help menu (key h) indicates all possible options.</li>
+<li>Options <code>Apply to Obj</code> and <code>Apply to tree file</code> (<img src="./media/2.png" width=15/>): to copy the 3D object geometric transformations in the 3D object "Geometric properties" section of the DART simulation, and/or create a new tree text file that should be specified for the DART simulation. Note that an 'Untransformed tree text file' can be used.</li>
+</ul>
+<p><center><img src="./media/tab_tools.png"><p><em>Tab tools. It is used to match the 3D object and the tree file to the satellite image. The left panel displays the geometric coordinates. It can be used also to define a sub zone (shortcut "R").</em></p></img></center></p>
+<p>A satellite image sub-zone can be defined: strike key r and draw a rectangular sub-zone. Its coordinates in DART and satellite images appear on the screen (<img src="./media/3.png" width=15/>). To run the inversion procedure for this sub-zone, input these DART coordinates into the sub-scene definition of a new DART simulation and input these satellite image coordinates into the Tab "Setting" of a new workspace.</p>
+<p><center><img src="./media/satellite_image.png"><p><em>Selection of sub-zone <img src="./media/empty_box_yellow.png" width=15/> in Sentinel 2 image and 'dsm.obj'.</em></p></img></center></p>
+<p>Simulation 'Basel_05082015.20m.3bands_SubZone' uses the sub-zone 3D object "dsm.obj" (DART "maket" module can create it) because loading it is faster than loading <code>basel_river_extracted.obj</code>.</p>
+<p><center><img src="./media/algorithm_inversion_method.png"><p><em>Algorithm of the inversion method. It relies on the iterative calculation of DART radiance images per type of element that is present in the urban landscape.</em></p></img></center></p>
+<p><center><img src="./media/results_workspace_basel.png"><p><em>Results of workspace_basel. a) Sentinel 2 image (2015/8/5) and DART images at iterations n=0, 1 and 8. At n=0, OP is unique for urban elements of the same type (e.g., roofs). b) Relative error decreases with n (n=0: 70%, n=1: 13%, n=2: 3.3%, n=3: 1.4%, n=5: 1%,...). c) Larger errors occur for pixels with <span class="arithmatex">\(\rho_{satellite} &gt; 1\)</span>.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Apart from creating scene using obj file, scene can also be created using DART elements. For per element, only one optical property can be assigned.</p>
+</div>
+<p>The image below indicates the types of DART elements that can be considered for the inversion. Note that only one optical property must be assigned pet type of element. For example, an unique optical property for all houses. The sopatial multiplicative factor allows one to have spatially variable optical properties for the roofs.</p>
+<p><center><img src="./media/types_dart_elements.png"><p><em>Types of DART elements that can be considered for the inversion. Note er optical property for each element. For example, please do not assign different optical property to different houses.</em></p></img></center></p>
+<p><strong>On-going work:</strong> accelerate DART simulations with new DART fast mode and decrease RAM with tree cloning.</p>
+<h3 id="c-mapping-an-area-with-agricultural-fields-multi_field_generatorpy">c) Mapping an area with agricultural fields: multi_field_generator.py</h3>
+<p><u><em>Objective:</em></u> manual creation of a field crop area. Any other scene element can be added.</p>
+<p><u><em>Method:</em></u> interactive definition of field vertices, and field (<img src="./media/1.png" width=15/>: vertices, row orientation, distance between plants,…) and 3D plant (<img src="./media/2.png" width=15/>: rotation, scale,…) parameter per field, possibly with an underlying image (<img src="./media/3.png" width=15/>) of the study area. The resulting field_map.txt file (<img src="./media/4.png" width=15/>) can be saved and later edited. Copy and paste is possible on any field. The command "<img src="./media/5.png" width=15/> Write DART field.txt" creates the DART field.txt. A help (<img src="./media/6.png" width=15/>: ?) is provided.</p>
+<p><u><em>Example of DART simulation:</em></u> CropFieldCreation</p>
+<p><center><img src="./media/dart_lux_image_of_scene.png"><p><em>a) DART-Lux image of the scene simulated with the field.txt file (<img src="./media/4.png" width=15/>) created by the Python module <code>DART\bin\python_script\CropFieldCreation\multi_field_generator.py</code>. Border effects at the top correspond to grapevines at the bottom that are only partly in the scene. The latter ones should be removed in the <code>field.txt</code> file in order to reove the border effects. b) Zoom of DART-Lux image at 2cm resolution.</em></p></img></center></p>
+<h3 id="d-change-the-size-of-all-or-part-of-3d-objects-changeobjsize_py">d) Change the size of all or part of 3D objects: changeObjSize_***.py</h3>
+<p><u><em>Objective:</em></u> to scale all or part of the triangles of an input 3D object. The output 3D object is identical to the input 3D object except that its triangles are scaled. The output 3D object appears with the same colors as the
+input 3D object if the mtl file of the input object is in the folder of the output object.</p>
+<p><u><em>2 scripts:</em></u></p>
+<ul>
+<li>changeObjLeavesSize_multiple_barycenters_groups.py: triangles of a specified group are scaled and each barycenter (center of gravity) of connected triangles of the group is preserved. The image below illustrates the scaling of the corncob of a maize 3D object.</li>
+<li>changeObjSize_unique_barycenter.py: all triangles are scaled, and the barycenter of all the connected triangles is preserved.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Triangles must be logically order in the input <code>*.obj</code> file.</p>
+</div>
+<p><center><img src="./media/run_change_obj_leaves_size_script.png"><p><em>Run of <code>changeObjLeavesSize_multiple_barycenters_groups.py</code> with <code>python_script_runner.bat</code></em></p></img></center></p>
+<h3 id="e-dart-dao-to-create-a-scene-from-a-lai-array-dartbinpython_scriptdao">e) DART DAO: to create a scene from a LAI array (DART\bin\python_script\DAO)</h3>
+<p><u><em>Objective:</em></u> to create a DART DAO turbid scene, and to derive DAO and non DAO triangle scenes for DART-FT and Lux</p>
+<ul>
+<li>1) Copy the empty file dao.nfm in the DART folder. Then, DAO python scripts, for example run with <img src="./media/python_script_launcher_button.png" width=100/>, create DAO turbid and triangle scenes in the folder "output/Scene".</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The DAO replaces the maket module, so that running this module will destroy the scene generated by the DAO. </p>
+</div>
+<ul>
+<li>
+<p>2) Create the simulation 'Turb': 3m x 3m scene, 1m x 1m cells, 90 bands <span class="arithmatex">\(\in\)</span> [400;850nm], DSM, 1 Lambertian optical property <span class="arithmatex">\(\rho_{ground}\)</span> = 'clay brown', 1 Vegetation optical property: default SIF parameters and leaf biochemistry / structure.</p>
+</li>
+<li>
+<p>3) Run the Maket module. It generates a DAO scene with expected scene and cell dimensions.</p>
+</li>
+<li>
+<p>4)  Create the DAO 3D turbid scene. 2 methods are proposed: <img src="./media/scene_with_turbid_cells.png"></p>
+<ul>
+<li>3D LAI array importation (here: <code>LAI_Array.txt</code>: scene layers from top to bottom separated by "***")<br />
+<u>Usage:</u> <code>Create_TurbidScene_From_LAI_Array.py SimulationName LAI_Array_name</code></li>
+<li>Creation of a random LAI distribution (here: <span class="arithmatex">\(LAI_{cell} \in\)</span> [0 1)<br />
+<u>Usage:</u> <code>Create_TurbidScene_Random.py SimulationName</code></li>
+</ul>
+</li>
+<li>
+<p>5) Create the DAO 3D triangle scene from the DAO 3D turbid scene, with <span class="arithmatex">\(5\times 10^{-3}\)</span> accuracy per <span class="arithmatex">\(LAI_{cell}\)</span>.</p>
+<ul>
+<li>Save 'Turb' as simulation 'Tri' and copy the folder 'Turb\output' into 'Tri' where you remove the Vegetation optical property and add a Lambertian optical property (it must be the same as 'Turb' vegetation optical property if 'Tri' and 'Turb' results are to be compared). Then run the "direction" and "phase" modules (not the maket module!).</li>
+<li>Conversion of the turbid LAI cells as cells filled with triangles<br />
+<u>Usage:</u> <code>Turbid_To_Triangles.py SimulationName triangle_cells</code><br />
+'triangle_cells': this folder stores N random samples of M objects that simulate a turbid cell (here: <span class="arithmatex">\(LAI_m\)</span> 3D object = 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 1) with triangles (area <span class="arithmatex">\(A_{triangle} = 5\times 10^{-5}m^2\)</span>). The conversion rule is: "triangle cell" <img src="./media/3d_object_triangle_cell.png"></li>
+<li>Scene <span class="arithmatex">\(LAI_{cell} &lt; 0.5\)</span>: the turbid medium is replaced by 2 triangles cells at most:<ul>
+<li><span class="arithmatex">\(1^{st}\)</span> triangle cell: it can be only enlarged, by 5% at most (if expected scaling &gt; 5% <span class="arithmatex">\(\implies\)</span> 2nd cell).</li>
+<li><span class="arithmatex">\(2^{nd}\)</span> triangle cell: it can be enlarged or shrunk.</li>
+</ul>
+</li>
+<li>Scene <span class="arithmatex">\(LAI_{cell} &gt; 0.5\)</span>: the turbid medium is replaced by 3 triangles cells at most:<ul>
+<li><span class="arithmatex">\(1^{st}\)</span> triangle cell: it cannot be scaled (if precision &gt; <span class="arithmatex">\(5\times 10^{-3} \implies 2^{nd}\)</span> cell).</li>
+<li><span class="arithmatex">\(2^{nd}\)</span> triangle cell: it can be only enlarged, by 5% at most (if expected scaling &gt; 5% <span class="arithmatex">\(\implies\)</span> 3rd cell).</li>
+<li><span class="arithmatex">\(3^{rd}\)</span> triangle cell: it can be enlarged or shrunk. <img src="./media/scene_with_triangle_cells.png"><br />
+<u><em>Examples:</em></u> - LAIcell = 0.23 (≈ 0.2 + 0.02 x 1.22472) ⇒ 2 triangle cells: LAIn = 0.2 and LAIn = 0.02 scaled by 1.2247.
+"triangle cells"</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(LAI_{cell}\)</span> = 0.48 (<span class="arithmatex">\(\approx\)</span> 0.4 + 0.1 x 0.89442) <span class="arithmatex">\(\implies\)</span> 2 triangle cells: <span class="arithmatex">\(LAI_n = 0.4\)</span> and <span class="arithmatex">\(LAI_n = 0.1\)</span> shrunk by 0.8944.</li>
+<li><span class="arithmatex">\(LAI_{cell}= 0.64\)</span> (<span class="arithmatex">\(\approx\)</span> 0.5 + 0.1 + 0.05 x0.8944) <span class="arithmatex">\(\implies\)</span> 3 cells: <span class="arithmatex">\(LAI_n= 0.5, LAI_n= 0.1, LAI_n= 0.05\)</span> shrunk by 0.8944.</li>
+<li><span class="arithmatex">\(LAI_{cell} = 0.93\)</span> (<span class="arithmatex">\(\approx\)</span> 0.5 + 0.4 x 1.03682) <span class="arithmatex">\(\implies\)</span> 2 triangle cells: <span class="arithmatex">\(LAI_n = 0.5\)</span> and <span class="arithmatex">\(LAI_n = 0.4\)</span> scaled by 1.0368.</li>
+</ul>
+</li>
+<li>
+<p>6) DART-FT sequence <span class="arithmatex">\((\theta_s=30° / 60°; \phi_s=225°)\)</span>; do not run the Maket module: DAO turbid &amp; triangle scenes. <span class="arithmatex">\(\rho_{scene}\)</span> , <span class="arithmatex">\(\rho_{PSI}\)</span> and <span class="arithmatex">\(\rho_{PSII}\)</span> depend on <span class="arithmatex">\(\theta_{sun}\)</span>. <span class="arithmatex">\(\rho_{PSx,turbid}\)</span> and <span class="arithmatex">\(\rho_{PSx,facet}\)</span> are very close (see below).<span class="arithmatex">\(\rho_{scene,turbid}\)</span> and <span class="arithmatex">\(\rho_{scene,facet differ}\)</span>. Differences decrease with smaller <span class="arithmatex">\(A_{triangle}\)</span> (<span class="arithmatex">\(\implies\)</span> triangle cell <span class="arithmatex">\(\implies\)</span> turbid cell) and high spatial resolution DEM.</p>
+</li>
+<li>
+<p>7) DART-FT / Lux sequence (<span class="arithmatex">\(\theta_s=30° / 60°; \phi_s=225°)\)</span>: save 'Tri' as 'Tri_no_DAO'. Then, remove the DAO scene and add a field of 3D objects created with: <code>Turbid_To_Triangles_Field.py Turb path_to_store_field.txt path_to_store_DSM.obj</code> <code>Field.txt</code> is such that you import 3 LAI objects, among 10 objects, per LAI value in folder "cellules_triangle", per LAI ascending order.<br />
+Advice: in the LUT of DART-Lux, only store results for the nadir direction.</p>
+</li>
+</ul>
+<p><center><img src="./media/total.png"><p><em>Total, PS1 and PS2 reflectance of the turbid scene and its associated triangle scene. <span class="arithmatex">\(\theta_s=30°\)</span> and 60°.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DAO is being adapted to create scenes that are adapted to DART-Lux, in order to reduce computer time and RAM.</p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

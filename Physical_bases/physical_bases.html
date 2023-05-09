@@ -1,0 +1,1839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Physical_bases/physical_bases.html">
+      
+      
+        <link rel="prev" href="../General_advices/general_advices.html">
+      
+      
+        <link rel="next" href="../Tutorials/T0/t0.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>**Physical bases** - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#physical-bases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              **Physical bases**
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          **Physical bases**
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="physical_bases.html" class="md-nav__link md-nav__link--active">
+        **Physical bases**
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-measures-used" class="md-nav__link">
+    Main measures used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermal-emission" class="md-nav__link">
+    Thermal emission
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toa-satellite-radiance-l_toaomega_v" class="md-nav__link">
+    TOA / satellite radiance \(L_{TOA}(\Omega_V)\)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-measures-used" class="md-nav__link">
+    Main measures used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermal-emission" class="md-nav__link">
+    Thermal emission
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toa-satellite-radiance-l_toaomega_v" class="md-nav__link">
+    TOA / satellite radiance \(L_{TOA}(\Omega_V)\)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="physical-bases"><strong>Physical bases</strong></h1>
+<h3 id="main-measures-used"><strong><em>Main measures used</em></strong></h3>
+<ul>
+<li><u><em>Solid angle</em></u> <span class="arithmatex">\(d\Omega\)</span> (sr) along direction <span class="arithmatex">\(\Omega(\theta,\phi)\)</span>: angle in 3D space <span class="arithmatex">\(d\Omega = sin(\theta).d\theta.d\phi\)</span> (See below)</li>
+</ul>
+<p><center><img src="./media/solid_angle.png"><p><em>Solid angle <span class="arithmatex">\(d\Omega\)</span> centred on direction <span class="arithmatex">\(\Omega(\theta,\phi)\)</span> from a surface <span class="arithmatex">\(\Sigma\)</span>..</em></p></img></center></p>
+<ul>
+<li>
+<p><u><em>Radiance</em></u>: power along (<span class="arithmatex">\(\Omega\)</span>) per sr and apparent <span class="arithmatex">\(m^2\)</span> of emitter/receiver surface <span class="arithmatex">\(\Sigma\)</span>: <span class="arithmatex">\(L_{\lambda}(\Omega): W/m^2/sr/\mu m; L_{\Sigma,\Delta \lambda}(\Omega): W/m^2/sr\)</span></p>
+</li>
+<li>
+<p><u><em>Exitance</em></u>: power (W) that exits a surface <span class="arithmatex">\(\Sigma\)</span> (See below) per <span class="arithmatex">\(m^2\)</span> of <span class="arithmatex">\(\Sigma\)</span>: <span class="arithmatex">\(M_{\Sigma,\lambda}=\int_{2\pi^{+}} L_{\Sigma,\lambda}(\Omega).cos(\theta).d\Omega\;\;\;\;W/m^2/\mu m\;\;\;\;M_{\Sigma,\Delta \lambda}=\int_{2\pi^{+}} L_{\Sigma,\Delta \lambda}(\Omega).cos(\theta).d\Omega\;\;\;\;W/m^2\)</span></p>
+</li>
+<li>
+<p><u><em>Irradiance</em></u>: power (W) that is incident on a surface <span class="arithmatex">\(\Sigma\)</span> (See below) per m of <span class="arithmatex">\(\Sigma\)</span>: <span class="arithmatex">\(E_{\Sigma,\lambda}=\int_{2\pi^{-}} L_{\Sigma,\lambda}(\Omega).|cos(\theta)|.d\Omega\;\;\;\;W/m^2/\mu m\;\;\;\;E_{\Sigma,\Delta \lambda}=\int_{2\pi^{-}} L_{\Sigma,\Delta \lambda}(\Omega).|cos(\theta)|.d\Omega\;\;\;\;W/m^2\)</span></p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Luminance <span class="arithmatex">\((cd/m^2)\)</span> = <span class="arithmatex">\(683.\int_{380}^{740} V(\lambda).L(\lambda).d\lambda\)</span> Normalized luminous efficiency <span class="arithmatex">\(V(\lambda)\)</span> in <a href="http://www.cvrl.org/lumindex.htm">www.cvrl.org/lumindex.htm</a></em> </p>
+</div>
+<ul>
+<li>
+<p><u><em>Reflectance factor of a surface</em></u> <span class="arithmatex">\(\Sigma\)</span>: <span class="arithmatex">\(\rho_{\sigma,\lambda}(\Omega)=\frac {\pi.L_{\Sigma,\lambda}(\Omega)} {E_{\Sigma,\lambda}}\)</span>(See below).
+<center><img src="./media/surface_irradiance.png" width=500><p><em>Surface irradiance <span class="arithmatex">\(E_{\lambda}(left)\)</span> and exitance <span class="arithmatex">\(M_{\lambda}(right)\)</span>.</em></p></img></center>
+Different reflectance factors are used for taking into account the fact that radiation can be:</p>
+<ul>
+<li>along a unique direction (i.e., <span class="arithmatex">\(d\Omega=0\)</span>). This is called "direct". Below, its index is "d".</li>
+<li>within a cone (<span class="arithmatex">\(\Omega, d\Omega \neq 0\)</span>). This is called "conical". Below, its index is "c".</li>
+<li>along an hemisphere (i.e., <span class="arithmatex">\(d\Omega = 2\pi\)</span>). This is called "hemispherical". Below, its index is "h".</li>
+</ul>
+</li>
+<li>
+<p><u><em>Lambertian surface</em></u>: isotropic radiance <span class="arithmatex">\(L_{\lambda}(\Omega) = cst \implies\)</span> isotropic reflectance <span class="arithmatex">\(\rho_{\lambda}(\Omega) = cst\)</span> (See below).</p>
+</li>
+</ul>
+<p><center><img src="./media/types_of_reflectance.png"><p><em>Different types of reflectance (direct d, hemispherical h, conical c)</em></p></img></center></p>
+<p><center><img src="./media/solar_plane.png"><p><em><span class="arithmatex">\(\rho_{dd}(\Omega)\)</span> in the solar plane</em></p></img></center></p>
+<p>Variable scattering direction for a given illumination direction and 2 types of surfaces:</p>
+<ul>
+<li>lambertian surface: <span class="arithmatex">\(\rho_{dd}(\Omega) = cst\)</span>. White surface <span class="arithmatex">\((\rho_{dd} = 1)\)</span> and grey (<span class="arithmatex">\(\rho_{dd} = cst &lt; 1\)</span>).</li>
+<li>natural surface: <span class="arithmatex">\(\rho_{dd}(\Omega)\)</span> changes. Often maximal for the specular direction and local maximum for the illumination direction.</li>
+</ul>
+<p><u><em>Bi-directional Reflectance Factor (BRF)</em></u>: <span class="arithmatex">\(\rho_{dd}(\Omega_s,\Omega_v,\lambda)= \frac {\pi.L_{\lambda}(\Omega_v).cos(\theta_v).\Delta \Omega_v} {E_{\lambda}(\Omega_s).cos(\theta_v).\Delta \Omega_v} = \frac {\pi.L_{\lambda}(\Omega_v)} {E_{\lambda}(\Omega_s)}\)</span></p>
+<p><u><em>Reflectance Factor direct-hemispherical</em></u>: <span class="arithmatex">\(\rho_{dh}(\Omega_v,\lambda)=\frac {M_{\lambda}} {E_{\lambda,s}}=\frac {\int_{2\pi^{+}}L_{\lambda}(\Omega_v).cos(\theta_v).\Delta \Omega_v} {L_{\lambda}(\Omega_s).cos(\theta_s).\Delta \Omega_s}\)</span> (<span class="arithmatex">\(\frac {exitance\:h} {irradiance\:d}\)</span>)</p>
+<p><u><em>Reflectance Factor hemispherical-direct</em></u>: <span class="arithmatex">\(\rho_{hd}(\Omega_v, \lambda) = \frac {\pi.L_{\lambda,v}} {E_{\lambda,s}} = \frac {\pi.L_{\lambda}(\Omega_v)} {\int_{2\pi^{-}}L_{\lambda}(\Omega_s).cos(\theta_s).\Delta \Omega_s}\)</span> (<span class="arithmatex">\(\frac {\pi.radiance\:d} {irradiance\:h}\)</span>)</p>
+<p><u><em>Reflectance Factor bi-hemispherical</em></u>: <span class="arithmatex">\(\rho_{hh}(\lambda)=\frac {M_{\lambda}} {E_{\lambda}}=\frac {\int_{2\pi^{+}}L_{\lambda}(\Omega_v).cos(\theta_v).\Delta \Omega_v} {\int_{2\pi^{-}}L_{\lambda}(\Omega_s).cos(\theta_s).\Delta \Omega_s}\)</span></p>
+<p><u><em>SKYL</em></u>: <span class="arithmatex">\(\frac {Sky\:(atmosphere)\:irradiance} {Total\:(direct\:sun+atmosphere)\:irradiance}\)</span>. It belongs to <span class="arithmatex">\([0;1]\)</span></p>
+<p><u><em>Albedo</em></u>: <span class="arithmatex">\(A_{dh}(\Delta \Omega_{i}=0, \Delta \lambda)=\frac {Exitance\:(h)\:over\:\Delta \lambda} {Irradiance\:(d)\:over\:\Delta \lambda\:along\:\Omega_{s}}\)</span></p>
+<p><span class="arithmatex">\(A_{hh}(2\pi^{-}, \Delta \lambda)=\frac {Exitance\:(h)\:over\:\Delta \lambda} {Irradiance\:(h)\:over\:\Delta \lambda\:along\:2\pi^{-}}\)</span></p>
+<p>It is the integral of reflectance <span class="arithmatex">\(\rho(\lambda,\Omega_v)\)</span>, weighted by spectral irradiance (i.e., <span class="arithmatex">\(E_{\lambda}(\Omega_i).\mu_i\)</span> for <span class="arithmatex">\(A_{dh}\)</span> and <span class="arithmatex">\(\int_{2\pi^{-}} L_{\lambda}(\Omega_s).\mu_s d\Omega_s.d\lambda\)</span> for <span class="arithmatex">\(A_{hh}\)</span>), over the spectral band <span class="arithmatex">\(\Delta \lambda\)</span> (i.e., all or part of the spectrum) and over all directions of the upper hemisphere (<span class="arithmatex">\(2\pi^{+}\)</span>). It depends a lot on the Earth surface.</p>
+<p>For plane Earth: <span class="arithmatex">\(A_{dh}(\Omega_s, \Delta \lambda) = \frac {1} {\pi}.\frac {\int_{\Delta \lambda} \int_{2\pi} \rho_{dd}(\Omega_s, \Omega_v,\lambda).\mu_v.E_{\lambda}(\Omega_s).\mu_s.d\Omega_v.d\lambda} {\int_{\Delta \lambda} E_{\lambda}(\Omega_s).\mu_s.d\lambda}\)</span> with <span class="arithmatex">\(\Delta \lambda \approx [0.2;\:4 \mu m]\)</span>.</p>
+<p>If <span class="arithmatex">\(E_{\lambda} \approx\: cst\)</span> over <span class="arithmatex">\(\Delta \lambda: \:A_{dh}(\Omega_s, \Delta \lambda)\approx\frac {1} {\pi}.\int_{\Delta \lambda} \int_{2\pi} \rho_{dd}(\Omega_s, \Omega_v,\lambda).\mu_v.d\Omega_v.d\lambda \approx \frac {1} {\Delta \lambda} . \int_{\Delta \lambda} \rho_{dh}(\Omega_s, \lambda).d\lambda\)</span> <span class="arithmatex">\(\approx \rho_{dh, \Delta \lambda}(\Omega_s)\)</span></p>
+<p><u><em>Optical depth <span class="arithmatex">\(\Delta \tau\)</span></em></u>: the direct transmittance along <span class="arithmatex">\(\Omega_v\)</span> of a medium with an optical depth <span class="arithmatex">\(\Delta \tau\)</span> is <span class="arithmatex">\(e^{- \frac {\Delta \tau} {\mu_v}}\)</span> with <span class="arithmatex">\(\mu_v = cos(\theta_v)\)</span>.</p>
+<p>DART <strong>"Forward"</strong> mode: a ray along direction <span class="arithmatex">\((\Omega,\Delta \Omega)\)</span> carries the power <span class="arithmatex">\(W(\Omega,\Delta \Omega)\)</span>. A ray that exits the scene at pixel <span class="arithmatex">\((\Delta x,\Delta y)\)</span> gives rise to local radiance <span class="arithmatex">\(L_{xy}(\Omega,\Delta \Omega)=\frac {W(\Omega, \Delta \Omega)(W)} {\Delta x.\Delta y.\int_{\Delta \Omega} cos(\theta).d\Omega\:(m^2.sr)}\)</span> with <span class="arithmatex">\((\Delta \Omega = \int_{\Delta \theta}\int_{\Delta \phi} sin(\theta).d\theta.d\phi)\)</span></p>
+<ul>
+<li>Surface of area A: it gives rise to:<ul>
+<li><span class="arithmatex">\(W_{scat}(\Omega, \Delta \Omega)=\frac {\rho(\Omega)} {\pi}.A.\int_{\Delta \Omega}cos(\theta).d\Omega\)</span>,</li>
+<li><span class="arithmatex">\(W_{thermal}(\Omega, \Delta \Omega)=\epsilon(\Omega).A.L_{B}(T).\int_{\Delta \Omega} cos(\theta).d\Omega\)</span></li>
+</ul>
+</li>
+<li>Turbid media: it gives rise to:
+<span class="arithmatex">\(W_{scat}(\Omega, \Delta \Omega) \:\&amp;\: W_{thermal}(\Omega, \Delta \Omega) \equiv \frac {\int_{\Delta \Omega} cos(\theta).d\Omega} {cos(\theta)}\)</span>. Fluids (spherical particules): <span class="arithmatex">\(W_{thermal}(\Omega,\Delta \Omega) \equiv \Delta \Omega\)</span></li>
+</ul>
+<p><center><img src="./media/albedo_earth_material.png"><p><em>Albedo of Earth material</em></p></img></center></p>
+<h3 id="thermal-emission"><strong><em>Thermal emission</em></strong></h3>
+<p><u><em>Planck law</em></u>: <span class="arithmatex">\(L_{\lambda}(T)=\frac {2.h.c^2} {\lambda^5.(e^{\frac {h.c} {\lambda.k.T}})}\)</span> (<span class="arithmatex">\(W.m^{-2}.sr^{-1}.m^{-1}\)</span>) where <span class="arithmatex">\(h=6.63\times10^{-34}\)</span> J.s and <span class="arithmatex">\(k=1.3807\times10^{-23}\:J.K^{-1}\)</span></p>
+<p><u><em>Wien law:</em></u> <span class="arithmatex">\(M(\lambda)\)</span> is maximal for <span class="arithmatex">\(\lambda_m=\frac {a} {T}\:(a=2899 \mu mK)\)</span></p>
+<p><u><em>Stephan-Boltzmann law:</em></u> <span class="arithmatex">\(M = \sigma.T^4\)</span>, where <span class="arithmatex">\(\sigma = 5.6704 \times10^{-8} W.m^{-2}.K^{-4}\)</span></p>
+<p><u><em>Brightness temperature <span class="arithmatex">\(T_B\)</span> of a scene:</em></u> temperature of the blackbody that emits the same radiance as the scene.</p>
+<p>For a measured radiance <span class="arithmatex">\(L_{mes,\lambda}(\Omega)\)</span>: <span class="arithmatex">\(L_{m,\lambda}(\Omega)=L_{B,\lambda}(T_B) \implies T_B =L_{B,\lambda}^{-1}(L_{mes,\lambda}(\Omega))=f(\lambda,T,\Omega)=\frac {h.c} {k.\lambda} .\frac {1} {ln(1+\frac {2.h.c^2} {\lambda^5.L_{m,\lambda}(\Omega)})}\)</span></p>
+<p><u><em>Emissivity <span class="arithmatex">\(\epsilon\)</span>:</em></u> efficiency of thermal emission relative to blackbody. <span class="arithmatex">\(\epsilon_{blackbody} = 1 \forall \lambda\)</span>.</p>
+<p>For a fluid (e.g., atmosphere): <span class="arithmatex">\(\epsilon(\Omega,\lambda) = 1 - \rho_{dh}(\Omega,\lambda) - t(\Omega,\lambda) \forall \lambda\)</span>. For an opaque surface: <span class="arithmatex">\(\epsilon(\Omega,\lambda) = 1 - \rho_{dh}(\Omega,\lambda) \forall \lambda\)</span></p>
+<h3 id="toa-satellite-radiance-l_toaomega_v"><strong><em>TOA / satellite radiance <span class="arithmatex">\(L_{TOA}(\Omega_V)\)</span></em></strong></h3>
+<p>3 radiation sources arise at TOA level: 
+<img src="./media/boa_toa_scheme.png"></img></p>
+<p>Atmosphere: direct transmittance <span class="arithmatex">\(e^{- \frac {\Delta \tau} {\mu_v}}\)</span> , diffuse transmittance <span class="arithmatex">\(t_{atm}\)</span>, total transmittance <span class="arithmatex">\(T_{atm} =e^{- \frac {\Delta \tau} {\mu_v}} +t_{atm}\)</span>.</p>
+<p>a) <u><em>Sun scattered radiation</em></u></p>
+<ul>
+<li>Scene scattering with direct atmosphere transmission <span class="arithmatex">\(\downarrow \uparrow\)</span>: <span class="arithmatex">\(E_{sun}.e^{- \frac {\Delta \tau_{atm}} {\mu_s}}.\frac {\rho_{scene}} {\pi}(\Omega_s,\Omega_v).e^{- \frac {\Delta \tau_{atm}} {\mu_s}}\)</span> <img src="./media/reflection_long_arrow.png"></img></li>
+<li>Scene scattering with diffuse atmosphere transmission: <span class="arithmatex">\(E_{sun}.t_{atm}(\Omega_s,2\pi^{-}).\rho_{scene}(2\pi^{-},2\pi^{+}).T_{atm}(2\pi^{+},\Omega_v)\)</span> <img src="./media/reflection_broken_arrow.png"></img></li>
+<li>Atmosphere scattering, without interaction with the scene: <span class="arithmatex">\(E_{sun}.\frac {\rho_{atm}} {\pi}(\Omega_s, \Omega_v)\)</span> <img src="./media/reflection_short_arrow.png"></img></li>
+<li>Scene scattering with Earth-Atmosphere coupling: <span class="arithmatex">\(E_{sun}.T_{atm}(\Omega_s,2\pi^{-}).\frac {\rho_{scene}(2\pi^{-},2\pi^{+})} {1-s_{atm}}.T_{atm}(2\pi^{+},\Omega_v)\)</span>. <img src="./media/reflection_more_broken_arrow.png"></img></li>
+</ul>
+<p>b) <u><em>Scene thermal emission</em></u> with atmosphere direct / diffuse transmission: <span class="arithmatex">\(L_{scene}.T_{atm}(2\pi^{+},\Omega_v)\)</span> <img src="./media/blue_arrow.png"></img></p>
+<p>c) <u><em>Atmosphere thermal emission</em></u> direct and scene scattered: <span class="arithmatex">\(L_{atm}(\Omega_v) + \rho_{scene}(2\pi^{-}, 2\pi^{+}).L_{atm}(\Omega_v)\)</span> <img src="./media/reflection_blue_arrow.png"></img></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2099 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Tutorials/T1/t1.html">
+      
+      
+        <link rel="prev" href="../T0/t0.html">
+      
+      
+        <link rel="next" href="../T2/t2.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>WP1 - Reflectance - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-preparation-and-run-of-a-dart-simulation-wp1a-ft-ct3-wp1a-lux-ct19" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WP1 - Reflectance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WP1 - Reflectance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="t1.html" class="md-nav__link md-nav__link--active">
+        WP1 - Reflectance
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation-and-run-of-a-dart-simulation-wp1a-ft-ct3-wp1a-lux-ct19" class="md-nav__link">
+    1) Preparation and run of a DART simulation: WP1A-FT (CT=3"), WP1A-Lux (CT=19")
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scene-spectral-broadband-terms-8-bands-04-08mu-m-delta-lambda005mu-m" class="md-nav__link">
+    2) Scene spectral &amp; broadband terms (8 bands: \([0.4 \:0.8\mu m]\), \(\Delta \lambda=0.05\mu m\))
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vegetation-spectra" class="md-nav__link">
+    3) Vegetation spectra
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-atmosphere-analytic-model-vs-atmosphere-rt" class="md-nav__link">
+    4) Atmosphere analytic model vs. Atmosphere RT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scene-uvvis-ir-radiative-budget-wp1e" class="md-nav__link">
+    5) Scene UV/VIS/ IR radiative budget: WP1E
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Scene UV/VIS/ IR radiative budget: WP1E">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wp1ea-multiband-with-3-bands-uv-vis-swir" class="md-nav__link">
+    WP1Ea: multiband with 3 bands (UV, VIS, SWIR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1eb-1-sequence-of-3-mono-band-simulations-uv-visir" class="md-nav__link">
+    WP1Eb: 1 sequence of 3 mono-band simulations (UV, VIS,IR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1ed-1-band-03mu-m-25mu-m" class="md-nav__link">
+    WP1Ed: 1 band \(([0.3\mu m \:2.5\mu m])\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1ee-wp1ef-wp1eg-same-as-wp1ea-wp1ec-and-wp1ed-where-atmosphere-rt-replaces-analytic-model" class="md-nav__link">
+    WP1Ee, WP1Ef, WP1Eg: same as WP1Ea, WP1Ec and WP1Ed where "Atmosphere RT" replaces "Analytic model"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-preparation-and-run-of-a-dart-simulation-wp1a-ft-ct3-wp1a-lux-ct19" class="md-nav__link">
+    1) Preparation and run of a DART simulation: WP1A-FT (CT=3"), WP1A-Lux (CT=19")
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scene-spectral-broadband-terms-8-bands-04-08mu-m-delta-lambda005mu-m" class="md-nav__link">
+    2) Scene spectral &amp; broadband terms (8 bands: \([0.4 \:0.8\mu m]\), \(\Delta \lambda=0.05\mu m\))
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vegetation-spectra" class="md-nav__link">
+    3) Vegetation spectra
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-atmosphere-analytic-model-vs-atmosphere-rt" class="md-nav__link">
+    4) Atmosphere analytic model vs. Atmosphere RT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scene-uvvis-ir-radiative-budget-wp1e" class="md-nav__link">
+    5) Scene UV/VIS/ IR radiative budget: WP1E
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Scene UV/VIS/ IR radiative budget: WP1E">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wp1ea-multiband-with-3-bands-uv-vis-swir" class="md-nav__link">
+    WP1Ea: multiband with 3 bands (UV, VIS, SWIR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1eb-1-sequence-of-3-mono-band-simulations-uv-visir" class="md-nav__link">
+    WP1Eb: 1 sequence of 3 mono-band simulations (UV, VIS,IR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1ed-1-band-03mu-m-25mu-m" class="md-nav__link">
+    WP1Ed: 1 band \(([0.3\mu m \:2.5\mu m])\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wp1ee-wp1ef-wp1eg-same-as-wp1ea-wp1ec-and-wp1ed-where-atmosphere-rt-replaces-analytic-model" class="md-nav__link">
+    WP1Ee, WP1Ef, WP1Eg: same as WP1Ea, WP1Ec and WP1Ed where "Atmosphere RT" replaces "Analytic model"
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>WP1 - Reflectance</h1>
+
+<p><u><em>Objective:</em></u> </p>
+<ul>
+<li>
+<p>To manipulate lambertian surfaces (i.e., isotropic radiance and reflectance) and spectral / broadband terms: radiance <span class="arithmatex">\(L_{\lambda}(\Omega)\)</span> / <span class="arithmatex">\(L_{\Delta \lambda}(\Omega)\)</span>, exitance <span class="arithmatex">\(M_{\lambda}\)</span> / <span class="arithmatex">\(M_{\Delta \lambda}\)</span>, irradiance <span class="arithmatex">\(E_{\lambda}\)</span> / <span class="arithmatex">\(E_{\Delta \lambda}\)</span>, bi-directional reflectance factor (BRF): <span class="arithmatex">\(\rho_{\lambda}(\Omega)=\frac {\pi.L_{\lambda}(\Omega)} {E_{\lambda}}\)</span> / <span class="arithmatex">\(\rho_{\Delta \lambda}(\Omega)=\frac {\pi.L_{\Delta \lambda}(\Omega)} {E_{\Delta \lambda}}\)</span>, ...</p>
+</li>
+<li>
+<p>To create mono-band (1 band) &amp; multi-band (N bands) simulations of 2D scenes and display images {<span class="arithmatex">\(\rho_{xy,\lambda}(\Omega), L_{xy,\lambda}(\Omega)\)</span>,...} and 2D/1D plots: <span class="arithmatex">\(\overline{\rho}_{xy,\lambda}(\Omega),\overline{\rho}_{xy,\lambda}(\theta, \phi=cst)\)</span>, LUT...</p>
+</li>
+<li>
+<p>To create a spectral sequence (cf. <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html">III.5.3</a> ) of mono-band simulations and its LUT.</p>
+</li>
+</ul>
+<p><center><img src="./media/coordinate_system.png"></img></center></p>
+<p>The 2 DART modes (<span style="color:blue">Bi-Directional</span> Monte Carlo, <span style="color:green">Forward</span>: initial mode) give similar image and radiative budget (RB) products. 'Forward' (i.e., 'DART-FT: Passive RS &amp; RB' uses the DOM; 'DART-RC: LiDAR' uses the RC method) is optimal for simple scenes and RB. Being optimal for complex 3D scenes, '<span style="color:blue">Bi-Directional</span>' (i.e., DART-Lux) is advised here. Screen copies show how to create WP1-Lux and WP1-FT simulations with parameters in Table below. </p>
+<p><center><img src="./media/wp1a_parameters.png"><p><em>WP1A parameters with those specific to the <span style="color:green">Forward (DART-FT)</span> and <span style="color:blue">Bi-Directional (DART-LUX)</span> modes. They are stored in xml files (i.e., text files) in the simulation 'input' folder. After entering them in the GUI, save the simulation (command <code>File / Save simulation</code>). Then, the symbol " * " on top of the editor menu panel disappears.</em></p></img></center></p>
+<h3 id="1-preparation-and-run-of-a-dart-simulation-wp1a-ft-ct3-wp1a-lux-ct19">1) Preparation and run of a DART simulation: WP1A-FT (CT=3"), WP1A-Lux (CT=19")</h3>
+<p><u><em>Objective:</em></u> to get started with the edition and run of a DART simulation, 1D and 2D displays,...</p>
+<ul>
+<li>
+<p><strong>Create WP1A-* </strong> (<code>Simulation / New simulation</code>): * = FT or LUX. It creates 2 empty folders (input, output) in folder WP1A-*.</p>
+</li>
+<li>
+<p><strong>Enter data of the table above into the simulation</strong> (GUI command <code>Parameters / Editor</code>)</p>
+</li>
+</ul>
+<p><img src="../media/1.png" width=15> <em>Light propagation mode</em>: <span style="color:blue">Bi-Directional</span> (<span class="arithmatex">\(\implies\)</span> DART-LUX *.Lux simulations) or <span style="color:green">Forward</span>  (DART-FT)</p>
+<p><center><img src="./media/radiation_menu.png"><p>Radiation menu. <img src="../media/1.png" width=15><em>Light propagation mode: '<span style="color:green">Forward</span>' to create WP * -FT simulations and '<span style="color:blue">Bi-Directional</span>' to create WP * -Lux simulations. <img src="../media/2.png" width=15> 'Transition:TOA <span class="arithmatex">\(\leftrightarrow\)</span> BOA": Analytic model'.</em></p></img></center></p>
+<ul>
+<li><u><em>Irradiance or radiance</em></u> (see below): here, an analytic model (option: "TOA <span class="arithmatex">\(\rightarrow\)</span> BOA transfer") derives BOA irradiance {<span class="arithmatex">\(E_{BOA,\lambda}, SKYL_{\lambda}\)</span>} from "Thuiller-Kurucz" TOA spectral irradiance <span class="arithmatex">\(E_{TOA,\lambda}\)</span> in database '<code>solar_constant.db</code>; <span class="arithmatex">\(W/m^2/\mu m\)</span>) and atmosphere properties in DART database '<code>dart_atmosphere.db</code>. It does not compute the BOA <span class="arithmatex">\(\rightarrow\)</span> TOA transfer and therefore the TOA data (<span class="arithmatex">\(\implies\)</span> in the LUT: <span class="arithmatex">\(L_{TOA}^{\uparrow}(\Omega)=L_{BOA}^{\uparrow}(\Omega) \:\forall \Omega\)</span> and <span class="arithmatex">\(M_{BOA} = M_{TOA}\)</span>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Other scene illumination: "spectral radiance <span class="arithmatex">\(L_{BOA,\lambda}(\Omega)\)</span>", band irradiance/solar constant <span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span>: <span class="arithmatex">\(W/m^2\)</span>, <span class="arithmatex">\(SKYL_{\Delta \lambda}\)</span> (1: cloud cover = 100%; 0: atmosphere does not scatter), or "spectral irradiance <span class="arithmatex">\(E_{BOA,\lambda}\)</span> <span class="arithmatex">\((W/m^2/\mu m) + SKYL_{\lambda}=\frac {E_{sky,\lambda}} {E_{BOA,\lambda}}\)</span>".</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The analytical model is less accurate than atmosphere RT, and is more accurate for <span class="arithmatex">\(\rho_{scene}\)</span> than for <span class="arithmatex">\(L_{scene}\)</span>. Why ? </p>
+</div>
+<p><center><img src="./media/specification_toa_irradiance.png"><p><em>Specification of TOA irradiance using the spectral irradiance table ThKur.</em></p></img></center></p>
+<ul>
+<li>
+<p><u><em>Forward parameters</em></u>: DART-FT iterates N times (here, N=5). IterX is the extrapolated data from last 4 iterations.</p>
+</li>
+<li>
+<p><u><em>BI-directional parameters</em></u>: <img src="../media/1.png" width=15/> Max scattering order, <img src="../media/2.png" width=15/> Pixel size, <img src="../media/3.png" width=15/> Number of samplings/pixel,...</p>
+</li>
+</ul>
+<p><center><img src="./media/Parameters specific.png"><p><em>Parameters specific to the Bi-directional mode  (a) and Forward mode (b).</em></p></img></center></p>
+<ul>
+<li><u><em>Spectral intervals</em></u> (see below): {central wavelength <span class="arithmatex">\(\lambda_m\)</span>, bandwidth <span class="arithmatex">\(\Delta \lambda\)</span>; <span class="arithmatex">\(\mu m\)</span>}. A mouse right click on 'Spectral intervals' adds single bands or a range of bands. The index (<img src="../media/empty_circle_blue.png" width=15/>) indicates the number of user defined intervals.</li>
+</ul>
+<p><center><img src="./media/setting_spectral_band.png"><p><em>Setting the spectral band [0.70 0.71] and its mode R.</em></p></img></center></p>
+<ul>
+<li><u><em>DART products</em></u> (see below)</li>
+</ul>
+<p><center><img src="./media/dart_products.png"><p><em>BRF/BTF menu: products. a)  <span style="color:green">Forward</span> mode (left) and  <span style="color:blue">Bi-Directional</span> mode (right). Here, <span class="arithmatex">\(\theta _{max} = 25° \implies\)</span> only images with <span class="arithmatex">\(\theta _v &lt;25°\)</span> are stored to save computer memory.</em></p></img></center></p>
+<ul>
+<li><u><em>Optical property</em></u> (see below): create reflectance <span class="arithmatex">\(\rho=0.5\)</span>, called "Lamb_ro=0.50", by multiplying reflectance <span class="arithmatex">\(\rho=1\)</span> of model "reflect_equal_1_trans_equal_0_0" in database <code>lambertian_mineral.db</code> by 0.5 for all bands.</li>
+</ul>
+<p><center><img src="./media/setting_optical_property.png"><p><em>Setting the optical property "Lamb_ro=0.50": <span class="arithmatex">\(\rho=0.50\)</span>. a) For 1 band only. b) For all bands.</em></p></img></center></p>
+<p><u><em>The Earth scene</em></u> (see below): infinitely repetitive horizontal 50m x 50m ground scene, with 1m x 1m discrete cells. The ground optical property is "Lamb_ro=0.50. For DART-Lux, spatial resolution is in Bi-directional parameters.</p>
+<p>DART input data are stored in xml files (i.e., text files) in the simulation 'input' folder. Once they are all entered, save the simulation (option <code>File / Save simulation</code>). Then, the symbol "*" on top of the editor menu panel disappears.</p>
+<p><center><img src="./media/scene_geometry.png"><p><em>Scene geometry.:<br> <img src="../media/1.png" width=15/> The scene is repetitive. It could be isolated or with an infinite continuous topography (slope). In DART-Lux, the number of scene repetitions is set in "Bi-directional" parameters.<br> <img src="../media/2.png" width=15/>: <span class="arithmatex">\(\Delta x=\Delta y, \Delta z\)</span>; For DART-FT: the cell size of the scene mock-up is the pixel size of the simulated images. For DART-Lux: cells are only used to simulate the 3D turbid elements elements and 3D RB.<br> <img src="../media/3.png" width=15/> Scene dimensions .<br> <img src="../media/4.png" width=15/>  Ground optical properties.</em></p></img></center></p>
+<p><strong>Run DART:</strong> menu <code>Run / DART</code> runs sequentially 4 modules (<em>directions, phase, maket, dart</em>) and modules set in the "Properties" menu. Modules can be run 1 per 1. The GUI "Console" shows log data.</p>
+<p><strong>Display DART discrete directions:</strong> menu <code>View / Directions 3D View</code></p>
+<p>This 3D view shows the user-defined <span class="arithmatex">\(U\)</span> upward and <span class="arithmatex">\(D\)</span> downward discrete directions that sub-divide the <span class="arithmatex">\(4\pi\)</span> space, and <span class="arithmatex">\(V\)</span> user-added viewing directions. DART-FT tracks radiation in the <span class="arithmatex">\(U+D\)</span> discrete directions, whereas DART-Lux tracks it in Monte Carlo derived directions. Images <span class="arithmatex">\(X_{xy}(\Omega_V)\)</span>, with <span class="arithmatex">\(X =\)</span> radiance <span class="arithmatex">\(L\)</span>, reflectance <span class="arithmatex">\(\rho\)</span> or brightness temperature <span class="arithmatex">\(T_B\)</span>, are stored for all <span class="arithmatex">\(V + U\)</span> * directions, with <span class="arithmatex">\(U\)</span> * a user-defined subset of the <span class="arithmatex">\(U\)</span> directions. DART-FT simulates them for all U + V directions, and DART-Lux for <span class="arithmatex">\(V + U\)</span> * directions. Text files (<code>brf</code>, <code>radiance</code>, <code>tapp</code>) store {<span class="arithmatex">\(\theta _V, \phi _V\)</span>, mean value <span class="arithmatex">\(\bar{X}_{xy}(\Omega_V)\)</span> per simulated image <span class="arithmatex">\(X_{xy}(\Omega_V,\Delta\Omega_V)\)</span>. For the (<span class="arithmatex">\(U - U\)</span> * ) directions where DART-Lux does not simulate images, they store <span class="arithmatex">\(\bar{X}_{xy}(\Omega_V)\)</span> as an interpolation of data of the BRF map over <span class="arithmatex">\(\Delta\Omega_V\)</span>. 
+Image <code>BRF map</code>: <span class="arithmatex">\(X_{xy}(\theta_V \in [0;89], \phi_V \in [359]; \Delta\theta_V=\Delta\phi_V=1°\)</span>). Only DART-Lux (bi-directional mode) creates it, if one sets the option <img src="./media/brf_image_button.png"> in the Editor or option <img src="./media/store_only_button.png"> in the LUT.</p>
+<p><center><img src="./media/dart_discrete_directions.png"><p><em>a) 3D view of directions. b) Simulated and stored images, and stored brf file. <span class="arithmatex">\(X = \rho, L\)</span> or <span class="arithmatex">\(T_B\)</span>.</em></p></img></center></p>
+<p><strong>2D display of the scene</strong> (<span style="color:green">only DART-FT</span> : menu <code>View/ Scene 2D</code>)
+It shows xy, xz and yz cross sections of the scene (see below). 3D data (e.g., scene temperature) can be overlaid.</p>
+<p><strong>3D view of the scene</strong> (menu <code>View/ Scene 3D</code>)
+It shows a 3D view of the scene, including the Ox, Oy and Oz axes and sun rays (Figure below).</p>
+<p><center><img src="./media/simulated_scene.png"><p><em>The simulated scene. a) 2D view: xy, xz, yz planes. Here: <span class="arithmatex">\(1^{st}\)</span> xy plane. b) 3D view: axes, sun direction and the scene.</em></p></img></center></p>
+<p><strong><code>Display dart.txt</code> and <code>simulation.properties.txt</code></strong> (output folder): menu <code>View/Report-Data files</code></p>
+<ul>
+<li>dart.txt: sIt stores input data ( band irradiance <span class="arithmatex">\(E_{TOA,\lambda}\)</span> , <span class="arithmatex">\(E_{BOA,\lambda}\)</span>, <span class="arithmatex">\(SKYL_{\lambda}\)</span>,…)and a few results: <ul>
+<li>DART-Lux: exitance <span class="arithmatex">\(M_\lambda\)</span> and albedo <span class="arithmatex">\(A_\lambda\)</span> or brightness temperature <span class="arithmatex">\(T_{B,_\lambda}\)</span>, possibly per time step i.</li>
+<li>DART-FT. 3 data per iteration i <span class="arithmatex">\(\in [1\ 1]\)</span> and extrapolation <span class="arithmatex">\(X\)</span> from <span class="arithmatex">\(I-3\)</span> to <span class="arithmatex">\(I\)</span>. <ul>
+<li>1) Albedo <span class="arithmatex">\(A_{\lambda,i}\)</span> / <span class="arithmatex">\(A_{\lambda,X}\)</span> if band mode = R or Brightness temperature <span class="arithmatex">\(T_{B,\lambda,i}\)</span> / <span class="arithmatex">\(T_{B,\lambda,X}\)</span> if band mode = T or R+T; </li>
+<li>2) <span class="arithmatex">\(A_{\lambda,X(i)}\)</span>/<span class="arithmatex">\(T_{B,\lambda,X(i)}\)</span> extrapolated from <span class="arithmatex">\(i-4\)</span> to <span class="arithmatex">\(i-1\)</span> </li>
+<li>3) Exitance <span class="arithmatex">\(M_{BOA,\lambda,i}\)</span> / <span class="arithmatex">\(M_{BOA,\lambda,X}\)</span>. Convergence if  <span class="arithmatex">\(\frac{A_{\lambda,X(i)}}{T_{B,\lambda,X(i)}} \approx \frac{A_{\lambda,X}}{T_{B,\lambda,X}}\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Verify that <span class="arithmatex">\(M_\lambda =A_\lambda\)</span> x <span class="arithmatex">\(E_{BOA,\lambda}\)</span></p>
+</div>
+<ul>
+<li>simulation.properties.txt (see below): input data of DART modules.</li>
+</ul>
+<p><center><img src="./media/simulation_properties_file.png"><p><em><code>SimulationProperties</code> file: input parameters of DART modules. Although designed for "computer usage", this file is useful to check DART input parameters. Here, the <span class="arithmatex">\(1^{st}\)</span> (index o) lambertian property stores reflectance <span class="arithmatex">\(R_0 = 0.5\)</span>, Diffuse transmittance TauDiffus=0, direct transmittance TauDirect = 0.</em></p></img></center></p>
+<p><strong>Display DART images:</strong> menu <code>View / Image</code> (see below)<br />
+A reflectance / radiance directional image <code>imaN_VZ=xx_VA=y.mp#</code> is a scene parallel projection onto a plane perpendicular to the viewing direction number N with zenith xx and azimuth yy angles. Hence, for an oblique direction it has a diamond shape (see below). Its ortho image (i.e., scene rectangular reference) is in the folder 'IMAGE PROJETEE'. Ortho images 'Exitance', 'Irradiance' and 'Albedo' are angular integrals of ortho images over <span class="arithmatex">\(2\pi^{+}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Option 'Save as': to copy a current simulation as a new simulation with the same input folder. Here, WP1A-FT can be created from WP1A-Lux, then replacing light mode 'Bi-directional' by 'Forward'.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Tool'Stats' of 'Mask Editor' (Figure 165.a): check that scene reflectance <span class="arithmatex">\(\rho(x,y)\)</span> fluctuates around 0.5 in all DART-Lux images and is exactly 0.5 in all DART-FT images (Figure below .b). Why?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>"Simulation / Simulation explorer": short-cut to the files of the simulation. Example: check that the "output" folder of the simulation stores DART products per spectral band q, in folders BANDq in folders 'BRF' and 'Radiance', and per iteration i in folders ITERi, each one with a folder 'IMAGES_DART' that stores DART images.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The BRF map {<span class="arithmatex">\(\rho_{scene}(\theta,\phi), \theta \in [0 89], \phi \in [0 359], \Delta\theta=\Delta\phi=1°\)</span>} (90 lines x 360 columns) of DART-Lux has <span class="arithmatex">\(\bar{\rho}_{scene}= 0.5001\)</span> and <span class="arithmatex">\(\sigma_{\rho_{scene}} = 5 10^{-2}\)</span>. In theory, <span class="arithmatex">\(\bar{\rho}_{scene}= 0\)</span> and <span class="arithmatex">\(\sigma_{\rho_{scene}}= 0\)</span>. How to decrease <span class="arithmatex">\(\sigma_{\rho_{scene}}\)</span>? </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Check: <span class="arithmatex">\(M_{xy,\lambda}^{DART-FT}=A_{xy,\lambda}^{DART-FT}. E_{BOA,\lambda}  =\pi . L_{xy,\lambda}^{DART-FT}\)</span>. Conversely to DART-FT, DART-Lux does not simulate <span class="arithmatex">\(M_{xy,\lambda}\)</span>  images.</p>
+</div>
+<p><center><img src="./media/menu_view_image.png"><p><em>DART images  and menus 'View' / 'Image' to display images and image statistics. a) DART-Lux: nadir image (correct mean value (i.e., 0.5); Monte Carlo noisy aspect) and BRF map. b) DART-FT: nadir and oblique (<span class="arithmatex">\(\theta_v=22.4°, \phi_v=30°\)</span>) images. Pixels outside the simulated scene have a NaN value (yellow color).</em></p></img></center></p>
+<p><strong>Plot 1D and 2D scene reflectance:</strong> </p>
+<p><img src="../media/1_green.png" width=15> View/Directonal R.../1D <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V = cst)\)</span>. Plot of file BRF <span class="arithmatex">\((\theta_V,\phi_V,\rho_{scene}(\theta_V , \phi_V))\)</span> with or without interpolation. </p>
+<p><img src="../media/2_blue.png" width=15> View/Directonal R.../2D <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V = cst)\)</span>. Plot of file BRF <span class="arithmatex">\((\theta_V,\phi_V,\rho_{scene}(\theta_V , \phi_V))\)</span> with interpolation. </p>
+<p><img src="../media/3.png" width=15> View BRF map: <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V)\)</span>. Plot from <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V )\)</span> in the BRF map with <span class="arithmatex">\(\theta_V \in [0;89]\)</span> and <span class="arithmatex">\(\phi_V \in [0;359]\)</span>.</p>
+<p><img src="../media/4_purple.png" width=15> Extract &amp; View from LUT: <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V)\)</span>. Plot from <span class="arithmatex">\(\rho_{scene}(\theta_V , \phi_V )\)</span> in the BRF</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><span class="arithmatex">\(\rho_{scene}^{DART-FT}(\Omega_V) = 0.5 \forall Omega_V\)</span> and pixel <span class="arithmatex">\((x,y)\)</span>, while <span class="arithmatex">\(\rho_{scene}^{DART-Lux}(\Omega_V)\)</span> has slignt fluctuation that decrase with <span class="arithmatex">\(N_{sample,BRF}\)</span>. Why?</p>
+</div>
+<p><center><img src="./media/folder_images_dart.png"><p><em>a) Folder IMAGES_DART of DART images. b) File brf: mean image reflectance {<span class="arithmatex">\(\theta_v, \phi_v, \rho(\theta_v, \phi_v)\)</span>}.</em></p></img></center></p>
+<p><center><img src="./media/1d_and_2d_sun_directions.png"><p><em>DART-Lux and DART-FT plots of 1D <span class="arithmatex">\(\rho_{scene}(\theta,\phi=cst)\)</span> &amp; 2D <span class="arithmatex">\(\rho_{scene}(\theta,\phi)\)</span> with discrete (x) and sun (•) directions. DART-FT and DART-Lux</em></p></img></center></p>
+<h3 id="2-scene-spectral-broadband-terms-8-bands-04-08mu-m-delta-lambda005mu-m">2) Scene spectral &amp; broadband terms (8 bands: <span class="arithmatex">\([0.4 \:0.8\mu m]\)</span>, <span class="arithmatex">\(\Delta \lambda=0.05\mu m\)</span>)</h3>
+<p><u><em>Objective:</em></u> to create a sequence of 8 mono-band simulations {<span class="arithmatex">\(\lambda_n\)</span>, <span class="arithmatex">\(\Delta \lambda_n=0.05\mu m\)</span>, <span class="arithmatex">\(n \in [1 \:8]\)</span>} and LUT stores results (<span class="arithmatex">\(E_{BOA,\lambda}\)</span> , <span class="arithmatex">\(M_{BOA,\Delta \lambda,…}\)</span>)</p>
+<p>The broadband module transforms results into broadband data (<span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span> , <span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> … with <span class="arithmatex">\(\Delta \lambda=\sum_n \Delta \lambda_n\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Create WP1B- * from WP1A- * , with * = Lux or FT, with the option <code>Save as</code>. </p>
+</div>
+<p><strong><em>Editor</em></strong> (to reduce CT): 2m x 2m scene, only nadir image (<strong><code>Maximalzenith angle of image</code></strong>: 1), no ortho-image(<strong><code>OrthoImage</code></strong>: No)</p>
+<p><strong><em>Run menu: create / edit and run the sequence</em></strong> (Sequence Launcher) WP1B-FT (CT=3s), WP1B-Lux (18s).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The root simulation must be "mono-band" (i.e., 1 spectral band) in spectral sequences (i.e., <span class="arithmatex">\(\lambda\)</span> is a varying variable).</p>
+</div>
+<ul>
+<li><u><em>Create a sequence</em></u>
+(file <code>*.xml</code>; here: <code>spectral_seq.xml</code>)</li>
+</ul>
+<p><img src="../media/1.png" width=15/> Process &amp; threads to run: to reduce computer time, run N simulations in parallel and only needed processes. Total number of threads is M.N if each simulation uses M threads.</p>
+<p><img src="../media/2.png" width=15/> Delete (not used here): reduce hard disk memory (automatic deletion or zip of products)</p>
+<p><img src="../media/3.png" width=15/> LUT: SQL database that can store most DART non imaging products (<span class="arithmatex">\(\rho_{scene}, L_{scene}\)</span>,...).</p>
+<p><img src="../media/4.png" width=15/> Add the variable parameters. Here: {"Central wavelength <span class="arithmatex">\(\lambda_{mean}\)</span>" and "Spectral bandwidth <span class="arithmatex">\(\Delta \lambda\)</span>" equal to <span class="arithmatex">\(0.5\mu m\)</span>} with "Linear" variation mode to define 8 adjacent bands in <span class="arithmatex">\([0.4\mu m\: 0.8\mu m]\)</span>.</p>
+<ul>
+<li>
+<p><u><em>Edit a sequence</em></u>: to edit an already created sequence. </p>
+</li>
+<li>
+<p><u><em>Prepare / Run Sequence:</em></u> it creates the <code>*_Launcher.xml</code> file (here: <code>spectral_seq_Launcher.xml</code>) that stores the definition of all simulations (e.g., spectral_seq_0, spectral_seq_1,…), then creates the folder 'sequence' in the root simulation with all simulations and input folders, then runs the <code>*launcher.xml</code> file.</p>
+</li>
+<li><u><em>Start/Continue Sequence.</em></u> : used to continue a sequence previously stopped with the command <code>Stop sequence</code>.</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Verify with the plotsof the LUT: <span class="arithmatex">\(M_{scene,\lambda}\)</span> = <span class="arithmatex">\(\rho_{scene,\lambda}.E_{scene,\lambda}, M_{scene,\lambda} = \pi.L_{scene,\lambda}\)</span>.</p>
+</div>
+<p><strong><em>Multi-band simulation</em></strong> (8 bands [0.4 0.45],...,[0.75 0.8]): WP1B-Lux_multi</p>
+<ul>
+<li>Editor menu (option "Add range of"): set the 8 bands <span class="arithmatex">\(\iff\)</span> <img src="./media/editor_menu.png" width = 300></li>
+<li>Set the LUT creation in the "Run" menu.</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The multi-band has the same results as the sequence of mono-band simulations and is much faster. Why?</p>
+</div>
+<p><center><img src="./media/8_mono_band_sequence.png"><p><em>Sequence of 8 mono-band simulations: <span class="arithmatex">\([0.4 \:0.45\mu m]\)</span>, <span class="arithmatex">\([0.45 \:0.5\mu m]\)</span>,...</em></p></img></center></p>
+<p>a) General menu. b) Preferences and display options for the run of the sequence: <img src="../media/1.png" width=15/> Processes to run with N simulations in parallel (larger N <span class="arithmatex">\(\implies\)</span> larger RAM). <img src="../media/2.png" width=15/> To delete products. <img src="../media/3.png" width=15/> Data to store in the LUT. <img src="../media/4.png" width=15/> Values (here <img src="../media/5.png" width=15/>: <span class="arithmatex">\(\overline{\lambda}\)</span>, <span class="arithmatex">\(\Delta \lambda\)</span>) and variation mode (here <img src="../media/6.png" width=15/>: linear) of the variable parameters (they vary together in a same group, and independently if not).</p>
+<p><center><img src="./media/data_from_lut_a_and_b.png"><img src="./media/data_from_lut_c.png"><p><em>Data from the LUT: a) Plots: <span class="arithmatex">\(E_{TOA,\lambda}, E_{BOA_\lambda}, E_{BOA_\lambda}^{direct}, E_{BOA_\lambda}^{diffuse}, M_{BOA,\lambda}, L_{BOA,\lambda}\)</span> <u>Top of atmosphere (TOA) spectral irradiance:</u> <span class="arithmatex">\(E_{TOA,\lambda}\)</span> = spectral solar cst x cos(sun zenith angle). <u>Bottom of atmosphere (BOA) spectral irradiance:</u> <span class="arithmatex">\(E_{BOA,\lambda} = [t_{sun,dir}(\Omega_s) + t_{sun,dif}].E_{TOA,\lambda}\)</span>, with direct (along <span class="arithmatex">\(\Omega_s\)</span>) <span class="arithmatex">\(t_{sun,dir}\)</span> and diffuse <span class="arithmatex">\(t_{sun,dif}\)</span> transmittance atmosphere that is simulated here as {gas: US Standard; aerosol: Rural 23km}. b) Values: reflectance, irradiance,… per spectral band.</em></p></img></center></p>
+<p><strong>Apply</strong> <code>Tools / Band calculation tools / Broadband / Spectral sequence of monoband simulations</code> to the sequence. The Broadband folder stores broadband <span class="arithmatex">\(\rho_{BOA,\Delta \lambda}, E_{TOA,\Delta \lambda}\)</span>,... with <span class="arithmatex">\(\Delta \lambda = 0.4\mu m\)</span>. </p>
+<p><center><img src="./media/broadband_menu.png"><p><em>Broadband (Tools / Band calculation tools).Broadband data <span class="arithmatex">\(E_{BOA,\Delta\lambda}, M_{BOA,\Delta\lambda} and A_{\Delta\lambda}\)</span>. They can be computed (not here) using a sensor spectral sensitivity and sub-zones (i.e., masks) possibly created in <code>DART View image</code> menu. The Broadband folder also stores <span class="arithmatex">\(\rho_{\Delta\lambda}\)</span> and <span class="arithmatex">\(L_{\Delta\lambda}\)</span>.
+</em></p></img></center></p>
+<p><center><img src="./media/names_and_locations_of_files.png"><p><em>Names and locations of files that store BroadBand and Scene spectra data in simulation WP1B.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Other method for Broadband (see below): run broadband.py with <code>Tools / Python Script Launcher</code>.</p>
+</div>
+<p><center><img src="./media/tools_python_script_launcher.png"><p><em>Tools / Python Script Launcher. It runs DART python modules. To run the Broadband.py module, get its command in the Broadband console <img src="../media/1.png" width=15/>, copy its script parameters in the bottom window <img src="../media/2.png" width=15/> and set paths between apostrophes (').</em></p></img></center></p>
+<h3 id="3-vegetation-spectra">3) Vegetation spectra</h3>
+<p>(12 bands: <span class="arithmatex">\([0.4\mu m \:1\mu m]\)</span>, <span class="arithmatex">\(\Delta \lambda=0.05\mu m\)</span>): WP1C</p>
+<p><u><em>Objective:</em></u> sequence and multi-band simulations as in WP1B with <span class="arithmatex">\(\rho_{ground}=\rho_{vegetation}\)</span> instead of 0.5.</p>
+<ul>
+<li><strong><em>Editor</em></strong>: Set <span class="arithmatex">\(\rho_{ground}(\lambda) = \rho_{grass\: rye}(\lambda)\)</span> from database <code>Lambertian_vegetation.db</code>; unset its multiplicative factor since it is equal to 1 (<span class="arithmatex">\(\implies\)</span> simpler visual aspect of the menu), and use <img src="./media/display_button.png" width=50/> to plot <span class="arithmatex">\(\rho_{ground}(\lambda)\)</span> (see below).</li>
+</ul>
+<p><center><img src="./media/optical_temperatures_properties_menu.png"><p><em>Menu "Optical &amp; Temperatures properties": spectral reflectance "grass_rye" of database "Lambertian_vegetation".</em></p></img></center></p>
+<p><strong><em>Sequence of 12 mono-band simulations:</em></strong> WP1C-FT (CT=5"), WP1C-Lux (CT=28")</p>
+<p>Plot the LUT spectral data (tool <code>View / LUT</code> to view): <span class="arithmatex">\(\rho_{scene}(\lambda)\)</span>, <span class="arithmatex">\(M_{scene}(\lambda)\)</span>, <span class="arithmatex">\(L_{scene}(\lambda)\)</span>,… (see below).</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Exitance <span class="arithmatex">\(M_{scene}(\lambda)\)</span> and radiance <span class="arithmatex">\(L_{scene}(\lambda)\)</span> spectra are proportional. Why? What is the factor?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><span class="arithmatex">\(\frac {\partial E_{BOA}(\lambda)} {\partial \lambda}\)</span> and <span class="arithmatex">\(\frac {\partial M_{BOA}(\lambda)} {\partial \lambda}\)</span> vary differently; example: at <span class="arithmatex">\(\lambda \approx 0.7\mu m\)</span>, <span class="arithmatex">\(\frac {\partial M_{BOA}(\lambda)} {\partial \lambda} &gt; 0\)</span> and <span class="arithmatex">\(\frac {\partial E_{BOA}(\lambda)} {\partial \lambda} &lt; 0\)</span>. Why ?</p>
+</div>
+<p><center><img src="./media/tool_view_lut.png"><p><em>Tool <code>View / LUT</code>: scene reflectance (a), and irradiance / exitance / radiance (b).</em></p></img></center></p>
+<p><strong><em>Multi-band simulation</em></strong> (12 bands): WP1C-FT_multi (CT=1"), WP1C-Lux_multi (CT=2")</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>The multi-band simulation gives the same results as the sequence, but is much faster. Why? </p>
+</div>
+<h3 id="4-atmosphere-analytic-model-vs-atmosphere-rt">4) Atmosphere analytic model vs. Atmosphere RT</h3>
+<p>(270 bands: <span class="arithmatex">\([0.3\mu m \:3\mu m]\)</span>, <span class="arithmatex">\(\Delta \lambda=0.01\mu m\)</span>): WP1D-FT (CT=1")</p>
+<p><u><em>Objective:</em></u> to compare <span class="arithmatex">\(E_{BOA}\)</span> simulated with the "Analytical model" and "Atmosphere radiative transfer (RT)" modes.</p>
+<p><strong><em>Default atmosphere</em></strong>: gas model: US Standard, aerosol model: Rural (VIS=23km).
+The Analytic model (Figure 158.a) (DART-FT: CT=1"; DART-Lux: CT=7") is less accurate and faster than the atmosphere RT (Figure 158.b) (DART-FT-RT: CT=5'30"; DART-Lux-RT: CT=5'40"). The file atmosphereMaket.nc stores atmosphere properties: transmittance per absorbing gas, for all scattering gases and aerosols, etc. </p>
+<p><center><img src="./media/irradiance_exitance_lut_spectra.png"><p><em>Irradiance / exitance LUT spectra (<span class="arithmatex">\([0.3 - 3\mu m]\)</span>, <span class="arithmatex">\(\Delta \lambda=0.01\mu m\)</span>) from the LUT. The irradiance spectra of the analytic model (a) is close to that of the "exact" atmosphere RT (b).</em></p></img></center></p>
+<p><u><em>Sun irradiance calculator:</em></u> <a href="https://www.pvlighthouse.com.au/calculators/solar%20spectrum%20calculator/solar%20spectrum%20cal culator.aspx">www.pvlighthouse.com.au/calculators/solar%20spectrum%20calculator/solar%20spectrum%20cal culator.aspx</a>.</p>
+<h3 id="5-scene-uvvis-ir-radiative-budget-wp1e">5) Scene UV/VIS/ IR radiative budget: WP1E</h3>
+<p><u><em>Objective:</em></u> to assess with sequence and multi-band simulations the accuracy of surface (<span class="arithmatex">\(\rho_{ground}=\rho_{grass\: rye}\)</span>) radiative budget <span class="arithmatex">\(RB_{BOA}= E_{BOA}- M_{BOA}\)</span> over <span class="arithmatex">\(\Delta \lambda_{sun} =[0.3\: 2.5\mu m]\)</span>, for different numbers <span class="arithmatex">\(N_{band}\)</span> of bands to sample <span class="arithmatex">\(\Delta \lambda_{sun}\)</span> , with <span class="arithmatex">\(N_{band} = 1\)</span>, 3 (UV <span class="arithmatex">\([0.3\: 0.4\mu m]\)</span>, VIS <span class="arithmatex">\([0.4\: 0.7\mu m]\)</span>, SWIR <span class="arithmatex">\([0.7\: 2.5\mu m]\)</span>), 30 (10 bands for UV, VIS, SWIR). </p>
+<p><span class="arithmatex">\(RB_{BOA,\Delta \lambda}\)</span>: the LUT and <code>dart.txt</code> file store it if <span class="arithmatex">\(N_{band} = 1\)</span>; the tool <code>Band calculation \ BroadBand</code> computes it if <span class="arithmatex">\(N_{band} &gt; 1\)</span>, possibly with wieghts <span class="arithmatex">\(g(\lambda)\)</span> on ground reflectance and atmosphere terms <span class="arithmatex">\(X(\lambda)\)</span> (<span class="arithmatex">\(\implies X_{\Delta \lambda} = \frac {\int_{\Delta \lambda} X(\lambda).g(\lambda).d\lambda} {g_{\Delta \lambda}=\int_{\Delta \lambda} g(\lambda).d\lambda}\)</span>; see below):</p>
+<p><u><em>Weighting of reflectance:</em></u> for a lambertian surface, the DART product <span class="arithmatex">\(M_{BOA,\Delta \lambda}^{DART}=\rho_{ground,\Delta \lambda}.E_{BOA,\Delta \lambda}\)</span> is equal to the actual value <span class="arithmatex">\(M_{BOA,\Delta \lambda} = \int_{\Delta \lambda} \rho_{ground}(\lambda).E_{BOA}(\lambda).d\lambda\)</span> if <span class="arithmatex">\(\rho_{ground,\Delta \lambda}\)</span> is computed with the spectral weight <span class="arithmatex">\(g(\lambda) = E_{sun,BOA}(\lambda)\)</span>: </p>
+<p><span class="arithmatex">\(\rho_{ground,\Delta \lambda} = \frac {1} {\Delta \lambda}.\frac {\int_{\Delta \lambda} \rho_{ground}(\lambda).E_{sun,BOA}(\lambda).d\lambda} {\int_{\Delta \lambda} E_{sun,BOA}(\lambda).d\lambda} \neq \frac {\int_{\Delta \lambda} \rho_{ground}(\lambda).d\lambda} {\Delta \lambda}\)</span>
+with <span class="arithmatex">\(E_{sun, BOA}(\lambda)\)</span> from the DART atmosphere analytic model.</p>
+<p><u><em>Weighting of atmosphere terms</em></u> <span class="arithmatex">\(X_{\Delta \lambda}\)</span> (in <code>atmosphere.txt</code> file) with the weight <span class="arithmatex">\(E_{sun, TOA}(\lambda): X_{\Delta \lambda} = \frac {\int_{\Delta \lambda} X(\lambda).E_{sun,BOA}(\lambda).d\lambda} {\int_{\Delta \lambda} E_{sun,BOA}(\lambda).d\lambda}\)</span> with X={<span class="arithmatex">\(T_{g,abs},T_{g,scat},\omega_{aer}\)</span>}; <span class="arithmatex">\(\Delta \tau_{aer}^{*}=\frac {\int_{\Delta \lambda} \Delta \tau_{aer}(\lambda).E_{sun,BOA}(\lambda).d\lambda} {\int_{\Delta \lambda} E_{sun,BOA}(\lambda).d\lambda}\)</span>. DART gives <span class="arithmatex">\(\Delta \tau_{aer}^{*}\)</span> but <span class="arithmatex">\(\Delta \tau_{aer}^{**}=-ln(\frac {\int_{\Delta \lambda} e^{\Delta \tau_{aer}(\lambda)}.E_{sun,BOA}(\lambda).d\lambda} {\int_{\Delta \lambda} E_{sun,BOA}(\lambda).d\lambda})\)</span> is a bit better.</p>
+<p><center><img src="./media/weighting_atmosphere_terms.png"><p><em>Weighting of atmosphere terms <img src="../media/1.png" width=15/> and reflectance <img src="../media/2.png" width=15/>.</em></p></img></center></p>
+<h4 id="wp1ea-multiband-with-3-bands-uv-vis-swir"><strong>WP1Ea: multiband with 3 bands</strong> (UV, VIS, SWIR)</h4>
+<p>The 3 spectral TOA irradiance <span class="arithmatex">\(E_{BOA,\Delta \lambda_i}\)</span> , BOA exitance <span class="arithmatex">\(M_{BOA,\Delta \lambda_i}\)</span> ,... from the LUT and <code>dart.txt</code> file (see below) show that <span class="arithmatex">\(E_{TOA,\Delta \lambda}\)</span> is larger in the VIS band, "Total back-scattered to BOA" is null in the absence of atmosphere RT,…</p>
+<ul>
+<li><span class="arithmatex">\(M_{BOA,\Delta \lambda_i}\)</span> can greatly change if <span class="arithmatex">\(E_{BOA}(\lambda)\)</span> weight is used or not for computing <span class="arithmatex">\(\rho_{ground,\Delta \lambda}\)</span> . For example, over <span class="arithmatex">\([0.7\: 2.5\mu m]\)</span>, <span class="arithmatex">\(M_{BOA,\lambda} =70.1 \:W/m^2/\mu m\)</span> without weight and 100.1 <span class="arithmatex">\(W/m^2/\mu m\)</span> with weight (table below). Why?</li>
+</ul>
+<p><center><img src="./media/dart_txt_file_and_lut.png"><p><em><span class="arithmatex">\(E_{\Delta \lambda}\)</span> and <span class="arithmatex">\(M_{\Delta \lambda}\)</span> per band: <code>dart.txt</code> file (left) and LUT (right).</em></p></img></center></p>
+<h4 id="wp1eb-1-sequence-of-3-mono-band-simulations-uv-visir"><strong>WP1Eb: 1 sequence of 3 mono-band simulations</strong> (UV, VIS,IR)</h4>
+<p>Set the sequencer: 2 variable parameters (central wavelength, bandwidth) with the 'Enumerate' mode.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Use the sequence's LUT or <code>dart.txt</code> per simulation to check that <span class="arithmatex">\(E_{TOA,\Delta \lambda}\)</span>, <span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span> and <span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> are as for WP1Ea.</p>
+</div>
+<p><strong>WP1Ec: 3 sequences</strong> (UV, VIS, IR) of <strong>10 mono-band simulations each</strong> (see below).</p>
+<p>Apply the tool "BroadBand" per sequence to get <span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span> and <span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> for each broadband UV, VIS and SWIR.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Verify that <span class="arithmatex">\(E_{TOA,\Delta \lambda}\)</span>$, <span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span> are identical as in WP1Ea.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Unlike in WP1Ea, <span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> varies very little if <span class="arithmatex">\(\rho_{ground,\Delta \lambda}\)</span> is computed with or without <span class="arithmatex">\(E_{sun,BOA}(\lambda)\)</span> weight. Why?</p>
+</div>
+<p><center><img src="./media/sequencer_menu.png"><p><em>Sequencer menu. Definition of the 10 spectral bands (i.e., <span class="arithmatex">\(\lambda_i\)</span>, <span class="arithmatex">\(\Delta \lambda_i\)</span>, <span class="arithmatex">\(i \in [0\: 9]\)</span>) that sample the spectral band UV).</em></p></img></center></p>
+<p><center><img src="./media/toa_and_boa_spectral_irradiance.png"><p><em>TOA and BOA spectral irradiance and BOA exitance of the UV, VIS and SWIR LUTs. Analytic model.</em></p></img></center></p>
+<h4 id="wp1ed-1-band-03mu-m-25mu-m"><strong>WP1Ed: 1 band</strong> <span class="arithmatex">\(([0.3\mu m \:2.5\mu m])\)</span></h4>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> is exact if <span class="arithmatex">\(\rho_{ground,\Delta \lambda}\)</span> is computed with the <span class="arithmatex">\(E_{sun,BOA}(\lambda)\)</span> weight, and less accurate otherwise. Why?</p>
+</div>
+<h4 id="wp1ee-wp1ef-wp1eg-same-as-wp1ea-wp1ec-and-wp1ed-where-atmosphere-rt-replaces-analytic-model"><strong>WP1Ee, WP1Ef, WP1Eg:</strong> same as WP1Ea, WP1Ec and WP1Ed where "Atmosphere RT" replaces "Analytic model"</h4>
+<p>Compared to the "exact" atmosphere radiative transfer, the analytic model gives <span class="arithmatex">\(E_{BOA,\Delta \lambda}\)</span> and <span class="arithmatex">\(M_{BOA,\Delta \lambda}\)</span> with a relative error less than 4%.The relative error can increase with larger sun zenith angle.</p>
+<p><center><img src="./media/toa_and_boa_spectral_irradiance_table.png"><p><em>TOA and BOA spectral irradiance / exitance <span class="arithmatex">\((W/m^2/\mu m\)</span>, <span class="arithmatex">\(W/m^2\)</span>) from BroadBand and <code>dart.txt</code> file:</em></p></img></center></p>
+<p>a) Analytic model. b) Atmosphere RT. <span class="arithmatex">\(\theta_s =30°\)</span>. US standard gas model. RuralV23 aerosol model. Symbol 'nw' stands for 'no weight' for reflectance and atmosphere. Atmosphere backscattering increases BOA irradiance by <span class="arithmatex">\(\approx 1.2%\)</span> in UV and <span class="arithmatex">\(\approx 0.8%\)</span> in VIS and SWIR. Most irradiance and exitance data are from the LUT and <code>dart.txt</code> files.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

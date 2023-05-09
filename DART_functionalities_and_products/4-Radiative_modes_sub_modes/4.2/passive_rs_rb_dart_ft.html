@@ -1,0 +1,1985 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html">
+      
+      
+        <link rel="prev" href="../4.1/radiative_parameters.html">
+      
+      
+        <link rel="next" href="../4.3/passive_rs_rb_dart_lux.html">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>4.2 Passive RS & RB: Forward mode (DART-FT) - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-parameters-of-the-forward-light-mode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.2 Passive RS & RB: Forward mode (DART-FT)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.2 Passive RS & RB: Forward mode (DART-FT)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="passive_rs_rb_dart_ft.html" class="md-nav__link md-nav__link--active">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-parameters-of-the-forward-light-mode" class="md-nav__link">
+    a) Parameters of the Forward light mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-radiative-budget-rb" class="md-nav__link">
+    b) Radiative budget (RB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-remote-sensing-rs" class="md-nav__link">
+    c) Remote sensing (RS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-sun-induced-fluorescence-sif" class="md-nav__link">
+    d) Sun induced fluorescence (SIF)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-parameters-of-the-forward-light-mode" class="md-nav__link">
+    a) Parameters of the Forward light mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-radiative-budget-rb" class="md-nav__link">
+    b) Radiative budget (RB)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-remote-sensing-rs" class="md-nav__link">
+    c) Remote sensing (RS)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-sun-induced-fluorescence-sif" class="md-nav__link">
+    d) Sun induced fluorescence (SIF)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>4.2 Passive RS & RB: Forward mode (DART-FT)</h1>
+
+<p>DART-FT (flux tracking) iteratively tracks rays on N discrete directions in a voxelized scene. (see below) 
+<center><img src="./media/steps_dart_ft.png"><p><em>Major steps of DART-FT</em></p></img></center></p>
+<h3 id="a-parameters-of-the-forward-light-mode">a) <strong>Parameters of the Forward light mode</strong></h3>
+<ul>
+<li>
+<p><strong><em>Expert parameters</em></strong>
+<center><img src="./media/advanced_parameter_dart_ft.png"><p><em>Advanced parameters of the 'Forward' light mode of 'Passive RS &amp; RB' (DART-FT).</em></p></img></center></p>
+<ul>
+<li>Number of threads: computation time is divided by up to the number of cores of the calculator.</li>
+<li><span class="arithmatex">\(Threshold_{propagation}\)</span> k: ray <span class="arithmatex">\(W(\Omega_n, \Delta \Omega_n)\)</span> with energy <span class="arithmatex">\(&lt; k.\Delta \Omega\)</span> . Mean intensity (W/sr) at iteration 1 &amp; 2 is stopped.</li>
+<li><span class="arithmatex">\(Threshold_{Albedo\: /\: Thermal\:exitance}\)</span>: test on 2 last iterations for stopping the simulation.</li>
+<li>Maximum number that a ray can cross the scene. Default value is 1000.</li>
+<li>BOA illumination smaller mesh size <span class="arithmatex">\(D \implies \eta= \frac {\Delta x.\Delta y} {D^2.(N_{sun}+N_{atm})}\)</span> incident rays per BOA cell (<span class="arithmatex">\(N_{atm}=0\)</span> if  SKLY = 0, <span class="arithmatex">\(N_{sun} =0\)</span>, if SKYL=1). <span class="arithmatex">\(D_{sun} =Max(D,\frac {D} {\sqrt{1 - SKYL}})\)</span>, <span class="arithmatex">\(D_{atm}=Max(D,\sqrt{\frac {N_{horiz}^{atm\downarrow}} {SKYL}})\)</span>. SKYL=<span class="arithmatex">\(\frac {E_{atm}} {E_{total}}\)</span> with <span class="arithmatex">\(N_{horiz}^{atm\downarrow}\)</span> downward DART directions (<span class="arithmatex">\(\Delta \Omega_{in}=2\pi^{-}\)</span>).
+<span class="arithmatex">\(\eta\)</span> must be <span class="arithmatex">\(\geq 10^2\)</span> for avoiding stripes and mis-calculation of temperature in the Earth scene. Vertical side of scene 'isolated / infinite slope': <span class="arithmatex">\(E_{sun,vert} = E_{sun,boa}.tan(\theta_s)\)</span>, with <span class="arithmatex">\(N_{vert}^{atm\downarrow}\)</span> directions (<span class="arithmatex">\(\Delta \Omega_{in}=\pi^{-}) \implies D_{sun,vert}=Max(D,\frac {D} {(1-SKYL).tan(\theta_s)}\)</span>), <span class="arithmatex">\(E_{atm, vert} = E_{atm}.\frac {\sum_{N_{vert}^{atm\downarrow}}cos(\theta .\Delta \Omega)} {\pi} \approx \frac {E_{atm}} {2} \implies D_{atm, vert} = D_{atm}.\sqrt{\frac {\pi.N_{vert}^{atm\downarrow}} {N_{horiz}^{atm\downarrow}.\sum_{N_{vert}^{atm\downarrow}}cos(\theta .\Delta \Omega)}} \approx D_{atm}\)</span></li>
+<li>Illumination sources spatial distribution. Default distribution is 'semi random'.</li>
+<li>Factor <span class="arithmatex">\(N \implies N^3\)</span> sub-cells (<span class="arithmatex">\(\implies\)</span> barycenters of scattering points per sub-cell) and <span class="arithmatex">\(6N^2\)</span> sub-faces (<span class="arithmatex">\(\implies\)</span> barycenters of exit points per sub-face) per cell. N is divided per 2 at each iteration down to 1.</li>
+<li>Factor <span class="arithmatex">\(M \implies N^2\)</span> . <span class="arithmatex">\(M^2\)</span> sub-faces per cell face (<span class="arithmatex">\(\implies\)</span> barycenter per sub-face)</li>
+<li>Surfacic sub-division S for thermal emission: at least 1 thermal emission per grid element.</li>
+<li><span class="arithmatex">\(K^2\)</span> integration points per sub-face for pre-computing thermal emission.</li>
+<li>Store intercepted power per direction: set for computing polarization on surfaces</li>
+<li>Use of barycenters on intercepting surface and sub-face: their use greatly decreases simulation time.</li>
+<li>Use sparse voxel acceleration: rays are not tracked through empty voxels.</li>
+<li>Number of triangles for acceleration in a voxel: Embree is used only in voxels with larger number of triangles</li>
+<li>Triangle storage method: facet 3D objects in the scene can be a clone of a reference 3D facet object.</li>
+<li>Use sparse voxel acceleration: acceleration technique in "empty" volumes.</li>
+<li>Minimum number of triangles inside a voxel in order to use the Embree acceleration technique.</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Maximal scattering order</em></strong> <span class="arithmatex">\(N_{max}\)</span> <em>(See below)</em>: maximal <span class="arithmatex">\(N_{iteration}\)</span> for scenes only made of facets. Any scene radiative term Y (i.e., RB, <span class="arithmatex">\(L(\Omega)\)</span>,…) is extrapolated to <span class="arithmatex">\(Y_{\infty}\)</span> with last iteration <span class="arithmatex">\(Y_{n}\)</span> (cf. DART Handbook): <span class="arithmatex">\(Y_{\infty} = Y_n+\alpha_n.\frac {e^{-\beta_n.(n+1)}} {1-e^{-\beta_n}}\)</span>, assuming <span class="arithmatex">\(\Delta Y_n = Y_n - Y_{n-1} \approx \alpha_n.e^{-\beta_n.n}\)</span>
+<center><img src="./media/max_scattering_order.png"><p><em>DART-FT: maximal scattering order</em></p></img></center></p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advised <span class="arithmatex">\(N_{max}\)</span> for vegetation: 3-4 in VIS, &gt;5 in NIR, 2 in TIR (Cao et al., 2018, TGRS; Guo, Cao et al., 2019, GRSL)</p>
+</div>
+<ul>
+<li><strong><em>Cell dimensions</em></strong> <em>(See below)</em>: They set the pixel size of DART-FT images and the voxel size of RB products of DART-FT and DART-Lux.
+<center><img src="./media/cell_dimensions.png"><p><em>Cell dimensions</em></p></img></center></li>
+</ul>
+<h3 id="b-radiative-budget-rb">b) <strong>Radiative budget (RB)</strong></h3>
+<p>RB products (<img src="../../media/2_green.png" width=15>; see the image below) are fluxes (i.e., thermal emission, intercepted, scattered, absorbed, exitance, SIF) in/out actual or fictive surfaces / volumes (e.g.,cell side). They are 3D RB per facet (+ derived 2D / 1D / scalar data), total and per type u of scene element. For DART created facet and turbid elements, u is predefined <a href="../../../Format_DART_files/2-DART_FT/dart_ft.html#makettxt">Here</a>(<em>e.g.</em>, <span class="arithmatex">\(u_{ground}=2\)</span>). For imported 3D objects, <span class="arithmatex">\(u_{facet} = 100 + material\)</span> (i.e., color assigneed to the group of the 3D object)and is  stored in the file <code>input/dart.typ</code>. The RB products are stored in text / binary files or NetCDF (on-going) files in "output\BANDn\RADIATIVE_BUDGET". The option "View / Report" reads binary RB files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DART-FT: RB can be per stage. Illudir: direct sun; Illudif: direct sun + sky; Iter1,..., IterX (infinite extrapolation of mean 3D/1D RB data of last stages) and Coupl if atmosphere RT. Intermediate Iter_n are present if requested. Power intercepted at iteration n-1 is scattered and absorbed at iteration n:  <span class="arithmatex">\(Int^{Iter n-1} = Abs^{Iter n} + Scat^{Iter n}\)</span>. Therefore: <span class="arithmatex">\(\xi_{cell,scat,u}^{ijk}=\xi_{cell,abs,u}^{ijk}=\xi_{cell,scat}^{ijk}=\xi_{cell,abs}^{ijk}\)</span> =0 at Illudir and Illudif, and <span class="arithmatex">\(Int^{IterX}\)</span> is slightly larger than <span class="arithmatex">\(Abs^{IterX}+ Scat^{IterX}\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The terms "Intercepted" and "Scattered" can be difficult to interpretate, conversely to "Absorbed". For example, "Intercepted" can be larger than scene irradiance if a facet intercepts several times the same photons.</p>
+</div>
+<ul>
+<li>
+<p>3D RB:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(RB_{cell}: RB_{all elements in cell ijk}\)</span>. File <em>RadiativeBudget3D</em> . Up to 18 terms {<span class="arithmatex">\(\xi_{cell, \alpha}^{ijk} :\alpha\)</span>=in, out, int, abs, scat, emit;<span class="arithmatex">\(\xi_{face,\beta}^{ijk} = \sum_{face} \xi_{face,\beta}^{ijk} : \beta=in,out\)</span>}: <span class="arithmatex">\(\xi =\)</span> power <span class="arithmatex">\(W\)</span> density or <span class="arithmatex">\(\frac {W_{cell,\alpha} or W_{face,\alpha}} {scene \: irradiance}\)</span> that enters/ exits a cell or cell face.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(RB_{cell,u}\)</span>: <span class="arithmatex">\(RB_{elements-of-type-u-in-cell}\)</span>. File RadiativeBudget_3D_ Turbid for 'turbid', <em>RadiativeBudget_3D_ Ground</em> for 'ground' and <em>RadiativeBudget_3D_typeNum=u</em> for other types. Up to 4 terms: <span class="arithmatex">\(\xi_{cell,\alpha,u}^{ijk} (\alpha\)</span>: int, abs, scat, emit)</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>With option <em>'Use sparse voxel acceleration'</em>: empty cells are ignored  <span class="arithmatex">\(\implies\)</span> in / out fluxes on their faces are null.</p>
+</div>
+<ul>
+<li>Power intercepted at iteration n-1 is scattered and absorbed at iteration n:</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RB unit: % of BOA irradiance, <span class="arithmatex">\(W/m^2/\mu m\)</span> or <span class="arithmatex">\(W/\mu m\)</span>. It is <span class="arithmatex">\(W/m^2\)</span> or W only for {mode T (i.e., sources are only "thermal") + "Boltzmann" option (i.e., thermal radiation = integral over the spectrum)}. <em>A Radiative budget tool</em> can convert the unit of RB products. RB expressions vary with their 3D/2D/1D/scalar nature and unit:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(W/m^2/\mu m\)</span> (<span class="arithmatex">\(W/m^2\)</span>: mode T + Boltzmann): <span class="arithmatex">\(\xi_{cell, \alpha}^{ijk} = \frac {W_{cell,\alpha}} {\Delta x.\Delta y}\)</span>, <span class="arithmatex">\(\xi_{cell,\alpha,u}=\frac {W_{cell,\alpha,u}} {\Delta x.\Delta y}\)</span>, <span class="arithmatex">\(\xi_{face,\beta}=\frac {W_{face,\beta}} {\Delta x.\Delta y}\)</span>. This is per scene <span class="arithmatex">\(m^2\)</span>.</p>
+</li>
+<li>
+<p>%:<span class="arithmatex">\(\xi_{cell, \alpha}^{ijk} = \frac {W_{cell, \alpha}} {W_{\Delta x.\Delta y}^{BOA}}\)</span>, <span class="arithmatex">\(\xi_{cell, \alpha, u}^{ijk} = \frac {W_{cell, \alpha, u}} {W_{\Delta x.\Delta y}^{BOA}}\)</span>, <span class="arithmatex">\(\xi_{face, \beta}^{ijk} = \frac {W_{face, \beta}} {W_{\Delta x.\Delta y}^{BOA}}\)</span>, <span class="arithmatex">\(W_{\Delta x.\Delta y}^{BOA} = BOA\)</span> incident power (<span class="arithmatex">\(W_{\Delta x.\Delta y}^{BOA, coupl}\)</span> if atmosphere RT) on <span class="arithmatex">\(\Delta x.\Delta y\)</span>.</p>
+</li>
+<li>If {Unit = %, No atm. coupling, 'Repetitive scene' mode}: <span class="arithmatex">\(\xi_{face,in}^{ijk_{max}}\)</span> (+Z) = 1-SKYL in Illudir and later.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tool "3D radiative budget extractor" it used <span class="arithmatex">\(RB_{cell}\)</span> 2D (i.e., scene xy, xz, yz section) and x,y,z 1D RBs from <span class="arithmatex">\(\forall x,y,z\)</span>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>"Infinite slope" mode: <span class="arithmatex">\(\frac {\sum_{i,j} \xi_{face, out}^{ijk_{max}}(+z)} {\sum_{i,j} \xi_{face, in}^{ijk_{max}}(+z)} \neq\)</span> Albedo, conversely to "Repetitive scene" mode, since scene exitance <img src="./media/up_up.png"> involves upward rays <img src="./media/up.png"> that exit the scene through its vertical sides.<img src="./media/repetitive_scene.png"></p>
+</div>
+<p><img src="./media/products_radiative_budget.png">
+    <em>RS &amp; RB products:</em> 
+    - <em><img src="../../media/1.png" width=15>Remote sensing (RS) products: BRF (reflectance) / BTF (temperature).</em>
+    - <em><img src="../../media/2_green.png" width=15>Radiative budget (RB) products with indication of the folders and files that store them.</em>
+    - <em><img src="../../media/3_blue.png" width=15>RB and RS options: '1st scattering order (DART-FT only)' used with 'Images only' is very fast because DART only simulates "1st order scattering for the user specified viewing directions".</em></p>
+<ul>
+<li>
+<p>2D: <span class="arithmatex">\(RB_{image} \xi_{\alpha}^{ij} = \sum_k \xi_{cell,\alpha}^{ijk}\)</span> and <span class="arithmatex">\(\xi_{u,\alpha}^{ij} = \sum_k \xi_{cell,u,\alpha}\)</span>. File <code>simulation.properties.txt</code> stores <span class="arithmatex">\(\bar{\xi}_{\alpha}^{ij}\)</span> and <span class="arithmatex">\(\bar{\xi}_{u,\alpha}^{ij}\)</span> . <span class="arithmatex">\(Albedo^{ij} =1 - \frac {\xi_{abs}^{ij}} {W_{\Delta x \Delta y}^{BOA}}\)</span></p>
+</li>
+<li>
+<p>1D:</p>
+<ul>
+<li>RadiativeBudget_profile: <span class="arithmatex">\(\bar{\xi}_{\alpha}(k)=\frac {\sum_{ij}\xi_{cell,\alpha}^{ijk} \: \forall\:cells\:of\:scene\:layer\:k} {Number\:of\:cells\:per\:scene\:layer}\)</span></li>
+<li>RadiativeBudget_profile = u: <span class="arithmatex">\(\bar{\xi}_{\alpha,u}(k)=\frac {\sum_{ij}\xi_{cell,u, \alpha}^{ijk} \: \forall\:cells\:of\:scene\:layer\:k} {Number\:of\:cells\:per\:scene\:layer}\)</span> If unit is %: <span class="arithmatex">\(\sum_u \sum_k \bar{\xi}_{int,u}(k)=\sum_k \bar{\xi}_{int}(k)=1\)</span></li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(RB_u\)</span> per type u <em>(RadiativeBudget Triangle)</em>: unit %: <span class="arithmatex">\(\frac {power\:density\:for\:u\:relative} {BOA\:irradiance}=\frac {\sum_{ij}\xi_{u,\alpha}^{ij}} {\sum_{ijk}A_{u}^{ijk}}.\frac {\Delta x.\Delta y} {W_{\Delta x.\Delta y}^{BOA}}\)</span> with area <span class="arithmatex">\(A_u^{ijk}\)</span> of element of type u in cell ijk. Unit <span class="arithmatex">\(W/(m^2\)</span> of u): <span class="arithmatex">\(\frac {\sum_{ij}\xi_{u,\alpha}^{ij}} {\sum_{ijk}A_{u}^{ijk}}\)</span> (if vegetation cover: <span class="arithmatex">\(\frac {\sum_{ij}\xi_{u,\alpha}^{ij}} {\sum_{ijk}A_{u}^{ijk}}\)</span>. LAI <span class="arithmatex">\(W/m^2\)</span> of scene area). Unit W: <span class="arithmatex">\(\sum_f W_{f,u,\alpha}\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(RB_{facet,f}\)</span> per facet f <em>(RadiativeBudget Figures)</em>: 1 line{objectName (DART-LUX), <span class="arithmatex">\(\frac {W_{f,u,\alpha}} {A_f}.\frac {\Delta x.\Delta y} {W_{\Delta x.\Delta y}^{BOA}}\)</span> % <span class="arithmatex">\(\:(\frac {W/m^2 of facet} {W/m^2 of scene}),\:\:\frac {W_{f,u,\alpha}} {A_f}\:W/m^2\)</span> of facet, or <span class="arithmatex">\(W_{f,u,\alpha}\)</span> in <span class="arithmatex">\(W\)</span> per face 1 and face 2 of facet, facet area <span class="arithmatex">\(A_f\)</span>} per facet f. DART-FT order of facets as in the binary file <code>triangles.txt</code>.DART-LUX: results grouped per scene element. Multiply by <span class="arithmatex">\(\frac{A_f}{\Delta x \Delta y}\)</span> to get the unit W/m² of scene.</p>
+</li>
+</ul>
+<p>Here, <em>the table below</em> shows that a vegetation plot simulated as turbid medium or facets have very close RB if facets are very small. From Illudif to IterX, <span class="arithmatex">\(E_{scene}\)</span> (cell <span class="arithmatex">\(4^{top face}\)</span>) = constant and <span class="arithmatex">\(E_{ground} (cell 0^{top face})\)</span> increases. <span class="arithmatex">\(RB_{cell} = RB_{cell,ground} + RB_{cell,plot}\)</span>. Note: <span class="arithmatex">\(Int^{Iter n-1} = Abs^{Iter n} + Scat^{Iter n}\)</span> lead to <span class="arithmatex">\(Int^{IterX} \approx Abs^{IterX}+ Scat^{IterX}\)</span>.</p>
+<p><a href="../../../Tutorials/T4/t4.html">WP4</a> illustrates also vegetation 3D RB. </p>
+<p><center><img src="./media/table_simulated_turbid_medium.png"><p><em><span class="arithmatex">\(RB_{0.56\mu m}\)</span> (unit: %) of a 1 x 1 x 1m vegetation plot 25cm above ground, simulated as turbid medium (left) and facets (right). <span class="arithmatex">\(Grid_{illumination}\)</span> <span class="arithmatex">\(D=10-3m\)</span>. <span class="arithmatex">\(\Delta x_{cell}=\Delta y_{cell}=1m, ∆=\Delta z_{cell}=25cm \implies\)</span> 6 layers.
+<span class="arithmatex">\(\theta_{sun}=30°, \phi_{sun}=180°. \rho_{ground}=0.38. \rho_{leaf}=\tau_{leaf}=0.2.\)</span> LAI=2. LAD: spherical. {TOA → BOA analytic model, gas: USSTD76, aerosol: Rural 23km} <span class="arithmatex">\(\implies\)</span>  <span class="arithmatex">\(E_{TOA}=1594 W/m^2/\mu m, E_{BOA}=1347 W/m^2/\mu m,\)</span> SKYL=0.294. 6 iterations.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>% <span class="arithmatex">\(E_{ground}\)</span> = direct + diffuse transmitance of vegetation.
+Here, 3D RB =1D RB since any mock-up layer is a single cell. </p>
+</div>
+<p><center><img src="./media/turbid_cell_mock_up.png"><p><em>a) Mock-up: turbid cells. b) Direction oversampled around sun direction to simulate sun upward looking sensors</em></p></img></center>
+<center><img src="./media/nadir_image.png"><p><em>c) Nadir image.</em></p></img></center>
+<center><img src="./media/mock_up_layer.png"><p><em>d) Mock-up layer 15. Crown cell (7,37,15) " 3D <span class="arithmatex">\(RB_{\Delta \lambda}\)</span> file" shows <span class="arithmatex">\(RB_{cell}\)</span>. Ground <span class="arithmatex">\(\xi_{int}\)</span></em></p></img></center>
+<center><img src="./media/illudif_and_illudir.png"><p><em>e) Illudir, f) Illudif.</em></p></img></center></p>
+<p>The images below show the 3D <span class="arithmatex">\(RB_{0.56\mu m}\)</span> of a schematic building (2 superimposed <code>buildingWindowBlock.obj</code>: 4 walls, 2 windows per wall, rooftop swimming pool). <span class="arithmatex">\(E_{BOA}=1347W/m^2/\mu m\)</span>, SKYL=0.294, <span class="arithmatex">\(\theta_{sun}=30°, \phi_{sun}=225°, grid_{illumination}\)</span> = 2mm, cell size = 5cm. Surfaces are lambertian (<span class="arithmatex">\(\rho_{roof}=\rho_{ground}=5.77\)</span>, <span class="arithmatex">\(\rho_{wall}=26.24\)</span>), apart the swimming pool that has a specular component. Below, the b) image shows RS images for 3 viewing directions (<span class="arithmatex">\(\theta_v,\phi_v\)</span>): nadir (<span class="arithmatex">\(\theta_v=0°\)</span>), oblique (30°,135°) and sat specular (30°,45°). <span class="arithmatex">\(\rho_{pool}^{sat}\)</span> is maximal for the specular direction. <span class="arithmatex">\(ρ_{surface}^{sat}\)</span> has a noise due to discrete cell size and llumination: e.g., <span class="arithmatex">\(\rho_{roof,nadir} \in [5.77 5.83]\)</span> with <em>&#961;&#772;</em><em int_IterX="int,IterX">{roof,nadir}=5.77. The c) and d) images show 3D <span class="arithmatex">\(RB_{facet}\)</span> and <span class="arithmatex">\(RB_{cell}\)</span> for interception at direct sun illumination (i.e., Illudir), total illumination (i.e., Illudif), and infinite scattering order IterX. <span class="arithmatex">\(RB_{facet}\)</span> is extreme for infinitesimal facets that are over / under irradiated: e.g., <span class="arithmatex">\(%f_{int,IterX}^{roof}\)</span> reaches 1.6, but $%\bar{f}</em>^{roof}. <span class="arithmatex">\(RB_{cell}\)</span> no such extreme values since cells have the same size. Windows have the same irradiance as walls, but scatter less.</p>
+<p><em>DART-FT radiative budget and remote sensing (RS) images of a schematic building.</em>
+<center><img src="./media/mock-up.png"><p><em>a) Mock-up.</em></p></img></center>
+<center><img src="./media/rs_images.png"><p><em>b) RS images. 3 viewing directions <span class="arithmatex">\((\theta_v,\phi_v)\)</span>: nadir <span class="arithmatex">\((\theta_v=0°)\)</span>, (30°,135°), "specular" (30°,45°). 3D <span class="arithmatex">\(RB_{facet}\)</span></em></p></img></center>
+<center><img src="./media/c_and_d.png"><p><em>c) and <span class="arithmatex">\(RB_{cell}\)</span> d): interception at Illudir, Illudif and IterX, and absorption and scattering at IterX.</em></p></img></center>
+<center><img src="./media/e_and_f_and_g.png"><p><em>e) Mean radiation per bar (% triangle area). f) Ground and roof absorption images. g) Vertical sections of <span class="arithmatex">\(RB_{abs}\)</span> with sunlit and shadowed wall</em></p></img></center></p>
+<h3 id="c-remote-sensing-rs">c) <strong>Remote sensing (RS)</strong></h3>
+<ul>
+<li><strong><em>Parallel projection</em></strong> <img src="../../media/2_green.png" width=15></li>
+</ul>
+<p>The products are images per viewing direction <span class="arithmatex">\(\Omega_V\)</span>  and their averages (i.e., files 'brf: reflectance', 'tapp: brightness temperature', 'radiance <span class="arithmatex">\((W/m2/µm)\)</span>'. Image names are 'imax_VZ=yyVA=zz', with x = index, yy = zenith angle and zz = azimuth angle of <span class="arithmatex">\(\Omega_V\)</span> . DART-FT BOA data are in folder <em>Bandm/Y/Itern/Image_Dart with Bandm</em> =  folder that stores products of spectral band m, Y = BRF, Tapp or Radiance, and Iter<em>n</em> = folder for products of iteration n. In DART-Lux, the term iteration refers to the storage of data by time or sample step. A better storage is being devised.</p>
+<ul>
+<li>Maximal zenith angle <span class="arithmatex">\((\theta_v)\)</span> of images: storage of images with <span class="arithmatex">\(\theta_v &lt; \theta_{max}\)</span>. to reduce computer memory.</li>
+<li>Keep non projected images: images on BOA horizontal plane.</li>
+<li><span style="color:red">Sensor plane</span>:<span style="color:green">horizontal plane images</span>  projected in the sensor plane (see next image).</li>
+<li>Image per type of Earth scene element (for any satellite / sensor).</li>
+<li>Horizontal and Sensor plane image oversampling.</li>
+<li>Number of repetitive scenes: N x N duplication (only to ease image interpretation).</li>
+<li>
+<p><span style="color:blue">OrthoImages</span> <span class="arithmatex">\(L_{xy,\Omega}^{ortho}\)</span> and <span class="arithmatex">\(\rho_{xy,\Omega}^{ortho}\)</span> per viewing direction <span class="arithmatex">\(\Omega\)</span>. They are derived from DART sensor images <span class="arithmatex">\(L_{ij,\Omega}^{sensor}\)</span>
+<span class="arithmatex">\(ρ_{ijy,\Omega}^{sensor}\)</span> using one of three possible projection methods (see next image):</p>
+<ul>
+<li>Energy conservation (EC). Upward orthopower <span class="arithmatex">\(W_{xy,\Omega}^{ortho} = \sum_z W_{xyz,\Omega}^{*}\)</span> with <span class="arithmatex">\(W_{xyz,\Omega}^{*} =\)</span>power that exits the scene column xy along <span class="arithmatex">\(\Omega\)</span> and reaches the sensor: <span class="arithmatex">\(L_{xy,\Omega} = \sum_z L_{xyz,\Omega}.\frac {Area\:of\:projected\:cells\:xyz\:on\:sensor\:plane} {Cell\:horizontal\:area\:\Delta x.\Delta y.x.cos(\theta)}\)</span>; it can be very large at xy with a wall. It is only theoretical since <span class="arithmatex">\(L_{xyz,\Omega}\)</span> is unknown in actual configurations. Wu et al., 2019, RSE.</li>
+<li>Industry standard (IS), also called radiance conservation. Back tracing "Sensor pixel (i,j) <span class="arithmatex">\(\rightarrow\)</span> Scene" gives <span class="arithmatex">\(M_{xyz}\)</span>; then, <span class="arithmatex">\(L_{xy,\Omega}^{ortho}=L_{ij,\Omega}^{sensor}.\delta_{ij}^{nadir}\)</span> with <span class="arithmatex">\(\delta_{ij}^{nadir} = 1\)</span> if nadir transmittance "<span class="arithmatex">\(M_{xyz} \rightarrow\)</span> top scene"=1; else <span class="arithmatex">\(\delta_{ij}^{nadir}=0\)</span>. IS images <span class="arithmatex">\(\bar{L}_{xy, \Omega}^{ortho}\)</span> are equal to standard orthorectified RS images <span class="arithmatex">\(\bar{L}_{xy,\Omega}^{standard ortho}\)</span> if back tracing uses enough rays per pixel.</li>
+<li>Reflectance conservation. <span class="arithmatex">\(\rho_{xy, \Omega}^{ortho}= \rho_{ij}^{sensor}\)</span> with the same projection method as the IS projection method.</li>
+</ul>
+</li>
+<li>
+<p>Fluid transmittance images (<span class="arithmatex">\(\frac {L_{sensor}} {L_{target}}\)</span>): BOA satellite and sensor inside the scene.</p>
+</li>
+<li>Spreading of rays: spread area in DART images depends on the cross area of elements from which rays come.</li>
+<li>Exitance <span class="arithmatex">\(M_{xy}^{ortho} = \int_{2\pi^{+}} L_{xy, \Omega}^{ortho}.cos(\theta).d\Omega\)</span> and albedo <span class="arithmatex">\(A_{xy}^{ortho} = \frac {M_{xy}^{ortho}} {E_{top\:scene}}\)</span> ortho-images.</li>
+</ul>
+<p><center><img src="./media/ortho_images.png"><p><em>Ortho images: a) IS: a downward vertical ray starts from the top scene until it reaches a scene element from which a ray is sent to the sensor image to get the the radiance <span class="arithmatex">\(L_{xy, \Omega}^{IS}\)</span> b) EC: sum of all radiance values from the column (x,y) to <span class="arithmatex">\(\Omega\)</span> gives <span class="arithmatex">\(L_{xy, \Omega}^{EC}\)</span></em></p></img></center></p>
+<ul>
+<li><strong><em>Non parallel projection</em></strong> <em>(see below, <a href="../../../Tutorials/T7/t7.html">Work Package VII.9</a>)</em><ul>
+<li>1) <u><em>Above scene, downward looking sensor.</em></u> In the "Forward" sub-mode, the sensor must be at the 'Atmosphere-Sensor' level if atmospheric RT is simulated. A blue frame in the GUI delimits the viewed zone at the scene lower altitude. A "Multiple-frame-camera sensor" text file can set Satellite / airborne parameters {camera position (x,y,z), intrinsic rotation, nutation (zenith), precession (azimuth), image size (length, width)}.<ul>
+<li>Pushbroom (not yet in DART-Lux): one sets the flight direction (azimuth angle) and platform azimuth.</li>
+<li>Frame (pinhole) &amp; spherical camera: (orientation, position) + FOV or viewed zone. Camera axis orientation is defined with the "Intrinsic ZYZ" option (Intrinsic rotation (anti-clockwise) along camera axis, Zenith and Azimuth angles of the camera axis; <a href="https://en.wikipedia.org/wiki/Euler_angles">https://en.wikipedia.org/wiki/Euler_angles</a>) or "Tait-Bryan angles" option. If it is not defined, default camera orientation is the scene center (Dx/2, Dy/2, 0) at ground level.</li>
+</ul>
+</li>
+<li>2) <u><em>Inside scene upward/downward camera</em></u>. A ray <span class="arithmatex">\(\Omega_{BOA\rightarrow sensor}\)</span> (atmosphere + direct sun; not a discrete direction) is sent per illumination grid sub-center to the sensor focal point. To get direct sun in upward images, simulate penumbra <span class="arithmatex">\((\Delta \theta_{sun} \approx 0.5°, \Delta \Omega_sun \approx 6.8 10-5 sr\)</span>); then, <span class="arithmatex">\(\Omega_{BOA \rightarrow sensor}\)</span> intersects the sun surface. Interpolation on discrete directions <img src="./media/1_2.png"> ,... gives the atmosphere rays. Image Camera VZ=0: downward camera.</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/sensor_menu.png"><img src="./media/pushbroom_menu.png"><img src="./media/frame_camera_menu_and_images.png"><p><em>a) Sensor menu. Above Earth scene: b) Pushbroom menu, c) Frame camera menu and images. Inside Earth scene:</em></p></img></center>
+<center><img src="./media/pinhole_camera_images.png"><p><em>d) Pinhole camera &amp; images</em></p></img></center>
+<center><img src="./media/penumbra_modelling.png"><p><em>e) Penumbra modeling</em></p></img></center>
+<center><img src="./media/spherical_camera.png"><p><em>f) Spherical camera: sphere (center O, radius OS), with an image plane tangent to it in S (here: downward looking <span class="arithmatex">\((\theta_v =0°)\)</span> camera with <span class="arithmatex">\(\theta_{max}\)</span> =180°) with Lambert azimuthal projection: point (X,Y,Z) on the sphere (except the antipode) is projected along a circular arc centered at S to a point (x,y,-1) in the plane tangent in S: <a href="https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection">https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection</a>.</em></p></img></center></p>
+<ul>
+<li><span class="arithmatex">\(\theta=acos(Z), \Phi=acos(\frac {X} {\sqrt{X^2 + Z^2}})\)</span>. Case Y=0: if <span class="arithmatex">\(X &gt; 0, \Phi=0, else \Phi=\pi.\)</span> Case X=0: if Y&gt;0, <span class="arithmatex">\(\Phi=\frac {\pi} {2} else \Phi=\frac {3.\pi} {2}\)</span></li>
+<li>X=<span class="arithmatex">\(\frac {X} {I}.\sqrt{1 - \frac {u^2 + v^2} {4}}, Y=\frac {y} {J}.\sqrt{1 - \frac {u^2 + v^2} {4}}, Z=\frac {u^2+v^2} {2}-1\)</span>, with <span class="arithmatex">\(u=\frac{\frac {2.x} {I} -1} {\eta}\)</span>, <span class="arithmatex">\(v=\frac{\frac {2.x} {J} -1} {\eta}\)</span>, <span class="arithmatex">\(\eta = \frac {|sin(\pi-\theta_{max})|} {\sqrt{\frac {2} {1-cos(\pi-\theta_{max})}}}\)</span>; the image has (I,J) pixels.</li>
+</ul>
+<h3 id="d-sun-induced-fluorescence-sif">d) <strong>Sun induced fluorescence (SIF)</strong></h3>
+<p>DART, as the SCOPE model, has an imbedded Fluspect model to simulate the SIF of vegetation.</p>
+<p><u><em>Fluspect</em></u>. It gives <span class="arithmatex">\(n_{mat}\)</span> matrices <span class="arithmatex">\(\overline{\overline{M}}_{ij}\)</span> for forward and backward SIF emission, per photosystem (PS), for excitation flux i in [400 750nm] and SIF flux j in [640 850nm] with <span class="arithmatex">\(\Delta \lambda_i=\Delta \lambda_j=1nm\)</span> and fluxes in <span class="arithmatex">\(\mu mol\)</span> <span class="arithmatex">\(photons/m^2/s\)</span>. <span class="arithmatex">\(Fluspect_{2017}\)</span> considers 2 PS (<span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(n_{mat}\)</span> = 4). <span class="arithmatex">\(Fluspect_{2021}\)</span> considers 1 combined PS (<span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(n_{mat}\)</span> = 2). </p>
+<p><span class="arithmatex">\(\mathcal{N}_{mol,i} \mu mol\)</span> photons <span class="arithmatex">\(/ m^2 / s / nm\)</span> (i.e., <span class="arithmatex">\(N_{mol,i} =10^3 N_{mol,i} \mu mol\)</span> photons / <span class="arithmatex">\(m^2 / s / \mu m\)</span>) in band <span class="arithmatex">\(\Delta \lambda_i=1nm\)</span> incident of a leaf ceate <span class="arithmatex">\(\mathcal{N}_{mol,j}^{SIF}\)</span> SIF <span class="arithmatex">\(\mu mol\)</span> photons / <span class="arithmatex">\(m^2\)</span> / s / nm (i.e., <span class="arithmatex">\(N_{mol,j}^{SIF} =10^3 \mathcal{N}_{mol,j}^{SIF} \mu mol\)</span> photons / <span class="arithmatex">\(m^2\)</span> / s /<span class="arithmatex">\(\mu m\)</span>) in band <span class="arithmatex">\(\Delta \lambda_j = 1\)</span> nm: <span class="arithmatex">\(\mathcal{N}_{mol,j}^{SIF}.\Delta \lambda_j = \mathcal{M}_{ij}.\mathcal{N}_{mol,i}.\Delta \lambda_i\)</span>. It implies <span class="arithmatex">\(N_{mol,j}^{SIF} = \mathcal{M}_{ij}.N_{mol,i}\)</span>. Since leaf irradiance <span class="arithmatex">\(E_i = N_{mol,i}.N_A.\frac {h.c} {\lambda_i}\)</span> and exitance <span class="arithmatex">\(F_ij = N_{mol,j}^{SIF}.N_A.\frac {h.c} {\lambda_j}\)</span> in <span class="arithmatex">\(W/m^2/\mu m\)</span>, we have: <span class="arithmatex">\(F_j = M_{ij}.E_i\)</span> with <span class="arithmatex">\(M_{ij}=\mathcal{M}_{ij}.\frac {\lambda_i} {\lambda_j}\)</span>.</p>
+<p><u><em>DART</em></u>. it has any number of U excitation bands <span class="arithmatex">\((\lambda_u , \Delta \lambda_u)\)</span> and V SIF bands <span class="arithmatex">\((\lambda_v , \Delta \lambda_v)\)</span> that are treated as combinations of Fluspect 1nm bands: <span class="arithmatex">\(\Delta \lambda_v = \sum_j \beta_{vj}.\Delta \lambda_j, \Delta \lambda_u = \sum_i \alpha_{ui}.\Delta \lambda_i\)</span>. The Phase module gives <span class="arithmatex">\(n_{mat}\)</span> "leaf" matrices <span class="arithmatex">\(\overline{\overline{M}}_{uv}\)</span> by spectral resampling the <span class="arithmatex">\(n_{mat} M_{ij}\)</span>. DART leaf SIF exitance is per PS for turbid-and facet-vegetation, for given PS fluorescence quantum yield. Spectral exitance at band v due to spectral irradiance <span class="arithmatex">\(E_u (W/m^2/\mu m)\)</span> at band u is: <span class="arithmatex">\(\overline{F}_v = \overline{\overline{M}}_{uv}.\overline{E}_u\)</span>. It is accurate only if the U bands cover all the SIF excitation domain, with no band overlap.</p>
+<p>The spectral resampling that creates <span class="arithmatex">\(\overline{\overline{M}}_{uv}\)</span> from <span class="arithmatex">\(\overline{\overline{M}}_{ij}\)</span> is a two successive weighted arithmetic averaging:</p>
+<ul>
+<li><u><em>Step 1</em></u>: at Fluspect band <span class="arithmatex">\((\lambda_j ,\Delta \lambda_j)\)</span>, irradiance <span class="arithmatex">\(E_u (\lambda_u ,\Delta \lambda_u : \mu m)\)</span> gives: <span class="arithmatex">\(F_{uj} = M_{uj}.E_u.\Delta \lambda_u (W/m^2/\mu m)\)</span> with <span class="arithmatex">\(M_{uj} = \frac {\sum_i \alpha_{ui}.\Delta \lambda_i.M_{ij}} {\sum_i \alpha_{ui}.\Delta \lambda_i}\)</span></li>
+<li><u><em>Step 2</em></u>: at band <span class="arithmatex">\((\lambda_v , \Delta \lambda_v)\)</span>, DART fluorescent exitance is <span class="arithmatex">\(F_v = M_{uv}.E_u.\Delta \lambda_u (W/m^2/\mu m)\)</span> with <span class="arithmatex">\(M_{uv} = \frac {\sum_j \beta_{uj}.\Delta \lambda_j.M_{uj}} {\sum_j \beta_{uj}.\Delta \lambda_j}\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(M_{uv} = \frac {\sum_{j=1}^{n} \sum_{i=1}^{m} M_{ij}} {m.n}\)</span> if bands <span class="arithmatex">\(\Delta \lambda_u\)</span> and <span class="arithmatex">\(\Delta \lambda_v\)</span> are integer numbers in nanometers (<em>i.e.</em>, integer numbers of Fluspect bands).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Leaf irradiance <span class="arithmatex">\(E_{leaf}\)</span> in Fluspect matrices is in <span class="arithmatex">\(\mu mol photons/m^2/s\)</span>. Because DART fluxes are in <span class="arithmatex">\(W/m^2/\mu m\)</span>, they are weighted by <span class="arithmatex">\(\frac {\lambda_i} {\lambda_j}\)</span>. Up to DART V 1201, as up to SCOPE V 2, this factor <span class="arithmatex">\(\frac {\lambda_i} {\lambda_j}\)</span> was not used.</p>
+</div>
+<p>DART works with:</p>
+<ul>
+<li>1 combined photosystem: use of Optipar2021 ProspectPro (see the table below). <span class="arithmatex">\(E_{leaf}\)</span> is in <span class="arithmatex">\(\mu mol .photons/m^2/s/\mu m\)</span>. It is consistent with SCOPE V2.0 and later. This is the default and advised mode.</li>
+<li>2 photosystems: use of Optipar2017_ProspectD or Optipar2021 ProspectPro_2PS. <span class="arithmatex">\(E_{leaf}\)</span> is in <span class="arithmatex">\(W/m^2/\mu m\)</span>. It is consistent with SCOPE up to V2.0.</li>
+</ul>
+<p><center><img src="./media/values_opticar2021.png"><p><em>Values of Optipar2021 at <span class="arithmatex">\(0.4\mu m\)</span> and <span class="arithmatex">\(0.76\mu m\)</span>. K: specific absorption coefficient <span class="arithmatex">\((nm^{-1})\)</span>.</em></p></img></center></p>
+<p><u><em>Menu "Optical and … properties"</em></u> (see below, a.): it sets if SIF is simulated and if leaf SIF yield is per triangle (file 'yieldsPerTriangle' in menu "Optical ... properties") or per optical property (see below, b.). Because bioclimatology (e.g., temperature) affects leaf SIF efficiency and SCOPE model considers that, SCOPE was modified to export its simulated leaf SIF efficiency relative to leaf Fluspect SIF as 2 arrays: <em>etau</em><span class="arithmatex">\((n, \theta, \phi)\)</span> for sun leaves and <em>etah</em>(n) for shade leaves, with canopy layer index n, leaf zenith angle <span class="arithmatex">\(\theta\)</span> and leaf azimuth angle <span class="arithmatex">\(\phi\)</span>. DART can import <em>etau</em> and <em>etah</em> (menu "Bio-climatic profile": see below .c) and distributes them per optical property in <span class="arithmatex">\(N_{layer}\)</span> layers between the minimal and maximal altitudes of the facets of S that have this optical property, whatever the presence of topography, urban elements, etc. This method can be inaccurate for large facets because the altitude of a facet is that of its centroid. The SIF optical properties of 2 sets <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> can be linked (e.g., sun / shade leaves of a same tree). Then, the <span class="arithmatex">\(N_{layer}\)</span> layers are between the smaller and larger altitudes of the whole set {<span class="arithmatex">\({S_1 , S_2}\)</span>}.</p>
+<p><img src="./media/fluorescence_menu_a.png" width=300 ></img>
+<img src="./media/fluorescence_menu_b.png" width=300></img>
+<img src="./media/fluorescence_menu_c.png" width=300><center><em>Fluorescence menus and eta matrices (below)</em></center></img></p>
+<p><span class="arithmatex">\(etau = \begin{pmatrix}
+a_{1,1,1} &amp; ... &amp; a_{1,1,N_{\phi}} \\
+... &amp; ... &amp; ... \\
+a_{1,N_{\theta},1} &amp; ... &amp; a_{1,N_{theta},N_{\phi}} \\
+a_{n,1,1} &amp; ... &amp; a_{n,1,N_{\phi}} \\
+... &amp; ... &amp; ... \\
+a_{N_{layer},N_{\theta},1} &amp; ... &amp; a_{N_{layer},N_{theta},N_{\phi}} \\
+\end{pmatrix}\)</span> and  <span class="arithmatex">\(etah = \begin{pmatrix} a1 \\ . \\ . \\ . \\ a_{N_{layer}} \\ \end{pmatrix}\)</span></p>
+<p><span class="arithmatex">\(\rightarrow\)</span> Photosynthesis: modeling this quantum process needs <span class="arithmatex">\(E_{APAR}^{Chl}\)</span> in PPFD (Photosynthetic Photon Flux Density: <span class="arithmatex">\(\mu mol/m^2/s)\)</span>: flux of moles of PAR (Photosynthetically Active Radiation: 400-700 nm) photons absorbed by Chl. Conversion factors <span class="arithmatex">\(\eta_{in} and \eta_{abs}^{Chl}\)</span> "Watt <span class="arithmatex">\(\rightarrow \mu mole/s\)</span>" for incident and Chl absorbed radiation depend on light spectral composition and hence on atmosphere and <span class="arithmatex">\(\Omega_{sun}\)</span> . For DART spectral bands <span class="arithmatex">\(\Delta \lambda_i\)</span> with <span class="arithmatex">\(PAR= \sum_{i=1}^{I} \Delta \lambda_i\)</span> and <span class="arithmatex">\(k_{abs}^{Chl}(\lambda) = \frac {E_{abs}^{Chl}(\lambda)} {E_{abs}^{total}(\lambda)}\)</span> (PROSPECT/FLUSPECT product):</p>
+<p><span class="arithmatex">\(\eta_{in, \Delta \lambda_i} = \frac {10^6} {h.c.N_A}.\frac {\int_{\Delta \lambda_i}L_B(\lambda,T).\lambda.d\lambda} {\int_{\Delta \lambda_i}L_B(\lambda,T).d\lambda}\)</span> (<span class="arithmatex">\(\lambda\)</span> in m) with <span class="arithmatex">\(\eta_{in, PAR} \approx 4.56\)</span> if <span class="arithmatex">\(T=5800K\)</span></p>
+<p><span class="arithmatex">\(\eta_{abs,\Delta \lambda_i}^{Chl} = \frac {10^6} {h.c.N_A}.\frac {\int_{\Delta \lambda_i}k_{abs}^{Chl}(\lambda).L_B(\lambda,T).\lambda.[1 - \omega_{l}(\lambda)].d\lambda} {\int_{\Delta \lambda_i}L_B(\lambda,T).[1 - \omega_l(\lambda)].d\lambda} = \frac {N_{\Delta \lambda_i}(\mu mol/m^2/s)} {E_{abs,\Delta \lambda_i} (W/m^2)} \implies N_{APAR}\:(\mu mol/m^2/s)=\sum_{i=1}^{I} \eta_{abs, \Delta \lambda_i}^{Chl}.E_{abs, \Delta \lambda_i}^{total} (W/m^2)\)</span></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

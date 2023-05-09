@@ -1,0 +1,2300 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Format_DART_files/1-All_dart_modes/all_dart_modes.html">
+      
+      
+        <link rel="prev" href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html">
+      
+      
+        <link rel="next" href="../2-DART_FT/dart_ft.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>1 - All DART modes - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-directionstxt-directionsxml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 - All DART modes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1 - All DART modes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="all_dart_modes.html" class="md-nav__link md-nav__link--active">
+        1 - All DART modes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-directionstxt-directionsxml" class="md-nav__link">
+    1) Directions.txt &amp; Directions.xml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lad-leaf-angle-distribution-derived-files" class="md-nav__link">
+    2) LAD (Leaf Angle Distribution) derived files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-optical-properties-sql-databases-lambertian_mineraldb" class="md-nav__link">
+    3) Optical properties SQL databases (Lambertian_mineral.db,…)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-3d-factor-matrix-text-file" class="md-nav__link">
+    4) 3D factor matrix text file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-temperature-temperaturestxt-and-temperaturespertrianglepercelltxt" class="md-nav__link">
+    5) Temperature: temperatures.txt and temperaturesPerTrianglePerCell.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-triangles-area-per-voxel-darttyp" class="md-nav__link">
+    6) Triangles area per voxel, dart.typ,…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-plots-plotstxt-and-information-file-covermapexampletxt" class="md-nav__link">
+    7) Plots: Plots.txt and information file CoverMapExample.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-turbid-trees-treetxt-and-branchtxt" class="md-nav__link">
+    8) Turbid trees: Tree.txt and Branch.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-3d-object-obj-and-mtl-files-and-object-field" class="md-nav__link">
+    9) 3D object: * .obj and * .mtl files, and object field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-solar-constantdb-and-bandirradiancefiletxt" class="md-nav__link">
+    10) Solar constant.db and BandIrradianceFile.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-atmosphere-sql-input-databases-atmospheredb-h2ogrounddb" class="md-nav__link">
+    11) Atmosphere SQL input databases (atmosphere.db, H2Oground.db)*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-atmosphere-output-files" class="md-nav__link">
+    12) Atmosphere output files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-sensor-input-files" class="md-nav__link">
+    13) Sensor input files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reflectance-temperature-and-radiance-files" class="md-nav__link">
+    14) Reflectance, temperature and Radiance files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-simulationpropertiestxt-and-darttxt" class="md-nav__link">
+    15) Simulation.properties.txt and dart.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-raster-files-dart-images-dem" class="md-nav__link">
+    16) Raster files (DART images, DEM,...)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-radiative-budget-rb-of-voxels-and-triangles" class="md-nav__link">
+    17) Radiative budget (RB) of voxels and triangles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-broadband-files" class="md-nav__link">
+    18) BroadBand files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-fluorescence-input-and-output-files" class="md-nav__link">
+    19) Fluorescence: input and output files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-directionstxt-directionsxml" class="md-nav__link">
+    1) Directions.txt &amp; Directions.xml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lad-leaf-angle-distribution-derived-files" class="md-nav__link">
+    2) LAD (Leaf Angle Distribution) derived files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-optical-properties-sql-databases-lambertian_mineraldb" class="md-nav__link">
+    3) Optical properties SQL databases (Lambertian_mineral.db,…)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-3d-factor-matrix-text-file" class="md-nav__link">
+    4) 3D factor matrix text file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-temperature-temperaturestxt-and-temperaturespertrianglepercelltxt" class="md-nav__link">
+    5) Temperature: temperatures.txt and temperaturesPerTrianglePerCell.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-triangles-area-per-voxel-darttyp" class="md-nav__link">
+    6) Triangles area per voxel, dart.typ,…
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-plots-plotstxt-and-information-file-covermapexampletxt" class="md-nav__link">
+    7) Plots: Plots.txt and information file CoverMapExample.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-turbid-trees-treetxt-and-branchtxt" class="md-nav__link">
+    8) Turbid trees: Tree.txt and Branch.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-3d-object-obj-and-mtl-files-and-object-field" class="md-nav__link">
+    9) 3D object: * .obj and * .mtl files, and object field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-solar-constantdb-and-bandirradiancefiletxt" class="md-nav__link">
+    10) Solar constant.db and BandIrradianceFile.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-atmosphere-sql-input-databases-atmospheredb-h2ogrounddb" class="md-nav__link">
+    11) Atmosphere SQL input databases (atmosphere.db, H2Oground.db)*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-atmosphere-output-files" class="md-nav__link">
+    12) Atmosphere output files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-sensor-input-files" class="md-nav__link">
+    13) Sensor input files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reflectance-temperature-and-radiance-files" class="md-nav__link">
+    14) Reflectance, temperature and Radiance files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-simulationpropertiestxt-and-darttxt" class="md-nav__link">
+    15) Simulation.properties.txt and dart.txt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-raster-files-dart-images-dem" class="md-nav__link">
+    16) Raster files (DART images, DEM,...)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-radiative-budget-rb-of-voxels-and-triangles" class="md-nav__link">
+    17) Radiative budget (RB) of voxels and triangles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-broadband-files" class="md-nav__link">
+    18) BroadBand files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-fluorescence-input-and-output-files" class="md-nav__link">
+    19) Fluorescence: input and output files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>1 - All DART modes</h1>
+
+<p>DART stores input data as xml files in the "input" folder of the current simulation and results (e.g., reflectance files,…) in text and binary files in the "output" folder. </p>
+<p><center><img src="./media/general_architecture.png"><p><em>General architecture of DART.</em></p></img></center></p>
+<h3 id="1-directionstxt-directionsxml"><strong>1) Directions.txt &amp; Directions.xml</strong></h3>
+<p>The module Directions (Section <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html">III.4.8</a>) uses <code>directions.xml</code> (input parameters) to create DART discrete directions (<code>directions.txt</code>). Here (see below), it creates <span class="arithmatex">\(\approx 1000\)</span> directions in 10 sectors, <span class="arithmatex">\(\theta_{sun}=50°\)</span>, <span class="arithmatex">\(\phi_{sun}=225°\)</span>, no added direction.</p>
+<p><center><img src="./media/directions_xml_directions_txt_3d_display_directions.png"><p><em>Files direction.xml (top) and directions.txt (bottom), and 3D display of directions.</em></p></img></center></p>
+<h3 id="2-lad-leaf-angle-distribution-derived-files"><strong>2) LAD (Leaf Angle Distribution) derived files</strong></h3>
+<p>The Phase module computes the fraction of leaf area Af over <span class="arithmatex">\([\theta_f;\: \theta_f+\Delta \theta_f]\)</span>. Two files are created:</p>
+<ul>
+<li>
+<p><u> <strong><em><code>LAD *.txt</code></em></strong> </u> (text file) with *= SPHERIC, etc.: {<span class="arithmatex">\(\theta_f\)</span>, normalized <span class="arithmatex">\(g(\theta_f).sin(\theta_f)\)</span>; <span class="arithmatex">\(\Delta \theta_f=0.5°=8.73\:10^{-3}\:rd\)</span>} created in the user database, if not yet present, for all LADs except the ellipsoidal / elliptical and "user defined" LADs (i.e., LADs derived from DeWit/Bunnik (<a href="http://rami-benchmark.jrc.ec.europa.eu/html/definitions/definitions.php">http://rami-benchmark.jrc.ec.europa.eu/html/definitions/definitions.php</a>). Only the phase module uses it.</p>
+</li>
+<li>
+<p><u> <strong><em><code>leafAngleDistributionFunctionVector[i].txt</code></em></strong> </u>: (text file); i=turbid index: {<span class="arithmatex">\(LAD_{index}, \theta_f\)</span>, normalized <span class="arithmatex">\(g(\theta_f).sin(\theta_f).\Delta \theta_f\)</span>; <span class="arithmatex">\(\Delta \theta_f=user \:defined \geq 1°\)</span>} in 'output/lib_phase' if required or if maket module transforms turbid medium as triangles. <span class="arithmatex">\(LAD_{index}\)</span>=0: uniform, 1: spheric, 2: erectophile, 3: planophile, 4: extremophile, 5: plagiophile, 6: horizontal, 7: vertical, 8: ellipsoidal, 9: elliptical,10: user defined (text file), 11: de Wit. 12: uniform bounded. Note that 6 / 7 are exactly vertical / horizontal only for triangles.</p>
+</li>
+</ul>
+<p><center><img src="./media/output_lad_file.png"></img></center></p>
+<p>The Phase module also computes binary files designed to manage scattering and interception (transmittance) events: </p>
+<p><u><code>j3D_....txt_diff</code></u>: {<span class="arithmatex">\(T_{diff}(\Omega_{sun},\Omega_i), T_{diff}(\Omega_{sector,k},\Omega_i), TG_{diff}(\Omega_i)\)</span>} of all bands, with j the leaf species index, <span class="arithmatex">\(k \in [1;\:K\)</span>=Number_of_sectors] and <span class="arithmatex">\(i \in [1;\:I\)</span>=Number_of_directions].</p>
+<p><center><img src="./media/diff_file.png"><p><em>File </em>_diff: <span class="arithmatex">\(T(\Omega_s,\Omega_i), T(\Omega_{sector,k},\Omega_i), TG(\Omega_i)\)</span> with <span class="arithmatex">\(k \in [1;\: 10]\)</span>, <span class="arithmatex">\(i \in [1;\: 100]\)</span>. DART option 'Specular' <span class="arithmatex">\(\implies\)</span> no line <span class="arithmatex">\(TG(\Omega)\)</span>. <span class="arithmatex">\(\rho_f:0.5\)</span>. <span class="arithmatex">\(\tau_f:0.4.\)</span> LAD spherical.*</p></img></center></p>
+<p><u><code>j3D_...txt.spec</code></u>: created per leaf species j if there is leaf specular scattering (<span class="arithmatex">\(\implies\)</span> possible polarization). For all spectral bands, each file stores: {<span class="arithmatex">\(T_{spec}(j,\Omega_{sun},\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(T_{Polarization}(j,\Omega_{sun},\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(T_{spec}(j,\Omega_I, \Omega_V)_{I=1..S,v=1..N}\)</span>, <span class="arithmatex">\(TG(j,\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(TG_{spec}(j,\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(S_1(j,\Omega_{sun},\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(S_{1,moy}(j,\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(S_M(j,\Omega_V)_{v=1..N}\)</span>, <span class="arithmatex">\(p_1(j,\Omega_V)_{v=1..N}\)</span>}; S= Number of angular sectors.</p>
+<p><u><code>*_diff_mc</code></u> and <u><code>*spec_mc</code></u>: created for <em>Lidar and Monte Carlo modes</em> (see below).</p>
+<p><center><img src="./media/diff_mc_file.png"><p><em>File <code>*_diff_mc</code>: <span class="arithmatex">\(T(\Omega_n, \omega_i)\)</span> with <span class="arithmatex">\(n \in [1;\:N+1]\)</span> and <span class="arithmatex">\(i \in [1\:100]\)</span>. Sun direction is n=1</em></p></img></center></p>
+<p><u><code>j3D...transm</code> file</u> (see below): <span class="arithmatex">\(G(\Omega_i)\)</span> for "all directions of directions.txt + sun direction with null solid angle".</p>
+<p><center><img src="./media/j3d_txt_transm_file.png"><p><em>File <code>j3D_...txt_transm</code> (<span class="arithmatex">\(G(\Omega)\)</span> for 100 directions + sun direction (101). Spherical LAD.</em></p></img></center></p>
+<h3 id="3-optical-properties-sql-databases-lambertian_mineraldb"><strong>3) Optical properties SQL databases (Lambertian_mineral.db,…)</strong></h3>
+<p>The "Database Manager" (III.7.11) manages DART SQL databases (see below) that store in tables optical properties from users or databases (e.g., <a href="https://speclib.jpl.nasa.gov">speclib.jpl.nasa.gov</a>, <a href="https://icess.eri.ucsb.edu/modis/EMIS/html/em.html">icess.eri.ucsb.edu/modis/EMIS/html/em.html</a>, <a href="https://usgs.gov/labs/spec-lab">usgs.gov/labs/spec-lab</a>).</p>
+<p><center><img src="./media/dart_default_database_parameters.png"><p><em>Parameters (cf. III.4.9) of DART default databases with header and 1st line of one of their models.</em></p></img></center></p>
+<p>Surface: <span class="arithmatex">\(\rho_{specular} = A.\rho_{Fresnel}\)</span> (refraction index n): cst, Gaussian or parabolic in a cone (angular_divergence) around specular direction.</p>
+<p>Turbid:for each surface element <span class="arithmatex">\(\rho_{leaf,specular,turbid medium} = K_{fj}(\Psi_{fs}).\rho_{Fresnel}\)</span> (<span class="arithmatex">\(n_{inf}\)</span> or <span class="arithmatex">\(n_{sup}\)</span>), with <span class="arithmatex">\(K_{fj}(\Psi_{fs})=K_{fj0}.e^{[-k_{fj}.tan(\Psi_{fs})]}\)</span>.</p>
+<p>Units: <span class="arithmatex">\(\mu m\)</span> for wavelength, 1 = 100% for reflectance / transmittance, no unit for albedo, ° for angle, and <span class="arithmatex">\(m^2\)</span> for cross section (sigma). The optical depth of a gas/aerosol layer (volume density N, depth <span class="arithmatex">\(\Delta l\)</span>) is: <span class="arithmatex">\(N.Sigma.\Delta l\)</span>.</p>
+<p><u><em>Fluids</em></u>. Two types of scattering phase functions <span class="arithmatex">\(\frac {P(\Psi_{sv})} {4\pi}\)</span>. Their selection is automatic: it depends on their number of parameters.</p>
+<ul>
+<li>
+<p>Rayleigh (gas,…): <span class="arithmatex">\(\frac {P(\Psi_{sv})} {4\pi}=\frac {1} {4\pi}.[a.(1+cos^2(\psi_{sv})) + c]\)</span>; <span class="arithmatex">\(\Psi_{sv} = phase\:angle\)</span> (forward scattering <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(\Psi_{sv}=0\)</span>), <span class="arithmatex">\(cos(\Psi_{sv}) = [cos(\theta_v).cos(\theta_s) + sin(\theta_s).sin(\theta_v).cos(\Phi_v-\Phi_s)]\)</span></p>
+<ul>
+<li>Parameters for gases: <span class="arithmatex">\(a=\frac {3} {2}.\frac {1 - \delta} {2 + \delta}\)</span> with <span class="arithmatex">\(\delta=\)</span> polarization ratio (<span class="arithmatex">\(\delta=0.0279\)</span> at <span class="arithmatex">\(0.65\mu m\)</span>), <span class="arithmatex">\(c=\frac {3\delta} {2 + \delta}\)</span></li>
+<li>Actual Rayleigh function: <span class="arithmatex">\(P(\Psi_{sv}) \approx \frac {3} {2}.\frac {1 - \delta} {2 + \delta}.[\frac {1 + \delta} {1 - \delta} + cos^2(\Psi_{sv}) \approx 0.7603 + 0.719.cos^2(\Psi_{sv})]\)</span></li>
+</ul>
+</li>
+<li>
+<p>Double Henyey-Greenstein (aerosol,...): <span class="arithmatex">\(\frac {P(\Psi_{sv})} {4\pi} = \frac {1} {4\pi}.[\frac {a.(1-g_1^2)} {[1 + g_1^2.2g_1.cos(\Psi_{sv})]^{3/2}} + \frac {(1-a).(1-g_2^2)} {[1 + g_2^2.2g_2.cos(\Psi_{sv})]^{3/2}}]\:\:\:(c \equiv g_1)\)</span> with g=0 <span class="arithmatex">\(\implies\)</span> isotropic (forwward scattering = backward scattering). g=1 <span class="arithmatex">\(\implies\)</span> Dirac (forward scattering)</p>
+</li>
+</ul>
+<h3 id="4-3d-factor-matrix-text-file"><strong>4) 3D factor matrix text file</strong></h3>
+<p>It stores multiplicative factors of an optical property per cell, ordered from bottom to top scene (see below), as in the 2D scene display of the simulation editor: origin = top left corner, then columns (y), then lines (x), then altitudes (z).</p>
+<p>Field separators are semi-column, space, or tab. If the option “Duplicate first voxel layer” is set, the input file is a 2D array that DART duplicates as a 3D array (<span class="arithmatex">\(\implies\)</span> constant optical property along the z-axis). If the simulated scene is a sub-zone, the first line of the file must contain the word: sub-zone.</p>
+<p><center><img src="./media/3d_factor_matrix.png"><p><em>3D factor matrix text file for a scene with x=4, y=3, z=2.</em></p></img></center></p>
+<h3 id="5-temperature-temperaturestxt-and-temperaturespertrianglepercelltxt"><strong>5) Temperature: temperatures.txt and temperaturesPerTrianglePerCell.txt</strong></h3>
+<ul>
+<li>
+<p><u><em>temperatures.txt</em></u>: 3D mean thermodynamic temperature per voxel (for all elements), from bottom to top.</p>
+</li>
+<li>
+<p><u><em>temperaturesPerTrianglePerCell.txt</em></u>: thermodynamic temperatures of face 1 (<span class="arithmatex">\(T_1\)</span>) and face 2 (<span class="arithmatex">\(T_2\)</span>) of each triangle t per cell (i,j,k). Per line: i.j.k.t:<span class="arithmatex">\(T_1\)</span>;<span class="arithmatex">\(T_2\)</span>;A, with triangle area A.</p>
+</li>
+</ul>
+<h3 id="6-triangles-area-per-voxel-darttyp"><strong>6) Triangles area per voxel, dart.typ,…</strong></h3>
+<ul>
+<li>
+<p><u><em><code>triAreaPerCell.txt</code></em></u> text files (folder "triAreaPerCell"): area of all triangles and triangles of type X, per cell.</p>
+</li>
+<li>
+<p><u><em><code>dart.typ</code></em></u> (text file in input folder): list of present materials (i.e., colors defined in "3D imported object").</p>
+</li>
+</ul>
+<h3 id="7-plots-plotstxt-and-information-file-covermapexampletxt"><strong>7) Plots: Plots.txt and information file CoverMapExample.txt</strong></h3>
+<p>Plots (ground, vegetation, fluid) can be created in DART GUI (stored in plots.xml file) and/or added using either:</p>
+<ul>
+<li><code>plots.txt</code> file. An example is in DART database; the file header gives the format. Very useful if there are many plots.</li>
+<li>CoverMap image and a text file (<code>CoverMap.txt</code>) that links pixel values Pi and plot parameters (type,…). Examples are in DART database: <code>CoverMapExample.mp#</code> (<a href="../../Tutorials/T5/t5.html#1-cover-map-importation-wp5a-ct10">example</a>: <span class="arithmatex">\(P_i\)</span> = 1, 3, 5 and 7) and <code>CoverMapExample.txt</code> (see below).</li>
+</ul>
+<p><center><img src="./media/format_information_file_covermap.png"><p><em>Format of the information file of CoverMap.This example (<code>CoverMapExample.txt</code>) is in DART database.</em></p></img></center></p>
+<p>Each line the field values of a plot, separated by blank characters or tabulation. Useless fields have any value (e.g., 0):</p>
+<ul>
+<li>Class name. It must not contain any blank character!</li>
+<li>Class index. It is the pixel value in the raster map.</li>
+<li>Use of plot: 1 if the plot is used, 0 if it is not used.</li>
+<li>H: Average height of the vegetation plot or fluid plot</li>
+<li>Leaf size (m): for simulating hot spot in short waves.</li>
+<li>Type of soil phase function: Lambertian: 0, Lambertian + specular: 1, or Hapke: 2</li>
+<li>HBase: Height of the base of the vegetation plot or fluid plot above the ground</li>
+<li><span class="arithmatex">\(\Omega_{min}, \Omega_{max}\)</span>, a, b: Angular weights of vegetation function <span class="arithmatex">\(G(\Omega)\)</span> (default values (1,0, 0, 0)).</li>
+<li>LAD: Leaf Angle Distribution <img src="./media/leaf_angle_distribution.png"/></li>
+<li>After 'LAD column': ellipsoidal LAD <span class="arithmatex">\(\implies\)</span> {ALA,0}, elliptical LAD <span class="arithmatex">\(\implies\)</span> {Thetam, Eccentricity}, other LAD <span class="arithmatex">\(\implies\)</span> {0,0}</li>
+<li><span class="arithmatex">\(T_{mean}, \Delta T\)</span>: Mean temperature and temperature range (K)</li>
+<li>Name of the spectral database.</li>
+<li>Type of plot: Ground: 0, Vegetation: 1, Ground + Vegetation: 2, Air: 3</li>
+<li><span class="arithmatex">\(\sigma_H\)</span>: Standard deviation of vegetation or fluid's height.</li>
+<li>Vegetation plot's LAI or fluid plot's particle volume density.</li>
+</ul>
+<h3 id="8-turbid-trees-treetxt-and-branchtxt"><strong>8) Turbid trees: Tree.txt and Branch.txt</strong></h3>
+<p><u><strong><em><code>Tree.txt</code></em></strong></u>: a line per tree. It stores tree parameters in labelled columns (see below):</p>
+<ul>
+<li>SPECIES_ID: species, POS_X: X, POS_Y: Y, T_HEI_BELOW: Trunk height below crown,</li>
+<li>T_HEI_WITHIN (Trunk height within crown), T_DIA_BELOW (Trunk diameter below crown),</li>
+<li>T_ROT_NUT / T_ROT_PRE (°): Trunk nutation / precession rotation (°),</li>
+<li>C_TYPE: Crown type (0 = ellipsoid, 1=ellipsoid composed, 2=cone, 3=trapezoid, 4=cone composed),</li>
+<li>C_HEI: Crown height,</li>
+<li>C_ROT_INT / C_ROT_NUT / C_ROT_PRE (°): Crown intrinsic / nutation / precession rotation,</li>
+<li>C_GEO_1: Crown geometry. <ul>
+<li>If crown type = ellipsoid or ellipsoid composed, C_GEO_1 = 1st axis, </li>
+<li>if crown type = cone or cone composed, C_GEO_1 = bottom radius,</li>
+<li>if crown type = trapezoid, C_GEO_1 = bottom length.</li>
+</ul>
+</li>
+<li>C_GEO_2: Crown geometry. <ul>
+<li>If crown type = ellipsoid or ellipsoid composed, C_GEO_2 = 2nd axis,</li>
+<li>if crown type = cone or cone composed, C_GEO_2 = top radius,</li>
+<li>if crown type = trapezoid, C_GEO_2 = bottom width.</li>
+</ul>
+</li>
+<li>C_GEO_3: Crown geometry. <ul>
+<li>If crown type = ellipsoid composed, C_GEO_3 = half heigth of lower ellipsoid if crown type = cone composed, C_GEO_3 = cylinder height,</li>
+<li>if crown type = trapezoid, C_GEO_3 = top length,</li>
+<li>if other crown type, C_GEO_3 = undefined.</li>
+</ul>
+</li>
+<li>C_GEO_4: Crown geometry parameters. <ul>
+<li>If crown type = trapezoid, C_GEO_4 = top width,</li>
+<li>if other crown type, C_GEO_4 = undefined.</li>
+</ul>
+</li>
+<li>LAI (optional): tree leaf area if LAI &gt; 0 or leaf volume density if LAI &lt; 0. If present, it replaces the LAI set in the GUI</li>
+</ul>
+<p><center><img src="./media/tree_file_dart_database.png"><p><em>Case "Exact position + Exact dimensions": tree file in DART database. Trees 1, 2: ellipsoid, tree 3: cone.</em></p></img></center></p>
+<p><u><strong><em><code>Branch.txt</code></em></strong></u> (schematic geometry): <span class="arithmatex">\(N_{branches}\)</span> followed by 1 branch / line: relativeHeight <span class="arithmatex">\(\theta\:\phi\)</span> relativeRadius relativeLength <span class="arithmatex">\(N_{facets}\)</span></p>
+<ul>
+<li>relativeHeight ([0 1]): relative height of branch origin on trunk; % of "trunk + crown" height.</li>
+<li><span class="arithmatex">\(\theta\)</span> (°), <span class="arithmatex">\(\phi\)</span> (°): zenith and azimuth angles of the branch direction.</li>
+<li>relativeRadius ([0 1]): branch base relative radius; % of trunk radius at branch base level.</li>
+<li>relativeLength ([0 1]): branch relative length. For branches below the tree crown: % of mean crown radius.
+For branches in the tree crown: % of the length "branch base - point of intersection "branch - tree crown".</li>
+<li><span class="arithmatex">\(N_{facets}\)</span>: number of facets (triangles) used to build the branch, in addition of the triangles of the branch base.</li>
+</ul>
+<h3 id="9-3d-object-obj-and-mtl-files-and-object-field"><strong>9) 3D object: * .obj and * .mtl files, and object field</strong></h3>
+<ul>
+<li><strong>obj &amp; mtl text files</strong> (<a href="https://web.cse.ohio-state.edu/~shen.94/581/Site/Lab3_files/Labhelp_Obj_parser.htm, en.wikipedia.org/wiki/Wavefront_.obj_file">web.cse.ohio-state.edu/~shen.94/581/Site/Lab3_files/Labhelp_Obj_parser.htm, en.wikipedia.org/wiki/Wavefront_.obj_file</a>)</li>
+</ul>
+<p>Data needed by DART is in bold. Obj file: it stores a 3D geometric model (<strong>vertex coordinates, faces</strong>, normals, textures, <strong>group names</strong>,…); each line starts from a special 1st character or word; indices start from 1. The mtl file stores <strong>color per group</strong>.</p>
+<p><center><img src="./media/obj_mtl_files_centered_triangle.png"><p><em><code>T.obj</code> and <code>T.mtl</code> of centred triangle ABC. <span class="arithmatex">\(AB=\Delta x=2m\)</span> in <code>T.obj</code> and DART. Note that DART only affects the display and not the values of <span class="arithmatex">\(M_{xyz}, \Omega_{sun}\: and \:\Omega_{view}\)</span>.</em></p></img></center>
+<center><img src="./media/obj_and_mtl_files.png"><p><em>obj and mlt files.</em></p></img></center></p>
+<ul>
+<li>
+<p><strong>Object field</strong>: ASCII file with values in full (no scientific notation), separated by spaces or tabulations, with 1 line per description of object. Accepted comments: /<em> …. </em>/ and // …. [end of line]'. There are 2 formats: "exact location + random characteristics" and "Exact location + Exact characteristics"</p>
+<ol>
+<li><u><em>Exact location + Random characteristics</em></u>. Per line: Object_Model_Index <span class="arithmatex">\(X_{pos}, Y_{pos}\)</span> Object_Model_Index: Index of the model of the 3D object. Index 0 is for the 1st model to be input,... <span class="arithmatex">\((X_{pos}, Y_{pos})\)</span>: X and Y Positions (float number in meters) If location <span class="arithmatex">\((X_{pos}, Y_{pos})\)</span> is outside the scene, the object will not be created.
+<center><img src="./media/field_file_random.png"><p><em>Field file for case "exact location + random characteristics". The index informs on the object type. Here, index "0" informs that the <span class="arithmatex">\(1^{st}\)</span> object is "Wild cherry tree".</em></p></img></center>  </li>
+<li><u><em>Exact location + Exact characteristics</em></u><ul>
+<li>Header: complete transformation</li>
+<li>Per line: Object_Model_Index <span class="arithmatex">\(X_{pos}, Y_{pos}, Z_{pos}, X_{scale}, Y_{scale}, Z_{scale}, Z_{rot}, Y_{rot}, Z_{rot}\)</span> </li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>Object_Model_Index: Index of the 3D object. Index 0 is for the 1st model to be input in DART, etc.</p>
+<p><span class="arithmatex">\(X_{pos}, Y_{pos}, Z_{pos}\)</span>: X, Y and Z Positions (float number in meters). By default: <span class="arithmatex">\(Z_{pos} = 0\)</span>.</p>
+<p>If location <span class="arithmatex">\((X_{pos}, Y_{pos}, Z_{pos})\)</span> is outside the scene, the object will not be built.
+<span class="arithmatex">\(X_{scale}, Y_{scale}\)</span> and <span class="arithmatex">\(Z_{scale}\)</span>: X, Y and Z scale factors (float number; 1 by default)
+<span class="arithmatex">\(Z_{rot}, Y_{rot}\)</span> and <span class="arithmatex">\(Z_{rot}\)</span>: Oz (intrinsic), Oy (nutation) and Oz (precession) rotations (float number; 0 by default)</p>
+<p><center><img src="./media/field_file_precise.png"><p><em>Field file: case "exact location + exact characteristics". There are two 3D objects: indices 0, 1.</em></p></img></center></p>
+<h3 id="10-solar-constantdb-and-bandirradiancefiletxt"><strong>10) Solar constant.db and BandIrradianceFile.txt</strong></h3>
+<p><u><em>Solar_constant.db</em></u>: 10 spectral solar constant spectra {<span class="arithmatex">\(E_{TOA}(\lambda)\)</span>: <span class="arithmatex">\(W/m^2/\mu m\)</span>; specific spectral resolution} stored in tables: CebChKur, ChKur, Kurucz97 (default in Modtran): <span class="arithmatex">\([0.2 \:- \:200\mu m]\)</span>; FonTenla, Kurucz95, Kurucz2005: <span class="arithmatex">\([0.2 \:-\: 10^4\mu m]\)</span>; ThKur<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> (Thuillier + corrected Kurucz): <span class="arithmatex">\([0.05\: -\: 10^3\mu m]\)</span>; TSIS2019_0025nm / TSIS2019_01nm / TSIS2019_1nm: <span class="arithmatex">\([0.2\mu m \: -\: 2.73\mu m]\)</span> <a href="https://lasp.colorado.edu/lisird/data/tsis1_hsrs">https://lasp.colorado.edu/lisird/data/tsis1_hsrs</a> extended to <span class="arithmatex">\(10^5\mu m\)</span> with Kurucz2005. Other tables can be added.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DART corrects <span class="arithmatex">\(E_{TOA}(\lambda)\)</span> of Earth-Sun distance d(J) with an equation <span class="arithmatex">\(E_{TOA} \equiv \frac {1} {d(J)^2}\)</span> similar to ESA <a href="https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-1c/algorithm">https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-1c/algorithm</a>.</p>
+</div>
+<p><u><strong><em><code>BandIrradianceFile.txt</code></em></strong></u>: it stores <span class="arithmatex">\(E_{BOA}(\lambda)\)</span> (i.e., irradiance or solar constant depending on DART option) and <span class="arithmatex">\(SKYL(\lambda)\)</span>. Options "No Atmosphere" and "Spectral radiation text file" can use it.</p>
+<p><center><img src="./media/band_irradiance_file.png"></img></center></p>
+<h3 id="11-atmosphere-sql-input-databases-atmospheredb-h2ogrounddb"><em>11) Atmosphere SQL input databases (atmosphere.db, H2Oground.db)</em>*</h3>
+<ul>
+<li>
+<p><strong><em>Atmosphere.db</em></strong><br />
+User data can be input. Henyey Greenstein parameters result from the fit of Lowtran scattering phase functions. All other spectral data must have the same resolution <span class="arithmatex">\(\Delta \nu\)</span>. <code>Atmosphere.db</code> data are derived from the Modtran model <span class="arithmatex">\((\Delta \nu=1cm^{-1}\)</span>, 36 layers): 6 gas (USSTD76, SUBARCWIN,…) and 7 aerosol (RuralV5,…) models.</p>
+<ol>
+<li><u><em>Gas</em></u> (index g): <span class="arithmatex">\(g_{scat}\)</span>, <span class="arithmatex">\(H_2O\)</span>, <span class="arithmatex">\(O_3\)</span>, <span class="arithmatex">\(N_2\)</span>, <span class="arithmatex">\(CO_2\)</span>, <span class="arithmatex">\(CO\)</span>, <span class="arithmatex">\(CH_4\)</span>, <span class="arithmatex">\(N_2O\)</span>, <span class="arithmatex">\(O_2\)</span>, <span class="arithmatex">\(NH_3\)</span>, <span class="arithmatex">\(NO\)</span>, <span class="arithmatex">\(NO_2\)</span>, <span class="arithmatex">\(SO_2\)</span>, <span class="arithmatex">\(HNO_3\)</span>, <span class="arithmatex">\(g_{other}\)</span><ul>
+<li><code>*_gECP</code>: gas density (atm cm/km, except <span class="arithmatex">\(N_2\)</span>: <span class="arithmatex">\(g/cm^2.km\)</span>) at 36 layers, per gas model (*).</li>
+<li><code>*_gH2O</code>: spectral transmittance <span class="arithmatex">\(T_{H_2O}\)</span> (<span class="arithmatex">\(T_{H_20}^{continuum}, T_{H_20}^{line-by-line}\)</span>), for N <span class="arithmatex">\(H_2O\)</span> content (default value x 0.1 n), with <span class="arithmatex">\(n \in [1\:N]\)</span> the index of the N tables (21 for USSTD, 16 for Sub Artic winter,…)</li>
+<li><code>*gTEMP</code>: gas temperature &amp; pressure (atm-cm/km; for <span class="arithmatex">\(N_2\)</span> and gas_scat: relative density to air at STP) at 36 altitudes.</li>
+<li><code>*gTRANS</code>: total up and down spectral transmittance of absorbing gases <span class="arithmatex">\(T_{gas,abs}^{\uparrow \downarrow}\)</span> (t_total_ud_abs), and spectral transmittance of all scattering gases <span class="arithmatex">\(T_{gas,scat}\)</span> (t_mol_scat) and per absorbing gas <span class="arithmatex">\(T_{gas,abs}.T_{H_2O} = T_{H_2O}^{continuum}.T_{H_2O}^{line}\)</span></li>
+<li><code>*g_pH2O</code>: <span class="arithmatex">\(H_2O\)</span> content (atm.cm, <span class="arithmatex">\(g/cm^2\)</span> + atm.cm/km at 0 &amp; 1km), temperature (K) at 0 &amp; 1km altitude.
+<center><img src="./media/aerosol_tables_3.png"><p><em>Gas table.</em></p></img></center></li>
+</ul>
+</li>
+<li><u><em>Aerosol tables</em></u> (index a)  <ul>
+<li><code>*gas_model_*_aAOD</code>: spectral Aerosol Optical Depth (AOD) per gas model *.</li>
+<li><code>*aECP</code>: normalized Extinction Coefficient vertical Profile at 36 altitudes.</li>
+<li><code>*aHG</code>: Henyey Greenstein (HG) coefficients (a, <span class="arithmatex">\(g_1\)</span>, <span class="arithmatex">\(g_2\)</span>) at 27 wavelengths.</li>
+<li><code>*_RH00_aHG</code>, <code>*_RH80_aHG</code>, <code>*_RH99_aHG</code>: HG coefficients per aerosol model that depends on humidity, for 0%, 80% and 99% relative humidity (RH). <code>*aHG</code> is for RH=70%. From the fit of Lowtran scattering phase functions.</li>
+<li><code>*_AGED_VOLC_aHG</code>, <code>*_FRESH_VOLC_aHG</code>, <code>*_STRT_H2SO4_aHG</code>, <code>*_MET_DUST_aHG</code>: HG coefficients for aerosols that do not depend on humidity.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><center><img src="./media/aerosol_tables_1.png"></img> <img src="./media/aerosol_tables_2.png"></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modtran simulations without aerosol are used to compute the absorption gas "Direct - Direct" transmittance <span class="arithmatex">\(T_{gas}^{\uparrow \downarrow}\)</span> and scattering gas direct transmittance <span class="arithmatex">\(T_{gas,scat}(T_{gas,scat} = T_{gas,scat}\)</span>); for the latter one, <span class="arithmatex">\(\rho_{ground} = 1\)</span> in DART simulations.</p>
+</div>
+<p><u><em>Band <span class="arithmatex">\(\Delta \lambda\)</span> without gas absorption</em></u>: <span class="arithmatex">\(T_{gas}^{\uparrow \downarrow} \approx T_{gas,abs}^2\)</span>, with <span class="arithmatex">\(T_{gas,abs} = T_{CO2,abs}.T_{CO,abs}.T_{CH_4,abs}....T_{O_3,abs}\)</span>.</p>
+<p><u><em>Band <span class="arithmatex">\(\Delta \lambda\)</span> with gas absorption</em></u>: Beer law becomes inaccurate <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(T_{gas,abs}^{\uparrow \downarrow} \neq (T_{gas,abs}^{\downarrow})^2\)</span>. DART uses downward transmittance <span class="arithmatex">\(T_{gas,abs}^{\downarrow} = T_{gas,abs} = T_{CO_2,abs}.T_{CO,abs}....T_{O_3,abs}\)</span> and upward transmittance is <span class="arithmatex">\(T_{gas,abs}^{\uparrow} = \frac {T_{gas}^{\downarrow \uparrow}} {T_{gas,abs}^{\downarrow}.T_{gas,abs}^{2}}\)</span></p>
+<p><center><img src="./media/tables_atmosphere_database.png"><p><em>a) Tables of
+atmosphere database.</em></u></img></center></p>
+<p><center><img src="./media/hg_coefficients.png"><p><em>b) <span class="arithmatex">\(E_{TOA}\)</span>. c) HG coefficients.</em></p></img></center></p>
+<p><center><img src="./media/dart_database.png"><p><em>DART database. a) Modtran <span class="arithmatex">\(P_{H_2O}^{Mod}\)</span> per gas model and <span class="arithmatex">\(T_{atm,H_2O}(\nu ;\Delta \nu =1cm^{-1})\)</span> for <span class="arithmatex">\(n.P_{H_2O}^{Mod}\)</span> with <span class="arithmatex">\(n \in [1\:N]\)</span>. N is gas dependant (21 for USSTD76,...). For any <span class="arithmatex">\(P_{H_2O}\)</span>, DART interpolates on the n <span class="arithmatex">\(T_{atm,H_2O}\)</span>. b) <span class="arithmatex">\(\Delta \tau_{a}^{Mod}\)</span> (550nm) for 8 aerosol types, per gas model; inaccurate for fog because <span class="arithmatex">\(T_{fog}^{Mod}\)</span> is with 4 digits.</em></p></img></center></p>
+<ul>
+<li><strong><em>H2Oground.db</em></strong><br />
+Modtran-derived <span class="arithmatex">\(H_2O\)</span> cross section at 71 bands ([<span class="arithmatex">\(7\mu m\: 14\mu m]\)</span>, <span class="arithmatex">\(\Delta \lambda=0.1\mu m\)</span>), 8 distances (1m, 10m, 50m, 100m, 150m, 250m, 500m, 1km), 8 pressures (880Pa, 920Pa, 950Pa, 980Pa, 1kPa, 1013.15Pa, 1025Pa, 1050Pa), 36 relative humidities ([0.3 1], <span class="arithmatex">\(\Delta rh=0.02\)</span>), and 29 temperatures ([259K 315K], <span class="arithmatex">\(\Delta T=2K\)</span>). Maket Atmosphere can use it with a mean distance value for scenes with "air", to compute extinction coefficients that replace those of the atmosphere extrapolated into the scene. It can greatly improve the simulation of TIR camera in the scene.</li>
+</ul>
+<h3 id="12-atmosphere-output-files"><strong>12) Atmosphere output files</strong></h3>
+<ul>
+<li><strong><em>Atmosphere.nc</em></strong> </li>
+</ul>
+<p>The phase module creates it using the atmosphere.xml file and atmosphere database. For each DART band, it stores: the 1D profiles (36 levels) of temperature, pressure, and gas and aerosol density, and also the transmittance for scattering gasses, the transmittance for absorption of most gases, the total up-and-down transmittance for gas absorption, the aerosol optical depth, single scattering albedo and Henyey Greenstein parameters, and the equivalent absorption cross section (z from 0 to 100km, <span class="arithmatex">\(\Delta l\)</span>=7km) of 5 gases (CO2, H2O, O3, CH4, N2O). These quantities are used to simulate atmosphere RT and to derive EBOA from ETOA (analytic model).</p>
+<ul>
+<li><strong><em>AtmosphereMaket.nc</em></strong></li>
+</ul>
+<p>The maket module creates it if there is "Atmosphere RT". It stores the atmosphere geometry (number of layers for each MA and HA atmosphere, etc.), and information per layer n: temperature, transmittance for gas scattering and gas absorption, up-and-down transmittance for gas absorption, Henyey Greenstein coefficients of aerosols, gas and aerosol mean gas and aerosol extinction coefficients and scattering albedo (<span class="arithmatex">\(\alpha_{e,gas,n}\)</span>, <span class="arithmatex">\(\omega_{gas,n},\)</span> <span class="arithmatex">\(\alpha_{e,aerosol,n}\)</span>, <span class="arithmatex">\(\omega_{aerosol,n}\)</span>), and coefficients {<span class="arithmatex">\(A_n,B_n,C_n,D_n\)</span>} used to compute <span class="arithmatex">\(\alpha_{e,gas}(z)\)</span>, <span class="arithmatex">\(\omega_{gas}(z)\)</span>, <span class="arithmatex">\(\alpha_{e,aerosol}(z)\)</span>, <span class="arithmatex">\(\omega_{aerosol}(z)\)</span>. With the relative altitude (<span class="arithmatex">\(t(z=z_n)=0, t(z_n+\Delta z_n)=\Delta z_n\)</span>): optical depth <span class="arithmatex">\(\delta \tau_n(t) = A_n.t^3 + B_n.t^2 + C_n.t+D_n\)</span>, extinction coefficient <span class="arithmatex">\(\alpha_{e,n}(t)=-3A_n.t^2- 2B_n.t-C_n\)</span>. We have: <span class="arithmatex">\(\delta \tau_n(0)=\Delta \tau_n, \delta \tau_n(\Delta z_n)=0\)</span>, <span class="arithmatex">\(\alpha_{e,n}(0)=\alpha_e(z_n)\)</span>, <span class="arithmatex">\(\alpha_{e,n}(\Delta z_n)=\alpha_e(z_n+\Delta z_n)\)</span>.</p>
+<ul>
+<li>
+<p><strong><em>Atmosphere radiance</em></strong>: 4 products stored in the folder "output", if required in the "Atmosphere" menu.</p>
+<ul>
+<li><strong><em>atmosphere_radiance_before_coupling.binary (see images below).</em></strong> <img src="./media/atmosphere_radiance_boa_before.png" width=250/>. {<span class="arithmatex">\(N_{direction}, cos(\theta).\Delta \Omega\)</span>, <span class="arithmatex">\(N_{MA horizontal cells}\)</span>, X} with <span class="arithmatex">\(X = L_{atm,BOA}^{\downarrow}\)</span> (<span class="arithmatex">\(L_{direct sun,BOA}^{\downarrow}\)</span> with <span class="arithmatex">\(cos(\theta_{sun}.\Delta \Omega_{sun}=0.1\)</span>), <span class="arithmatex">\(L_{atm,sensor}^{\uparrow}\)</span>, <span class="arithmatex">\(L_{atm,sensor}^{\downarrow}\)</span> (<span class="arithmatex">\(L_{direct,sun,sensor}^{\downarrow}\)</span>), <span class="arithmatex">\(L_{atm,TOA}^{\uparrow}\)</span> <span class="arithmatex">\(\forall \Omega\)</span>, and TOA irradiance <span class="arithmatex">\(\downarrow\)</span>, absorbed energy <span class="arithmatex">\((W_{HA,abs}, W_{MA,abs})\)</span> before Earth-Atmosphere coupling for <span class="arithmatex">\((\lambda_1,\lambda_2,…)\)</span>}. DART simulations, possibly with a different number of spectral bands can use it. Data "… shifts…." is for the option "scene with infinite slope". Option "View" can export/import it: binary <span class="arithmatex">\(\Leftrightarrow\)</span> csv.</li>
+<li><strong><em>atmosphere_radiance_after_coupling_BOA_total.binary (see images below):</em></strong> <img src="./media/atmosphere_radiance_boa_after.png" width=250/>. It has the same format as 'atmosphere_radiance_before_coupling', for BOA level only.</li>
+<li><strong><em>AtmosphereOrder1Radiance</em></strong> (radiance\TOA folder): {<span class="arithmatex">\(\theta,\phi, L_{atm,TOA,order1,\lambda}^{\uparrow}(\theta,\phi)\)</span>}. No ground interaction.</li>
+<li><strong><em>AtmosphereRadiance</em></strong> (radiance\TOA folder): {<span class="arithmatex">\(\theta,\phi, L_{atm,TOA,total,\lambda}^{\uparrow}(\theta,\phi)\)</span>}. No ground interaction.</li>
+</ul>
+</li>
+<li>
+<p><strong><em>Atmosphere scattering function: binary file AtmospherePhaseFunction <span class="arithmatex">\(T(\Omega_s, \Omega_v)\)</span> for gas and aerosol.</em></strong><br />
+The menu "View/Report-Data files / Scattering functions" exports this file as a text file. The menu "View / Directions 3D" displays all <span class="arithmatex">\(T(\Omega_s^{'},\Omega_v)\)</span> for incident <span class="arithmatex">\(\Omega_s^{'}\)</span> (option "Incident"), and all <span class="arithmatex">\(T(\Omega_s, \Omega_v^{'})\)</span> for scattered <span class="arithmatex">\(\Omega_v^{'}\)</span> (option "scattered").
+<center><img src="./media/atmosphere_scattering_function.png"/></center></p>
+</li>
+<li><strong><em>Atmosphere spectral transfer functions TF.</em></strong><br />
+dart computes these TFs if in the "Atmosphere" menu one sets the option. These TFs are used in further simulations for fast derivation of TOA and Sensor products from BOA products without simulating atmosphere RT, which saves computer time.<ul>
+<li><strong><em>atmosphere_transfer_function_from_MA.binary </em></strong>(see below): it is created if one asks for "Atmosphere radiance before coupling": <span class="arithmatex">\(TF_{MA-HA}^{scat}(\Omega^{\uparrow}, \Omega^{\uparrow})\)</span>, <span class="arithmatex">\(TF_{MA-BA}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, <span class="arithmatex">\(TF_{MA-Sensor}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\uparrow \:or\: \downarrow})\)</span></li>
+<li><strong><em>atmosphereTransferFunctions.binary</em></strong> (see below): transfer functions (BOA <span class="arithmatex">\(\rightarrow\)</span> BOA,Sensor,TOA): <span class="arithmatex">\(TF_{BA-BA}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, <span class="arithmatex">\(TF_{BA-HA}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\uparrow})\)</span>, <span class="arithmatex">\(TF_{BA-Sensor}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\uparrow})\)</span> and <span class="arithmatex">\(TF_{BA-Sensor}^{scat}(\Delta i, \Delta j, \Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, from <span class="arithmatex">\(TF_{BA-BA}^{scat}(\Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, etc. </li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/atmosphere_radiance_before.png"><p><em><code>Atmosphere_radiance_before_coupl.binary</code>. Here: 2 bands in mode R, 10 x 10 scene, atmosphere = HA + MA layers with 1 horizontal cell. No pixel / distance shift with "repetitive" scenes. 101 direction indices (sun direction index = 100; <span class="arithmatex">\(cos(\theta_{sun}.\Delta \Omega_{sun}=0.1 \implies E_{sun}=0.1.L_{sun}\)</span>). Rows: '<span class="arithmatex">\(cos(\theta).\Delta \Omega\)</span>', 'BOA / Sensor / TOA spectral radiance: <span class="arithmatex">\(W/m^2/sr/\mu m\)</span>'.</em></p></img></center></p>
+<p><center><img src="./media/atmosphere_radiance_after.png"><p><em><code>Atmosphere_radiance_after_coupl.binary</code>. Same options as the previous tables.</em></p></img></center></p>
+<p><center><img src="./media/atmosphere_transfer_function.png"><p><em><code>atmosphere_transfer_function_from_MA.binary</code>. Here, same options as the previous tables.</em></p></img></center></p>
+<p><center><img src="./media/atmosphere_transfer_function_diffuse.png"><p><em><code>atmosphere_transfer_function_from_MA.binary</code>. Transfer functions: <span class="arithmatex">\(TF_{BA-HA}^{scat}(\Omega^{\uparrow}, \Omega^{\uparrow})\)</span>, <span class="arithmatex">\(TF_{BA-Sensor}^{scat}(\Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, <span class="arithmatex">\(TF_{BA-Sensor}^{scat}(\Omega^{\uparrow}, \Omega^{\uparrow})\)</span>, <span class="arithmatex">\(TF_{BA-BA}^{scat}(\Omega^{\uparrow}, \Omega^{\downarrow})\)</span>, <span class="arithmatex">\(TF_{BA-HA}^{dir}(\Omega^{\uparrow}, \Omega^{\uparrow})\)</span> + offset, <span class="arithmatex">\(TF_{BA-Sensor}^{dir}(\Omega^{\uparrow}, \Omega^{\downarrow})\)</span> + offset. Same options as the previous tables.</em></p></img></center></p>
+<ul>
+<li><strong><em>AtmosphereReport.txt</em></strong> (folder BANDn of each band n).<br />
+It is created by dart module. It stores:<ul>
+<li>energy intercepted, absorbed, incident on TOA &amp; BOA (total sum must be a constant) during sun illumination <span class="arithmatex">\((W/\mu m)\)</span> and "BOA <span class="arithmatex">\(\rightarrow\)</span> TOA" transfer (no unit: initial energy per direction = 2048) per iteration of atmosphere R.T. The number of iterations is lmited by its maximal value and a threshold set in the "Atmosphere" menu.</li>
+<li>BOA SKYL and irradiance (<span class="arithmatex">\(E_{dir}\)</span>: direct sun, <span class="arithmatex">\(E_{diff}\)</span>: atmosphere, <span class="arithmatex">\(E_{coupl}\)</span>: "Atmosphere - Earth" coupling, <span class="arithmatex">\(E_{total}\)</span>: total; 2 units: <span class="arithmatex">\(W/m^2/\mu m\)</span> and %), with no, unique and infinite atmosphere backscattering</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/atmosphere_report_file.png"><img src="./media/atmosphere_report_file2.png"><p><em>Example of AtmosphereReport.txt file.</em></p></img></center></p>
+<h3 id="13-sensor-input-files"><strong>13) Sensor input files</strong></h3>
+<ul>
+<li><u><em>Sensor spectral sensitivity <span class="arithmatex">\(s(\lambda)\)</span></em></u>:<ul>
+<li><span class="arithmatex">\(1^{st}\)</span> line: <span class="arithmatex">\(\lambda_{min}-\epsilon\)</span> (<span class="arithmatex">\(\lambda_{min}\)</span> : <span class="arithmatex">\(1^{st}\)</span> wavelength with non zero gain)</li>
+<li><span class="arithmatex">\(2^{nd}\)</span> line: <span class="arithmatex">\(\lambda_{min}\)</span> xxx</li>
+<li>...</li>
+<li>before last line: <span class="arithmatex">\(\lambda_{max}\)</span> xxx wavelength slightly smaller than.</li>
+<li>Last line: <span class="arithmatex">\(\lambda_{max} + \epsilon\)</span> 0.00 (<span class="arithmatex">\(\lambda_{max}\)</span>: last wavelength with non zero gain.)</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/sensor_spectral_sensitivity.png"></img></center></p>
+<ul>
+<li><u><strong><em><code>Sensors.txt</code></em></strong></u> (menu <code>Sensor/Frame Camera</code>): multi-frame-camera <span class="arithmatex">\(\mathcal{C}\)</span>. 1 line per <span class="arithmatex">\(\mathcal{C}\)</span>: <span class="arithmatex">\(\mathcal{C}\)</span> position <span class="arithmatex">\(\mathcal{C}\)</span> rotation (°) <span class="arithmatex">\(\mathcal{C}\)</span> ground area (projected zone on the ground (m).). Separator: space, tabulation</li>
+</ul>
+<p><center><img src="./media/sensors_txt.png"></img></center></p>
+<ul>
+<li><u><strong><em><code>theta.txt</code>, <code>phi.txt</code></em></strong></u> (menu 'Sensor / Pushbroom'): <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(\phi\)</span> (°) for pixels of pushbroom image at ground level (scene minimal altitude). Separator: space, tabulation.</li>
+</ul>
+<p><center><img src="./media/theta_txt_phi_txt.png"></img></center></p>
+<h3 id="14-reflectance-temperature-and-radiance-files"><strong>14) Reflectance, temperature and Radiance files</strong></h3>
+<ul>
+<li>Monoband results (see the image a. below): files <span class="arithmatex">\((\theta, \phi, X_{\Delta \lambda}(\theta,\phi))\)</span>, with <span class="arithmatex">\(X = \rho\)</span>, T or L, and u = BOA, sensor or TOA. They are in Band i \ Iter j folders (n = band number, j = iteration number).</li>
+<li>Multi-band results (see the image b. below): files <span class="arithmatex">\((\theta, \phi, X_{\Delta \lambda_1}, X_{\Delta \lambda_2},…)\)</span>. They are in the "output" folder</li>
+</ul>
+<p><center><img src="./media/band_reflectance_file.png"><p><em>a) Mono-band reflectance file. b) Multi-band reflectance file.</em></p></img></center></p>
+<h3 id="15-simulationpropertiestxt-and-darttxt"><strong>15) Simulation.properties.txt and dart.txt</strong></h3>
+<ul>
+<li><u><strong><em><code>Simulation.properties.txt</code></em></strong></u>: DART modules input / output data. Keys indicate which module creates and/or uses it.</li>
+</ul>
+<p><center><img src="./media/simulation_properties_file.png"><p><em>Simulation.properties file (left) and its viewer in the "View" menu (right).</em></p></img></center></p>
+<ul>
+<li><u><strong><em><code>dart.txt</code></em></strong></u>: a few DART input data and results (i.e., <span class="arithmatex">\(E_{TOA}, E_{BOA}, A_{BOA}, M_{BOA}\)</span>,... per band) that can be used to check thesimulation. Scene albedo <span class="arithmatex">\(A_{BOA}\)</span> / Brightness temperature <span class="arithmatex">\(T_{BOA}\)</span> and also exitance <span class="arithmatex">\(M_{BOA}\)</span> are per DART iteration and for an infinite extrapolation. They result of angular integrals of scene directional radiance. Note that the albedo image is the integral over the only stored DART ortho images. The extrapolated "A /T" allows one to determine the smaller number of iterations necessary to get an accurate "A /T.</li>
+</ul>
+<h3 id="16-raster-files-dart-images-dem"><strong>16) Raster files (DART images, DEM,...)</strong></h3>
+<p>Format of raster image (binary file) is ILWIS: binary file (name.mp#) + header file (name.mpr) (see below).</p>
+<p><center><img src="./media/ilwis_header_file.png"><p><em>Example of ILWIS header file. "CoordBounds" and "Size"are the only fields that DART needs.</em></p></img></center></p>
+<h3 id="17-radiative-budget-rb-of-voxels-and-triangles"><strong>17) Radiative budget (RB) of voxels and triangles</strong></h3>
+<p><center><img src="./media/radiative_budget_files.png"><p><em>RB files example. See Radiative budget (RB) for units and definitions. a) RadiativeBudgetFigures: per facet. b) RadiativeBudget_profile. c) RadiativeBudget_3D. d) RadiativeBudget_3D_ground, 3D_typeNum=u. e) RadiativeBudget_Triangles: per type of element.</em></p></img></center></p>
+<h3 id="18-broadband-files"><strong>18) BroadBand files</strong></h3>
+<p>Broad band products can be computed using spectral weights (e.g., sensor spectral sensitivity: IV.14)</p>
+<ul>
+<li><strong><em><code>BroadBand_data.txt</code></em></strong>: it has 6 columns and a number of lines equal to the number of spectral bands:</li>
+</ul>
+<p><center><img src="./media/broadband_data_file.png"><p><em>RB files of example. See Radiative budget (RB) for units and definitions.</em></p></img></center></p>
+<ul>
+<li><strong><em><code>Exitance.txt</code></em></strong>: broadband exitance in <span class="arithmatex">\(W/m^2\)</span> and <span class="arithmatex">\(W/m^2/\mu m\)</span>.</li>
+<li><strong><em><code>Irradiance.txt</code></em></strong>: broadband irradiance in <span class="arithmatex">\(W/m^2\)</span> and <span class="arithmatex">\(W/m^2/\mu m\)</span>.</li>
+<li><strong><em>RadiativeBudget_3D &amp; RadiativeBudget_profile</em></strong>: 3D (cell) &amp; 1D (scene layer) broadband radiative fluxes:
+<center><img src="./media/radiative_budget_3d_and_profile.png"><p><em>RB files of example. See Radiative budget (RB) for units and definitions.</em></p></img></center></li>
+<li><strong><em>RadiativeBudget_per_element</em></strong>: broadband irradiance <span class="arithmatex">\((W/m^2)\)</span> and for each scene element the downward (incident), upward, intercepted, absorbed and scattered fluxes.</li>
+</ul>
+<h3 id="19-fluorescence-input-and-output-files"><strong>19) Fluorescence: input and output files</strong></h3>
+<p><u><strong><em><code>fluorescence_x_y.txt</code></em></strong></u> (lib_phase folder): the Phase module creates it; x=type of turbid material (cf. 4)), y=index of Vegetation optical property (y=0 for the 1st element). It stores the 4 Fluspect matrices, after their spectral resampling to DART bands, in the following order: backward PSI, backward PSII, forward PSI, forward PSII.</p>
+<p>In the case of N bands, each matrix is: 
+<span class="arithmatex">\(\begin{pmatrix} 
+band\:1\rightarrow band\:1 &amp; ... &amp; band\:1\rightarrow band\:N \\
+... &amp; ... &amp; ... \\
+band\:N\rightarrow band\:1 &amp; ... &amp; band\:N\rightarrow band\:N \\
+\end{pmatrix}\)</span></p>
+<p><u><strong><em>y.Leaf_fluorescence</em></strong></u> (lib_phase folder): <span class="arithmatex">\(T_{SIF}(\Omega_{in},\Omega_{out})\)</span> function created by Phase module, similarly to {<span class="arithmatex">\(T_{diff}(\Omega_{sun},\Omega_i)\)</span>, <span class="arithmatex">\(T_{diff}(\Omega_{sector,k},\Omega_i)\)</span>, <span class="arithmatex">\(TG_{diff}(\Omega_i)\)</span>} in section 2). y=index of Vegetation optical property; y=0 for the <span class="arithmatex">\(1^{st}\)</span> element.</p>
+<p><u><strong><em><code>yieldsPerTriangle.txt</code></em></strong></u>: <span class="arithmatex">\(PSI_{fluorescence-yield}\)</span> and <span class="arithmatex">\(PSII_{fluorescence-yield}\)</span> per triangle (1 line / triangle). PS yields are the same for all triangles if the file stores 2 values only.</p>
+<p><u><strong><em><code>profileEta.bin</code> or <code>profileEta.txt</code></em></strong></u>: same format for <em>etau</em> and <em>etah</em>: "line 1: <span class="arithmatex">\(N_{layer}\)</span> (number of layers) <span class="arithmatex">\(N_\theta\)</span> (number of <span class="arithmatex">\(\theta\)</span> values) <span class="arithmatex">\(N_{\phi}\)</span> (number of <span class="arithmatex">\(\phi\)</span> values)", "line 2: values of <span class="arithmatex">\(\theta\)</span> ", "line 3: values of <span class="arithmatex">\(\phi\)</span> ", "lines 4 to <span class="arithmatex">\(N_{layer}\)</span> +3: <em>eta</em> values". <span class="arithmatex">\(N_{\theta} =N_{\phi} =1\)</span> for <em>etah</em> . SCOPE default
+values: <span class="arithmatex">\(N_{layer} =60\)</span> , <span class="arithmatex">\(N_{\theta} =13\)</span> (<span class="arithmatex">\(\theta \in\)</span> [5:10:75 ;81:2:89]) and <span class="arithmatex">\(N_{\phi} =36\)</span> (<span class="arithmatex">\(\phi \in\)</span> [5:10:355]).</p>
+<p><center><img src="./media/profile_eta.png"></img></center></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.researchgate.net/profile/Didier_Gillotay/publication/226667402_The_Solar_Spectral_Irradiance_from_200_to_2400_nm_as_Measured_by_the_SOLSPEC_Spectrometer_from_the_Atlas_and_Eureca_Missions/links/004635155b63cea072000000.pdf">www.researchgate.net/profile/Didier_Gillotay/publication/226667402_The_Solar_Spectral_Irradiance_from_200_to_2400_nm_as_Measured_by_the_SOLSPEC_Spectrometer_from_the_Atlas_and_Eureca_Missions/links/004635155b63cea072000000.pdf</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

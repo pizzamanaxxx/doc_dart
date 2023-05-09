@@ -1,0 +1,1983 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html">
+      
+      
+        <link rel="prev" href="../4.9/optical_and_temperature_properties.html">
+      
+      
+        <link rel="next" href="../4.11/atmosphere.html">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>4.10 The Earth scene - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-ground-surface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.10 The Earth scene
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4.10 The Earth scene
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="earth_scene.html" class="md-nav__link md-nav__link--active">
+        4.10 The Earth scene
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-ground-surface" class="md-nav__link">
+    a) Ground surface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-plots" class="md-nav__link">
+    b) Plots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-trees" class="md-nav__link">
+    c) Trees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-urban" class="md-nav__link">
+    d) Urban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-water-surfaces" class="md-nav__link">
+    e) Water surfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-3d-imported-object" class="md-nav__link">
+    f) 3D imported object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-dao" class="md-nav__link">
+    g) DAO
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T6/t6.html" class="md-nav__link">
+        WP6 - Trees - creation and importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tutorials/T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-ground-surface" class="md-nav__link">
+    a) Ground surface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-plots" class="md-nav__link">
+    b) Plots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-trees" class="md-nav__link">
+    c) Trees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-urban" class="md-nav__link">
+    d) Urban
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-water-surfaces" class="md-nav__link">
+    e) Water surfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-3d-imported-object" class="md-nav__link">
+    f) 3D imported object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-dao" class="md-nav__link">
+    g) DAO
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>4.10 The Earth scene</h1>
+
+<h3 id="a-ground-surface">a) <strong>Ground <em>surface</em></strong></h3>
+<p>Three types of scenes with a top empty layer (see below):</p>
+<ul>
+<li><u><em>Repetitive scene:</em></u> (default): the DEM last line and row are replaced by its 1st line and row. The repetition of a slope is not a slope!<ul>
+<li>DART-FT: infinite repetition of the Earth scene, including its DEM. A ray that exits a scene through a vertical side re-renters it through its opposite vertical side. </li>
+<li>DART-Lux: rays propagate in a scene that is (<span class="arithmatex">\(2.N_{scene \:repetition} + 1\)</span>) times the user-defined scene. </li>
+</ul>
+</li>
+<li><u><em>Infinite slope</em></u>: repetitive + continuous DEM: the last n lines and rows are modified so that last line and row altitudes are those of the scene 1st line and row to a vertical shift <span class="arithmatex">\(\Delta h_{row}\)</span> or <span class="arithmatex">\(\Delta h_{line}\)</span>. The repetition of a slope is an infinite slope: simple slopes are perfectly simulated. <ul>
+<li>DART-FT: rays that the scene by a vertical side re-renter by its opposite vertical side with <span class="arithmatex">\(\frac{\Delta h_{row}}{\Delta h_{line}}\)</span> shift. </li>
+<li>DART-Lux: rays propagate in a scene that is (<span class="arithmatex">\(2.N_{scene \:repetition} + 1\)</span>) times the user-defined scene.</li>
+</ul>
+</li>
+<li><u><em>Isolated scene</em></u>: there is nothing around the scene. The DEM is not modified. Rays that exit the scene through a vertical side do not re-renter it (<span class="arithmatex">\(\implies\)</span> no surrounding elements to induce neighboring effects). In DART-Lux, it corresponds to <span class="arithmatex">\(N_{scene \:repetition}\)</span> = 0.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The "Infinite slope" and "Repetitive scene" options lead to identical scenes if there is no topography. </p>
+</div>
+<p><center><img src="./media/ground_surface.png"><p><em>a) Repetitive scene. b) Isolated scene. c) Infinite slope.</em></p></img></center></p>
+<p>The simulated "ground" scene (see below) is also characterized by:</p>
+<ul>
+<li>
+<p>Sub scene or scene <img src="../../media/2.png" width=15/>: 3D zone where radiation is tracked. If a sub-scene is simulated, its coordinates are input.</p>
+</li>
+<li>
+<p>Scene horizontal dimension <img src="../../media/3.png" width=15/>: <span class="arithmatex">\(\Delta X, \Delta Y\)</span>.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DART-FT is voxelized with user-defined cell dimensions <span class="arithmatex">\(\Delta x = \Delta y, \Delta z\)</span>.</p>
+</div>
+<ul>
+<li>
+<p>Optical and Temperature properties <img src="../../media/4.png" width=15/>.</p>
+</li>
+<li>
+<p>DEM (Digital Elevation Model) <img src="../../media/5.png" width=15/>: imported 3D object or raster image (with scene dimensions). DART vectorizes the DEM raster image with a few diagonal connection strategies (<img src="../../media/6.png" width=15/> "Lowest difference", "Random",…). The <em>DEMGenerator</em> module (<img src="../../media/7.png" width=15/>) creates DEM raster images from the scene simulation menu () or menu.</p>
+</li>
+<li>
+<p>Coordinates <img src="../../media/8.png" width=15/>: altitude, latitude, longitude; they are only to compute sun direction angles with the option "date".</p>
+</li>
+</ul>
+<p><center><img src="./media/earth_scene_creation.png"><p><em>Earth scene creation. The Editor's 2D display, with its x and y axes, is shown.</em></p></img></center></p>
+<h3 id="b-plots">b) <strong>Plots</strong></h3>
+<p>Plots are surfaces or volumes with a quadrilateral (4 points) horizontal section. "Volume" plots have a height and a bottom side altitude. There are 5 types of plots:</p>
+<ul>
+<li>Ground: a surface (optical properties 2D_...) replaces the local ground zone of the DART scene.</li>
+<li>Vegetation: volume optical property + plot LAI (<span class="arithmatex">\(m^2\)</span> leaf / <span class="arithmatex">\(m^2\)</span> plot) or leaf volume density <span class="arithmatex">\(u_f\)</span> (<span class="arithmatex">\(m^2\)</span> leaf / <span class="arithmatex">\(m^3\)</span> cell). It is a turbid medium or set of triangles with optical properties automatically derived from the volume optical property.</li>
+<li>Ground + Vegetation: combination of the 2 above options.</li>
+<li>Fluid: volume with particle optical property (3D_Flu...) + particle density (/<span class="arithmatex">\(m^3\)</span>).</li>
+<li>Water: fluid + surface above it. Option not finalized. It can be created manually with Fluid option.</li>
+</ul>
+<p><center><img src="./media/plot_creation_options.png"><p><em>Plot creation: options "4 corners" (a) and "rectangle" (b). "Ground+ Vegetation" (c) and "Fluid" (d) plots.</em></p></img></center></p>
+<p>Three methods to create plots:</p>
+<ul>
+<li>Input in the GUI of plot coordinates and properties (see above): mouse right click on <img src="./media/earth_scene_plots.png" width=120/></li>
+<li>Import a CoverMap (VII.5): <img src="../../media/1_white.png" width=15/> raster image (pixel value = index of land/fluid unit) + <img src="../../media/2_white.png" width=15/> text file (<a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html#17-plots-plotstxt-and-information-file-covermapexampletxt">here</a>, see below) that gives properties (e.g., optical properties,…) per CoverMap unit. Plots are stored either in the <code>plots.xml</code> file or in a <code>plots.txt</code> file <img src="../../media/3_white.png" width=15/>, which is usually more convenient if there are many plots.</li>
+<li>Import a plots.txt file (<img src="../../media/4_white.png" width=15/>, IV.17), see below), that can have been created by the "CoverMapImportation" tool.</li>
+</ul>
+<p><center><img src="./media/2_vegetation_plots.png"><p><em>Plots. a) DART editor: 2 vegetation plots.</em></p></img></center></p>
+<p><center><img src="./media/import_covermap_menu.png"><p><em>b) Menu for importing the CoverMap CoverMapExample.mp#</em></p></img></center></p>
+<p><center><img src="./media/nadir_and_oblique_view_scene.png"><p><em>c), stored in DART database (<a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html#17-plots-plotstxt-and-information-file-covermapexampletxt">here</a>). d, e) Nadir and oblique view of the 3D scene.</em></p></img></center></p>
+<p><center><img src="./media/plot_simulation_N_layers.png"><p><em>Plot simulations with N layers (a: LAI =1, b: LAI=7) and 5 leaf dimensions (c). <span class="arithmatex">\(\theta_s = 30°\)</span></em></p></img></center></p>
+<h3 id="c-trees">c) <strong>Trees</strong></h3>
+<p>A DART created tree is characterized by{Tree species, Trunk + Crown: turbid cells or isocele triangles}:</p>
+<ul>
+<li><strong><em>Tree species</em></strong>: trees of species <span class="arithmatex">\(s\in[1\:S]\)</span> share properties (e.g., branches in DART created tree, optical properties, C(s) crown layers (<span class="arithmatex">\(c\in [0\:C-1]\)</span>): see below, leaf / twig area density <span class="arithmatex">\(u_l\)</span> (s), crown shape and dimensions).</li>
+<li><strong><em>Trunk</em></strong>: 8 trapezoids (i.e., horizontal section = octagon), below and within the crown.</li>
+<li><strong><em>Crown</em></strong>: volume (ellipsoid: 0, ellipsoid composed: 1, truncated cone: 3, trapezoid: 4, conique composed: 5).<ul>
+<li><u><em>Crown level</em></u> c(s): relative height %h(c(s)) (level height = %h x crown height), relative <span class="arithmatex">\(u_l\)</span> (%<span class="arithmatex">\(u_l(c(s))\)</span>, relative trunk diameter, leaf and trunk optical properties OP(c(s)), and horizontal profiles of clumping (hole volume proportion h(%r)) and <span class="arithmatex">\(u_l\)</span> (%<span class="arithmatex">\(u_l(c(s),%r)\)</span>): <span class="arithmatex">\(u_l(c(s),%r)=%u_l(c(s),%r).u_l)\)</span>, with %r the relative distance "trunk - crown local radius" (see below) <span class="arithmatex">\(\implies\)</span> LAI &amp; clumping vertical/horizontal profiles can be simulated.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The use of relative values is adapted to simulate trees of the same tree species with different dimensions.</p>
+</div>
+<ul>
+<li>
+<ul>
+<li><u><em>Turbid crown</em></u>: turbid + empty / hole cells. A turbid cell is created only if leaves occupy &gt; 50% cell volume. It can contain several leaf / twig species with specific LAI / <span class="arithmatex">\(u_f\)</span> (<span class="arithmatex">\(m^2\)</span> leaves / <span class="arithmatex">\(m^3\)</span>), TAI (Twig Area Index), LAD,... Then, the leaf occupation of the cell cannot exceed 100%: leaf elements that exceed 100% are stored in other cells.</li>
+<li><u><em>Triangle crown</em></u>: isosceles triangles (heigth =2 .base) that are defined by their area A or number. No twigs.</li>
+</ul>
+</li>
+</ul>
+<p><center><img src="./media/crown_parts.png"><p><em>Crown. Level 0 (bottom): <span class="arithmatex">\(height = 0.5 x H_{crown}\)</span>, vertical relative <span class="arithmatex">\(u_l = 0.33\)</span>, trunk diameter = 0.75 x Diameter of Trunk below crown, horizontal profile of <span style="color:green">holes</span> and <span style="color:blue"><span class="arithmatex">\(u_l\)</span></span>.</em></p></img></center></p>
+<p><u>How to specify <span class="arithmatex">\(u_l\)</span></u>: <a href="https://www.fs.fed.us/psw/topics/urban_forestry/products/cufr_94_PP01_39.pdf">www.fs.fed.us/psw/topics/urban_forestry/products/cufr_94_PP01_39.pdf</a>. For example: <span class="arithmatex">\(u_l \approx 0.5m^{-1}\)</span> (no dense tree) if tree DBH=0.4m, crown heigh = 8m, crown diameter <span class="arithmatex">\(\approx 12m\)</span>, leaf area <span class="arithmatex">\(\approx 300m^2\)</span>.</p>
+<p>Three methods allow one to specify the spatial distribution, dimensions and tree species of trees:</p>
+<ol>
+<li>
+<p><u><em>Exact location + Exact dimensions.</em></u><br />
+Text file (e.g., trees.txt in DART database) with labelled columns: Species_ID for tree species, POS_X &amp; POS_Y for location, lai for tree leaf area or leaf area density per tree, rotation per tree (see below),… Option 2) can use it.<br />
+<center><img src="./media/tree_menu_mode.png"><p><em>Tree menu: mode. Tree presence <img src="../../media/1_green.png" width=15/>, Mode "Exact position + Random dimensions" <img src="../../media/2.png" width=15/> with file that stores tree location <img src="../../media/3.png" width=15/> and zone where LAI is known <img src="../../media/4_black.png" width=15/>, Tree crown content <img src="../../media/5_blue.png" width=15/>.</em></p></img></center></p>
+</li>
+<li>
+<p><u><em>Exact location + Random dimensions.</em></u><br />
+Only labels "Species_ID, POS_X, POS_Y" of file 1) are used. The GUI sets other parameters (mean, <span class="arithmatex">\(\sigma\)</span>: see below).<br />
+<center><img src="./media/tree_trunk_and_crown_rotations.png"><p><em>Tree trunk and crown rotations (nutation, precession, intrinsic).</em></p></img></center></p>
+</li>
+<li>
+<p><u><em>Random location + Random dimensions.</em></u><br />
+Per species, trees are randomy set in disks (radius r), with probability of presence, centred on the nodes of a <span class="arithmatex">\(\Delta x/\Delta y\)</span> grid over the scene (grid option), quadrilateral (zone option) or ellipse (fctdistribution option) (see below).</p>
+</li>
+</ol>
+<p><center><img src="./media/tree_menu_option.png"><p><em>Tree menu: option "Random position + Random dimensions. Trees are located inside disks (5m radius) centred at the nodes of a grid defined by <span class="arithmatex">\(\Delta x=\Delta y=5m\)</span>.</em></p></img></center></p>
+<p><center><img src="./media/tree_crown_shapes_ellipsoidal.png"><p><em>Tree crown shapes. a) Ellipsoidal.</em></p></img></center></p>
+<p><center><img src="./media/tree_crown_shapes_ellipsoid.png"><p><em>Tree crown shapes b) Ellipsoid composed.</em></p></img></center></p>
+<p><center><img src="./media/tree_crown_shapes_truncated.png"><p><em>Tree crown shapes c)Truncated cone.</em></p></img></center></p>
+<p><center><img src="./media/tree_crown_shapes_trapezoid.png"><p><em>Tree crown shapes d) Trapezoid. e) Conique composed (cylinder + truncated cone).</em></p></img></center></p>
+<p><center><img src="./media/tree_crown_shapes_2_levels.png"><p><em>Tree crown shapes f) Tree crowns with 2 levels and LAI / hole vertical profiles.</em></p></img></center></p>
+<h3 id="d-urban">d) <strong>Urban</strong></h3>
+<p>Urban surfaces (roof,...) can be "Single face" or "Double faces" (surface = 2 triangles with opposite normal vectors and specific optical properties). Houses in the same building can have the same properties (see below).</p>
+<p><center><img src="./media/building_optical_properties.png"><p><em>Optical properties of a building with 1 house.</em></p></img></center></p>
+<p>House = 4 walls (4 top corners (x, y, z); 2 corners can be identical) + 1 roof with 4 predefined types (see below):</p>
+<p><center><img src="./media/house_geometric_parameters.png"><p><em>House geometric parameters. a) Walls: 4 points (x,y,z). b) Roof type. c) "No roof": roof with null thickness (2 triangles). c) "Plate roof": roof with a depth. d) "Classic roof" (2 points): 2 slopes. e) "Complex roof" (4 points).</em></p></img></center></p>
+<ul>
+<li>"No": there is a roof with a null depth. It is defined by the wall top corners.</li>
+<li>"Plate": the roof is defined by 4 points at a height <span class="arithmatex">\(\Delta z\)</span> above the 4 wall top corners</li>
+<li>"Classic": the roof is defined by 2 points (x, y, z).</li>
+<li>"Complex": the roof is defined by 4 points (x, y, z).</li>
+</ul>
+<p>Elements other than houses can be created: roads (see below) and small walls.</p>
+<p><center><img src="./media/road_option.png"><p><em>Road: juxtaposition of segments that are defined by their width and extremities.</em></p></img></center></p>
+<h3 id="e-water-surfaces">e) <strong>Water surfaces</strong></h3>
+<p>Water volumes can be simulated (e.g., fluid plot + top specular/refractive surface). Water surfaces are opaque (see below) with possible priority on trees and vegetation plots (e.g., mangrove forests).Their horizontal projection is:</p>
+<ul>
+<li>Lake: ellipse defined by its center and its two axes along the Ox and Oy axes.</li>
+<li>River: specific width + segments between successive points (x,y).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To simulate within water RT, define water plots.</p>
+</div>
+<p><center><img src="./media/water_surface.png"><p><em>Water surfaces.</em></p></img></center></p>
+<h3 id="f-3d-imported-object">f) <strong>3D imported object</strong></h3>
+<p>DART imports 3D objects (set of groups of triangles) in obj format; cf examples in DART database (see below). It cannot edit it, but can manage its geometry (location, scale, rotation) and OP per group of triangles. Blender can edit them (export option for DART: Apply, modifiers, Write materials, Triangulate faces, Material groups, Z forward, Yup).</p>
+<p><center><img src="./media/examples_tree.png"><p><em>Examples of 3D trees.</em></p></img></center></p>
+<p>1) <u><em>Example of importation</em></u>: <em>cherry tree</em> (<code>Merisier_adulte.obj</code>; in DART database)</p>
+<p>A 3D object can be defined as a "DEM", "on top of a DEM" or "Independent of DEM", with options per group <img src="../../media/0_black.png" width=15/>:</p>
+<ul>
+<li>Scene symmetry: a 3D object that exits partly the scene can appear on the scene opposite side (<img src="../../media/1_black.png" width=15/>).</li>
+<li>Ignore/Hide the 3D object when creating the scene. Option available per group of 3D object (<img src="../../media/2_black.png" width=15/>).</li>
+<li>Color of the disk that represents the 3D object in the editor (<img src="../../media/3_black.png" width=15/>).</li>
+<li>Transformation of all triangles of the 3D object into turbid medium (<img src="../../media/4_black.png" width=15/>); it can be performed per group. The resulting LAI can be directly computed or specified by the user.</li>
+<li>Assign the same optical properties to all triangles of the 3D object (<img src="../../media/5_black.png" width=15/>).</li>
+<li>"Mono face" or "Double face" (surface = 2 equal triangles with opposite normal, and possibly different OPs <img src="../../media/6_black.png" width=15/>.</li>
+</ul>
+<p><center><img src="./media/import_and_display_3d_object.png"><p><em>Import and display of a 3D object.</em></p></img></center></p>
+<p>2) <u><em>Colors</em></u>: they qare very useful for setting the material of facets in the same group of the 3D object (cf. input/dart.typ), and also to get nice 3D views (e.g., color 'Bark' for group 'Trunk' see below) </p>
+<p><center><img src="./media/colors_management.png"><p><em>Management of colors for displaying the 3D objects in the main GUI.</em></p></img></center></p>
+<p>3) <u><em>Geometry</em></u>: 3D object position (x, y, z), scale factor (x, y, z) and rotation (3 angles) can be specified.</p>
+<p><center><img src="./media/geometry_management_menu.png"><p><em>Management of the geometry of 3D objects.</em></p></img></center></p>
+<p>Rotations are relative to the point (0,0,0). Hence, results can differ a lot depending on the 3D object coordinates. The maket module must be run after setting thegeometry of 3D objects.</p>
+<p>4) <u><em>Group properties</em></u><br />
+Facet properties (e.g., facets with single or double face option) are identical for all groups of the 3D object or defined per group of the object. The "display" option shows the 3D object. A click on the group (e.g., "Foliage " and "Trunk" in see below) displays only the triangles of that group. It allows one to verify that one treats the correct group. The transformation "Triangles → Turbid medium" can be done for the whole 3D object or part of its groups.</p>
+<p><center><img src="./media/properties_management.png"><p><em>Management of the geometry of 3D objects. a) Menu. b) Display per user selected group.</em></p></img></center></p>
+<p>5) <u><em>Transformation of triangles into turbid medium</em></u><br />
+It can be useful to convert a 3D object with many facets as a volume of cells filled with turbid medium, each with:</p>
+<ul>
+<li><span class="arithmatex">\(A_{cell}\)</span> : automatically computed value per cell that is the area <span class="arithmatex">\(A_{f,cell}\)</span> of facets per cell with a multiplicative factor (default value is 1), or a user-defined LAI value for the derived turbid vegetation, or a user-defined leaf area (m²).</li>
+<li>
+<p><span class="arithmatex">\(LAD_{cell}\)</span>: <span class="arithmatex">\(LAD\)</span> (e.g., spherical) for all cells or <span class="arithmatex">\(LAD\)</span> per cell {<span class="arithmatex">\(N\)</span> areas <span class="arithmatex">\(A_{cell}^n\)</span> (SimulationProperties: <span class="arithmatex">\(\sum_{n=1}^N A_{cell}^n = A_{f,cell}\)</span>) + <span class="arithmatex">\(N\)</span> elliptical <span class="arithmatex">\(LADs\)</span> <span class="arithmatex">\(g_n(θ_1)=\frac {f(\epsilon,ALA_n)} {\sqrt{1-\epsilon².cos(θ_1-ALA_n)}}\)</span>, Average Leaf Angle <span class="arithmatex">\(ALA_n \approx \frac {(2n-1).\pi} {4.N}\)</span>, eccentricity <span class="arithmatex">\(\epsilon_n = 1-e^{1-N}\)</span>.</p>
+</li>
+<li>
+<p>Optical property (3D_Veg_...): it is user-specified as a volume optical property (i.e., turbid medium). </p>
+</li>
+</ul>
+<p><center><img src="./media/transforming_group_triangles_turbid.png"><p><em>Transforming a group of triangles into turbid medium with 1m and 0.2m resolutions.</em></p></img></center></p>
+<p>6) <u><em>Fields of 3D objects</em></u><br />
+DART creates fields of 3D objects (see below) using a text file that gives each object location (<a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html#19-3d-object-obj-and-mtl-files-and-object-field">here</a>) and possibly each object specific geometric transformation (<a href="../../../Format_DART_files/1-All_dart_modes/all_dart_modes.html#19-3d-object-obj-and-mtl-files-and-object-field">here</a>).</p>
+<p><center><img src="./media/specification_field.png"><p><em>Specification of a field of 3D objects.</em></p></img></center></p>
+<p><center><img src="./media/example_triangle_to_turbid.png"><p><em>Example of transformation "Triangle to Turbid"</em></p></img></center></p>
+<h3 id="g-dao">g) <strong>DAO</strong></h3>
+<p>The document <code>DAO_documentation.pdf</code> (<code>…\DART\bin\python_script\DAO</code>) presents the Python API that allows one to modify or create from scratch a DART scene. In order to run it with DART, one is advised to create all other information (i.e., discrete directions, optical properties, atmosphere) with DART.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="Tutorials/T6/t6.html">
+      
+      
+        <link rel="prev" href="../T5/t5.html">
+      
+      
+        <link rel="next" href="../T7/t7.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>WP6 - Trees - creation and importation - DART User's Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-tree-creation-wp6a" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-header__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DART User's Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WP6 - Trees - creation and importation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="DART User&#39;s Manual" class="md-nav__button md-logo" aria-label="DART User's Manual" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DART User's Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I. Remote sensing and radiative budget modeling of natural and urban surfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Remote_sensing/remote_sensing.html" class="md-nav__link">
+        Remote sensing and radiative budget modeling of natural and urban surfaces
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II. DART model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II. DART model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_model/dart_model.html" class="md-nav__link">
+        DART Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III. DART functionalities and products
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III. DART functionalities and products
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/1-File_architecture/file_architecture.html" class="md-nav__link">
+        1 - File Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/2-GUI/gui.html" class="md-nav__link">
+        2 - Graphical User Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.html" class="md-nav__link">
+        3 - Editor of simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.html" class="md-nav__link">
+        4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR'
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.html" class="md-nav__link">
+        4.2 Passive RS & RB: Forward mode (DART-FT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.html" class="md-nav__link">
+        4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.html" class="md-nav__link">
+        4.4 Monte Carlo (DART-MC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.html" class="md-nav__link">
+        4.5 LiDAR: Forward mode (DART-RC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.html" class="md-nav__link">
+        4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.html" class="md-nav__link">
+        4.7 Earth scene products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.html" class="md-nav__link">
+        4.8 Direction of rays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.html" class="md-nav__link">
+        4.9 Optical and Temperatures properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.html" class="md-nav__link">
+        4.10 The Earth scene
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.html" class="md-nav__link">
+        4.11 Atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.html" class="md-nav__link">
+        4.12 Inversion (being removed)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          5 - Run menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          5 - Run menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.html" class="md-nav__link">
+        5.1 DART basic modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.2/the_lut.html" class="md-nav__link">
+        5.2 The LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.html" class="md-nav__link">
+        5.3 Sequencer module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.html" class="md-nav__link">
+        5.4 Python scripts to run DART
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          6 - View menu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          6 - View menu
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.html" class="md-nav__link">
+        6.1 View scene 3D and 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.2/view_image.html" class="md-nav__link">
+        6.2 View image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.html" class="md-nav__link">
+        6.3 3D object viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.html" class="md-nav__link">
+        6.4 Directions 3D view
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.html" class="md-nav__link">
+        6.5 Directional reflectance/Temperature 1D & 2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.6/lidar.html" class="md-nav__link">
+        6.6 LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.html" class="md-nav__link">
+        6.7 Surface radiative budget (RB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.8/lut.html" class="md-nav__link">
+        6.8 LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/6-View_menu/6.9/report_data_files.html" class="md-nav__link">
+        6.9 Report / data files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          7 - Tools menu: run DART tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          7 - Tools menu: run DART tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.html" class="md-nav__link">
+        7.1 SAIL model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.html" class="md-nav__link">
+        7.2 Leaf spectra inversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.html" class="md-nav__link">
+        7.3 Computation of parametric model coefficients
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.html" class="md-nav__link">
+        7.4 Creation of 3D objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.html" class="md-nav__link">
+        7.5 LUT tools: BRF model inversion and noised LUT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.html" class="md-nav__link">
+        7.6 Topography tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.html" class="md-nav__link">
+        7.7 CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.html" class="md-nav__link">
+        7.8 Band calculation tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html" class="md-nav__link">
+        7.9 Color composite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.html" class="md-nav__link">
+        7.10 3D Radiative budget extractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.html" class="md-nav__link">
+        7.11 DART database manager
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV. Format of DART files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV. Format of DART files
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/1-All_dart_modes/all_dart_modes.html" class="md-nav__link">
+        1 - All DART modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/2-DART_FT/dart_ft.html" class="md-nav__link">
+        2 - DART-FT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/3-DART_RC/dart_rc.html" class="md-nav__link">
+        3 - DART-RC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format_DART_files/4-DART_LUX/dart_lux.html" class="md-nav__link">
+        4 - DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V - General advices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V - General advices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General_advices/general_advices.html" class="md-nav__link">
+        **General Advices**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI - Physical bases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI - Physical bases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physical_bases/physical_bases.html" class="md-nav__link">
+        **Physical bases**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          VII. Work packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII. Work packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T0/t0.html" class="md-nav__link">
+        WP0 - DART Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T1/t1.html" class="md-nav__link">
+        WP1 - Reflectance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T2/t2.html" class="md-nav__link">
+        WP2 - Temperature
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T3/t3.html" class="md-nav__link">
+        WP3 - House, Specular and polarized reflectance, atmosphere
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T4/t4.html" class="md-nav__link">
+        WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T5/t5.html" class="md-nav__link">
+        WP5 - Fluids and CoverMap importation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WP6 - Trees - creation and importation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="t6.html" class="md-nav__link md-nav__link--active">
+        WP6 - Trees - creation and importation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tree-creation-wp6a" class="md-nav__link">
+    1) Tree creation: WP6A
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Tree creation: WP6A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1a-turbid-tree-option-exact-location-random-dimensions-wp6aa_ft" class="md-nav__link">
+    1.a - Turbid tree + option "Exact location + Random dimensions": WP6Aa_FT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1b-turbid-tree-exact-location-exact-dimensions-wp6ab_ft-copy-of-wp6aa" class="md-nav__link">
+    1.b - Turbid tree + "Exact location + Exact dimensions": WP6Ab_FT (copy of WP6Aa)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c-triangle-tree-exact-location-exact-dimensions-wp6ac_ft-copy-of-wp6ab" class="md-nav__link">
+    1.c - Triangle tree + "Exact location + Exact dimensions": WP6Ac_FT (copy of WP6Ab)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tree-creation-option-random-location-random-dimensions-wp6b-copy-of-wp6aa" class="md-nav__link">
+    2) Tree creation + option "Random location + Random dimensions": WP6B (copy of WP6Aa)
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Tree creation + option "Random location + Random dimensions": WP6B (copy of WP6Aa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-dart-ft-wp6b_ft" class="md-nav__link">
+    2.a - DART-FT (WP6B_FT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2b-dart-lux-wp6b-lux" class="md-nav__link">
+    2.b - DART-Lux (WP6b-Lux)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creation-of-a-scene-with-different-tree-species-wp6c-copy-of-wp6aa_ft" class="md-nav__link">
+    3) Creation of a scene with different tree species: WP6C (copy of WP6Aa_FT)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-importation-of-3d-tree-wp6d-copy-of-wp6aa_ft" class="md-nav__link">
+    4) Importation of 3D tree: WP6D (copy of WP6Aa_FT)
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Importation of 3D tree: WP6D (copy of WP6Aa_FT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-wp6da" class="md-nav__link">
+    4.a - WP6Da
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-wp6db-copy-of-wp6da" class="md-nav__link">
+    4.b - WP6Db (copy of WP6Da)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-transformation-of-an-imported-3d-triangle-tree-into-a-turbid-tree-wp6e-copy-of-wp6da" class="md-nav__link">
+    5) Transformation of an imported 3D triangle tree into a turbid tree: WP6E (copy of WP6Da)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-comparison-of-dart-methods-for-simulating-vegetation-wp6f" class="md-nav__link">
+    6) Comparison of DART methods for simulating vegetation: WP6F
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T7/t7.html" class="md-nav__link">
+        WP7 - Topography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T8/t8.html" class="md-nav__link">
+        WP8 - LiDAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T9/t9.html" class="md-nav__link">
+        WP9 - Airborne and in-situ sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T10/t10.html" class="md-nav__link">
+        WP10 - RAMI Experiment - run of DART using python scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T11/t11.html" class="md-nav__link">
+        WP11 - Mapping global sun radiometric quantities (out of date)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T12/t12.html" class="md-nav__link">
+        WP12 - Satellite image inversion (under development)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Annexes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex1/annex1.html" class="md-nav__link">
+        Annex 1: DART Python modules / scripts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex2/annex2.html" class="md-nav__link">
+        Annex 2: DART Albedo and Ortho images
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex3/annex3.html" class="md-nav__link">
+        Annex 3: AERONET and ECMWF data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex4/annex4.html" class="md-nav__link">
+        Annex 4: Forest simulation with DART-Lux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex5/annex5.html" class="md-nav__link">
+        Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex6/annex6.html" class="md-nav__link">
+        Annex 6: Optimal domain of leaf variables to get leaf optical properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annexes/Annex7/annex7.html" class="md-nav__link">
+        Annex 7: List of abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tree-creation-wp6a" class="md-nav__link">
+    1) Tree creation: WP6A
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Tree creation: WP6A">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1a-turbid-tree-option-exact-location-random-dimensions-wp6aa_ft" class="md-nav__link">
+    1.a - Turbid tree + option "Exact location + Random dimensions": WP6Aa_FT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1b-turbid-tree-exact-location-exact-dimensions-wp6ab_ft-copy-of-wp6aa" class="md-nav__link">
+    1.b - Turbid tree + "Exact location + Exact dimensions": WP6Ab_FT (copy of WP6Aa)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1c-triangle-tree-exact-location-exact-dimensions-wp6ac_ft-copy-of-wp6ab" class="md-nav__link">
+    1.c - Triangle tree + "Exact location + Exact dimensions": WP6Ac_FT (copy of WP6Ab)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tree-creation-option-random-location-random-dimensions-wp6b-copy-of-wp6aa" class="md-nav__link">
+    2) Tree creation + option "Random location + Random dimensions": WP6B (copy of WP6Aa)
+  </a>
+  
+    <nav class="md-nav" aria-label="2) Tree creation + option "Random location + Random dimensions": WP6B (copy of WP6Aa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a-dart-ft-wp6b_ft" class="md-nav__link">
+    2.a - DART-FT (WP6B_FT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2b-dart-lux-wp6b-lux" class="md-nav__link">
+    2.b - DART-Lux (WP6b-Lux)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creation-of-a-scene-with-different-tree-species-wp6c-copy-of-wp6aa_ft" class="md-nav__link">
+    3) Creation of a scene with different tree species: WP6C (copy of WP6Aa_FT)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-importation-of-3d-tree-wp6d-copy-of-wp6aa_ft" class="md-nav__link">
+    4) Importation of 3D tree: WP6D (copy of WP6Aa_FT)
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Importation of 3D tree: WP6D (copy of WP6Aa_FT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-wp6da" class="md-nav__link">
+    4.a - WP6Da
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-wp6db-copy-of-wp6da" class="md-nav__link">
+    4.b - WP6Db (copy of WP6Da)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-transformation-of-an-imported-3d-triangle-tree-into-a-turbid-tree-wp6e-copy-of-wp6da" class="md-nav__link">
+    5) Transformation of an imported 3D triangle tree into a turbid tree: WP6E (copy of WP6Da)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-comparison-of-dart-methods-for-simulating-vegetation-wp6f" class="md-nav__link">
+    6) Comparison of DART methods for simulating vegetation: WP6F
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>WP6 - Trees - creation and importation</h1>
+
+<p><u><em>Objective:</em></u> spatial distribution of DART-created and imported trees, possibly using fields (i.e., xy location,… per tree).</p>
+<p><center><img src="./media/parameters_to_set.png"><p><em>a) Parameters to set: Forward (DART-FT) and Bi-directional (DART-Lux) modes. b) File <code>trees_WP6.txt</code> in simulation input folder. It can be the edition of file trees.txt in DART database.</em></p></img></center></p>
+<h3 id="1-tree-creation-wp6a">1) Tree creation: WP6A</h3>
+<p><u><em>Objective:</em></u> the 3 DART methods (<img src="../media/1_blue.png" width=15/>, <img src="../media/2_blue.png" width=15/>, <img src="../media/3_blue.png" width=15/>) to get DART-created trees.</p>
+<p><center><img src="./media/3_dart_methods.png"></img></center></p>
+<h4 id="1a-turbid-tree-option-exact-location-random-dimensions-wp6aa_ft">1.a - Turbid tree + option "Exact location + Random dimensions": WP6Aa_FT</h4>
+<p>Tree creation method <img src="../media/1_blue.png" width=15/> only reads the tree species index (i.e., optical properties, LAI profile,…), xy location, and possibly leaf area (noted LAI!), from a tree file (here: <code>trees_WP6.txt</code>) that can store each tree geometry. Other information is directly specified by the user in the GUI. The figure below shows scene nadir images.</p>
+<p><center><img src="./media/nadir_images.png"><p><em>Nadir images. a) <span class="arithmatex">\(0.4\mu m\)</span>. b) <span class="arithmatex">\(0.56\mu m\)</span>. c) <span class="arithmatex">\(0.66\mu m\)</span>. d) <span class="arithmatex">\(0.9\mu m\)</span>. e) Color composite (cf. <a href="../../DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.html">III.7.9</a>, <a href="../T3/t3.html#4-toa-sensor-and-boa-spectra-wp3e-ft-ct37s-wp3e-lux-ct53s">WP3E</a>).</em></p></img></center></p>
+<p><strong>Create the scene</strong> <span class="arithmatex">\(NDVI=\frac {\rho_{NIR} - \rho_{red}} {\rho_{NIR} + \rho_{red}}\)</span> image (see below): tool <code>Tools/Band Combination</code> (cf. <a href="../T3/t3.html#7s-specular-reflectance-and-polarization-wp3h-ct24">WP3H</a>)</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Check the consistency of NDVI image: high value for green vegetation and low for bare ground.</p>
+</div>
+<p><center><img src="./media/scene_ndvi_image.png"><p><em>Scene NDVI image.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Forward mode, the information panel of menu "View\ Scene 2D") displays <span class="arithmatex">\(LAI_{scene}\)</span>; here, it is <span class="arithmatex">\(\frac {leaf\:area} {scene\:area} = 3\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For below copies of WP6Aa, the folder "BandCombination" can be deleted to reduce computer memory.</p>
+</div>
+<h4 id="1b-turbid-tree-exact-location-exact-dimensions-wp6ab_ft-copy-of-wp6aa">1.b - Turbid tree + "Exact location + Exact dimensions": WP6Ab_FT (copy of WP6Aa)</h4>
+<ul>
+<li>Set DART tree creation method <img src="../media/2_blue.png" width=15/> with WP6Aa's hole distribution. Then, DART uses all available data of file <code>trees_WP6.txt</code> (crown shape,…). Note that the tree geometry slightly differs from WP6Aa.</li>
+</ul>
+<h4 id="1c-triangle-tree-exact-location-exact-dimensions-wp6ac_ft-copy-of-wp6ab">1.c - Triangle tree + "Exact location + Exact dimensions": WP6Ac_FT (copy of WP6Ab)</h4>
+<ul>
+<li>"Fill" the tree crown with triangles (<span class="arithmatex">\(area_{triangle}\)</span>: 0.03<span class="arithmatex">\(m^2\)</span>) instead of turbid medium.</li>
+<li>
+<p>Set the Maket product "Triangles area products" (i.e., distribution of areatriangle as 3D array, vertical profile, and per type of scene element. Here, we only select "per type"; results (i.e., <span class="arithmatex">\(300m^2\)</span> for leaves and <span class="arithmatex">\(100m^2\)</span> for the scene) are stored in the "Maket" section of <code>SimulationProperties.txt</code> file.</p>
+</li>
+<li>
+<p>Set Maket product <img src="./media/3d_object_button.png" width=150/> to create the 3D object <code>dsm.obj</code>. It stores all facets of the scene into 3 groups: "DARTground","DARTcanopy" and "DARTtrunk". Comment its 2 ground facets "f 1 2 3" et "f 4 5 6" to get the 3D tree object, and name it <code>TreeObjWP6Ac.obj</code>; WP6B_Lux uses it.</p>
+</li>
+</ul>
+<h3 id="2-tree-creation-option-random-location-random-dimensions-wp6b-copy-of-wp6aa">2) Tree creation + option "Random location + Random dimensions": WP6B (copy of WP6Aa)</h3>
+<p><u><em>Scene:</em></u> 20m x 20m. Tree creation method <img src="../media/3_blue.png" width=15/> randomly locates (see below) the WP6Aa tree at nodes of a grid <span class="arithmatex">\((\Delta x=4m, \Delta y=5m)\)</span> inside disks (radius 2m) with 90% probability of presence. Crowns are filled with <span class="arithmatex">\(0.03m^2\)</span> facets. LAI=3.</p>
+<p>The figure below illustrates that images of a same scene from successive DART runs differ if the scene is simulated with
+option <img src="./media/random_seed_button.png" width=220/> because this option leads to different tree and leaf / hole geometries.</p>
+<h4 id="2a-dart-ft-wp6b_ft">2.a - DART-FT (WP6B_FT)</h4>
+<p>computer time (CT) is 2' 39" with <span class="arithmatex">\(\Delta r = 0.5m\)</span> and 32' 14" with <span class="arithmatex">\(\Delta r = 0.1m\)</span>.</p>
+<p><center><img src="./media/menu_of_method.png"><p><em>Menu of method <img src="../media/3_blue.png" width=15/> "Random location + Random dimensions" for creating a tree spatial distribution.</em></p></img></center></p>
+<p><center><img src="./media/dart_ft_images.png"><p><em>DART-FT simulated with images option <img src="./media/random_seed_button.png" width=220/>. <span class="arithmatex">\(0.56\mu m\)</span>.</em></p></img></center></p>
+<h4 id="2b-dart-lux-wp6b-lux">2.b - DART-Lux (WP6b-Lux)</h4>
+<p>With option "Conversion of N turbid tree crowns into facets in the tree crown volume", DART-Lux creates N 3D independent objects (<span class="arithmatex">\(\implies\)</span> N ply files). Another approach is shown here.</p>
+<ul>
+<li>
+<p>Edit the file Tree_report (i.e., location xy, <span class="arithmatex">\(N_{triangles}\)</span> &amp; <span class="arithmatex">\(Area_{triangle}\)</span> / tree) of WP6B_FT as the field <code>FieldObjWP6B.txt</code> to get the tree xy distribution of WP6B_FT. Specific scaling factors <span class="arithmatex">\((s_x,s_y,s_z)\)</span> and rotations <span class="arithmatex">\((rot_1,rot_2, rot_3)\)</span> could be applied per tree to get variable trees, which is more realistic. Note that a factor <span class="arithmatex">\(s=s_x=s_y=s_z\)</span> multiplies the foliar area by <span class="arithmatex">\(s^2\)</span>.
+<center><img src="./media/field_obj.png"></center></p>
+</li>
+<li>
+<p>Import the field of 3D objects <code>FieldObjWP6B.txt</code> (see below) and object <code>TreeObjWP6Ac.obj</code>. All trees will be clones of this object (<span class="arithmatex">\(\implies\)</span> 1 ply file). Set the correct surface optical properties to the groups DARTcanopy and DARTtrunk.</p>
+</li>
+</ul>
+<p><center><img src="./media/importation_of_3d_object.png"><p><em>Importation of the 3D object TreeObjWP6Ac.objin the field <code>FieldObjWP6B.txt</code>.</em></p></img></center></p>
+<p><center><img src="./media/brf_plot.png"></img></center></p>
+<p>The figure above shows:</p>
+<ul>
+<li>Images (WP6B_Lux): <span class="arithmatex">\(0.56\mu m\)</span> (a: nadir, b: oblique) and <span class="arithmatex">\(0.9\mu m\)</span> (c: nadir), pixel size <span class="arithmatex">\(\Delta r = 0.1m\)</span>, CT=2' 26".</li>
+<li>2D BRF plot:<ul>
+<li>direct interpolation of the 360 x 90 BRF map. <span class="arithmatex">\(N_{samples}\)</span>: 50 (d: WP6B_Lux) &amp; 103 (e: WP6B_Lux_BRF). (<span class="arithmatex">\(0.56\mu m\)</span>) </li>
+<li>interpolation of <code>brf.txt</code> that stores mean values of DART images and interpolations of the BRF map for all upward discrete directions (here: 103 + plus directions around hot spot). It is usually smoother than the direct 2D BRF plot. <span class="arithmatex">\(N_{samples} = 50\)</span> (f: WP6B_Lux) and 103 (g: WP6B_Lux_BRF).</li>
+</ul>
+</li>
+<li>1D BRF plot (solar plane, 4 bands): interpolation of <code>brf.txt</code>. <span class="arithmatex">\(N_{samples} = 50\)</span> (h: WP6B_Lux) &amp; 103 (i: WP6B_Lux_BRF).</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>BRF plots become smoother with increasing <span class="arithmatex">\(N_{samples}\)</span>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Due to its 1° resolution, the BRF map, and therefore the direct 2D BRF, tends to underestimate the hotspot (by more than 13% at <span class="arithmatex">\(0.56\mu m\)</span> with <span class="arithmatex">\(N_{samples}=103\)</span>).. <code>brf.txt</code>, and therefore its associated 2D BRF plot, is more accurate around the hotspot, if the hotspot image is simulated and if thehotspot direction from the BRF map is removed).</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>With small <span class="arithmatex">\(N_{samples}=50\)</span>, the random noise can lead to maximal reflectance in the neighborhood of the hotspot.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>BRF is minimal for very oblique directions. This effect decreases if <span class="arithmatex">\(N_{scene repetition}\)</span> is increased.</p>
+</div>
+<p><center><img src="./media/nadir_oblique_1.png"></img></center></p>
+<p><center><img src="./media/nadir_oblique_2.png"><p><em>DART-Lux. <span class="arithmatex">\(\Delta r=0.1m\)</span>. <span class="arithmatex">\(\theta_s=30°, \phi_s=225°\)</span>. Images: <span class="arithmatex">\(0.56\mu m\)</span> (a: nadir, b: oblique), <span class="arithmatex">\(0.9\mu m\)</span> (c: nadir); CT=2' 26". 2D BRF (<span class="arithmatex">\(0.56\mu m\)</span> ): d,e) direct interpolation of BRF map; f,g) interpolation of <code>brf.txt</code> (from BRF map + hotspot image; manual removal of BRF map's hotspot direction). h,i) 1D BRF (4 bands, solar plane): interpolation of <code>brf.txt</code>.</em></p></img></center></p>
+<h3 id="3-creation-of-a-scene-with-different-tree-species-wp6c-copy-of-wp6aa_ft">3) Creation of a scene with different tree species: WP6C (copy of WP6Aa_FT)</h3>
+<p><u><em>Objective:</em></u> scene with several tree species (i.e., crown shape,..) + Option "Exact location + Random dimensions".</p>
+<p><u><em>Scene:</em></u> 20m x 20m. 4 DART-created trees (2 tree species: 0, 1). The table below shows the tree file <img src="../media/1.png" width=15/> (species, x, y, and possibly Leaf area), the DART-tree GUI menu <img src="../media/2.png" width=15/>, and tree parameters <img src="../media/3.png" width=15/> per species.</p>
+<p>The images below show the scene mock-up and nadir images from DART-FT at <span class="arithmatex">\(\Delta r=0.5m\)</span> and DART-Lux at <span class="arithmatex">\(\Delta r=0.1m\)</span>.</p>
+<p><center><img src="./media/setting_dart_created_trees.png"></img><p><em>Setting DART-created trees. <img src="../media/1.png" width=15/> Tree position file. <img src="../media/2.png" width=15/> DART-created trees menu. <img src="../media/3.png" width=15/> Tree species parameters.</em></p></center></p>
+<p><center><img src="./media/3d_scene_mock_up.png"><p><em>a) 3D scene mock-up. Nadir images: b) DART-FT, <span class="arithmatex">\(\Delta r=0.5m\)</span>; c) DART-Lux: <span class="arithmatex">\(\Delta r=0.1m\)</span>. <span class="arithmatex">\(0.56\mu m\)</span>.</em></p></img></center></p>
+<h3 id="4-importation-of-3d-tree-wp6d-copy-of-wp6aa_ft">4) Importation of 3D tree: WP6D (copy of WP6Aa_FT)</h3>
+<p><u><em>Objective:</em></u> to import a 3D tree (i.e., 3D object made of facets) (WP6Da) and a field of 3D trees (WP6Db).</p>
+<p><u><em>Scene:</em></u> 10m x 10m. 4 bands {<span class="arithmatex">\(0.4\mu m\)</span>, <span class="arithmatex">\(0.56\mu m\)</span>, <span class="arithmatex">\(0.66\mu m\)</span>, <span class="arithmatex">\(0.9\mu m\)</span>}.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For DART-FT: the illumination grid must be consistent with facet dimensions for getting accurate results.</p>
+</div>
+<ul>
+<li>DART-created trees can be ignored (<img src="../media/1.png" width=15/>) or removed (<img src="../media/2.png" width=15/>). Here, we remove them (<img src="../media/2.png" width=15/>). <img src="./media/ignore_options.png"></img></li>
+</ul>
+<h4 id="4a-wp6da">4.a - WP6Da</h4>
+<p><strong>Import and display the 3D tree <code>benjamina.obj</code>, and rename its groups</strong> (the images a. and b. below)</p>
+<p>The tree is located in folder <code>Dart\database\3D_Objects\Tree\Aesthetic_Trees\Deciduous</code>. It is made of 25800 triangles that belong to 2 groups: 1 group for trunk and branches and 1 group for leaves. Specific properties are assigned per group. To view each group individually, display the tree with the '3D View' option (see the images b. and c. below), then, select a group (see the images a. and d. below). Groups can be named "Trunk" and "Leaf".</p>
+<p><strong>Define colors and assign them to the groups:</strong> menu "Colors / Custom colors" (see the image a. below)</p>
+<p>The color of a facet sets its material. The file <code>input\dart.typ</code> lists all defined materials, including DART materials.</p>
+<p><strong>Set the tree location (x=y=4) and scale factor</strong> (1.8 for all axes): menu <code>Object / Geometric properties</code></p>
+<p><strong>Assign optical properties per group of facets:</strong> menu <code>Object / Groups / Group</code> (see the image e. below)</p>
+<p>The "double face" option is needed for the group "Leaf" to get scattering on the 2 faces of leaf facets. It is not needed for the group "Trunk" because the trunk facets have normals that are oriented towards trunk outside.</p>
+<p><strong>Run DART and create the color composite image with the RGB nadir images</strong> (see the image f. below)</p>
+<p><center><img src="./media/importation_of_3d_tree.png"><p><em>a,b) Importation of a 3D tree. c,d) The tree mock-up. e) Properties of the trunk. f) Color composite.</em></p></img></center></p>
+<h4 id="4b-wp6db-copy-of-wp6da">4.b - WP6Db (copy of WP6Da)</h4>
+<p><strong>Remove the 3D tree.</strong> Then, there is no individually imported 3D object (see  the <img src="../media/1.png" width=15/> of the image below)</p>
+<p><strong>Import a Field of objects <img src="../media/2.png" width=15/> and 2 3D models</strong> "Citrus CISY1" <img src="../media/3.png" width=15/> and "CISY4" <img src="../media/4.png" width=15/> </p>
+<p>The image below shows the 3D mock-up of the scene and a color composite of DART nadir images.</p>
+<p><center><img src="./media/field_of_2_types_trees.png"><p><em>Field of 2 types of trees. a) Menu. b) Field file. c) Mock-up. d) DART-Lux nadir image. <span class="arithmatex">\(\Delta r=2cm\)</span>.</em></p></img></center></p>
+<h3 id="5-transformation-of-an-imported-3d-triangle-tree-into-a-turbid-tree-wp6e-copy-of-wp6da">5) Transformation of an imported 3D triangle tree into a turbid tree: WP6E (copy of WP6Da)</h3>
+<p>3D trees made of many facets (e.g., <span class="arithmatex">\(10^6\)</span> per tree) can need huge CT and RAM. DART-Lux greatly reduces them by simulating trees as clones of several 3D trees, with xyz scalings and rotations per tree. There is another solution presented here with DART-FT: facets are transformed into turbid medium volumes. Note that CT can be much larger for turbid trees than for facet trees if <span class="arithmatex">\(N_{turbid \:volumes}\)</span> is huge conversely to <span class="arithmatex">\(N_{facets}\)</span>. For DART-FT, CT and accuracy for "turbid" trees usually decrease with coarser spatial resolution, and they mostly depend on <span class="arithmatex">\(N_{facets}\)</span> for facet trees.</p>
+<p><strong>WP6E_FT:</strong> the 'Triangle <span class="arithmatex">\(\rightarrow\)</span> Turbid' transformation can be done at any spatial resolution (see below) with pre-defined turbid optical properties, and user specified or automatically derived LAD and LAI.</p>
+<p><center><img src="./media/transformation_triangle_turbid.png"><p><em>Transformation "Triangle <span class="arithmatex">\(\rightarrow\)</span> Turbid". 4 spatial resolutions: a) 0.5m, b), 0.25m, c) 0.1m, d) 0.05m.</em></p></img></center></p>
+<p>The figure above shows nadir reflectance images, <span class="arithmatex">\(\overline{\rho}\)</span> and CT at <span class="arithmatex">\(0.56\mu m\)</span> (<span class="arithmatex">\(\Delta r=0.1m, 0.2m, 0.3m\)</span>). With <span class="arithmatex">\(\Delta r\)</span> decrease, we note:</p>
+<ul>
+<li>Turbid tree: CT greatly increases and <span class="arithmatex">\(\overline{\rho}\)</span> accuracy improves mostly due to better shadow simulation. <span class="arithmatex">\(\overline{\rho}\)</span> does not change much if LAD is computed or pre-computed.</li>
+<li>Facet tree: CT remains much smaller than for the turbid tree, and <span class="arithmatex">\(\overline{\rho}\)</span> remains nearly constant.</li>
+</ul>
+<p><center><img src="./media/dart_ft_scene_reflectance.png"><p><em>DART-FT scene reflectance <span class="arithmatex">\(\overline{\rho}\)</span> and computation time <span class="arithmatex">\(\Delta t\)</span>. Facet and turbid trees. 3 cell sizes: <span class="arithmatex">\(\Delta r=0.1m\)</span>, 0.25mand 0.5m. Transformation "Facet <span class="arithmatex">\(\rightarrow\)</span> Turbid" is with pre-defined and computed LAD. <span class="arithmatex">\(0.56\mu m\)</span>.</em></p></img></center></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The conversion "Facets <span class="arithmatex">\(\rightarrow\)</span> Turbid" in DART-Lux gives similar results. However, it is not always advised because it can lead to a scene with many turbid volumes, especially if Nscene repetition is large, which in turn leads to many PLY files and very large file <code>scene.scn</code>, which can be unnecessarily too computer demanding.</p>
+</div>
+<p><strong>WP6E_Lux:</strong> compared to DART-FT, it is usually greatly faster, with much less RAM and radiative transfer modeling parameters (i.e., <span class="arithmatex">\(N_{scat}, N_{scene\: repetitions}, N_{samples}\)</span>, and Russian Roulette (RR) scattering depth <span class="arithmatex">\(N_{RR,depth}\)</span> and surviving probability PRR). Depending on 3D scenes, DART default parameters may not be optimal for the best trade-off "Accuracy of <span class="arithmatex">\(\rho_{scene}\)</span> - CT". This is illustrated here with the 10m x 10m Benjamina scene, especially at <span class="arithmatex">\(0.9\mu m\)</span> because convergence is slower for this band due to greater multiple scattering. DART-Lux images (see below) simulated with {<span class="arithmatex">\(N_{scat}=300, N_{scene \:repetitions}=10\)</span>, <span class="arithmatex">\(N_{samples}=300\)</span>} (<span class="arithmatex">\(CT_{ref}=207s\)</span>) are used as references to assess how <span class="arithmatex">\(N_{scat}, N_{samples}\)</span> and RR impact CT and relative error <span class="arithmatex">\(\epsilon_{\rho}\)</span> of <span class="arithmatex">\(\overline{\rho}\)</span>.</p>
+<ul>
+<li><span class="arithmatex">\(0.56\mu m\)</span>: <span class="arithmatex">\(\epsilon_{\rho} &lt; 2 \times10^{-2}\:\: \forall N_{scat} \ge 10, N_{sample} \ge 10\)</span>. CTs greatly vary: 7" if <span class="arithmatex">\(N_{scat} = N_{sample} = 10; 154\)</span>" if <span class="arithmatex">\(N_{scat} = N_{sample} = 10^2\)</span>.</li>
+<li><span class="arithmatex">\(0.9\mu m\)</span>: <span class="arithmatex">\(N_{scat} \ge 30 \implies \epsilon_{\rho} &lt; 10^{-2} \:\: \forall N_{sample}\)</span>. CT =14s and <span class="arithmatex">\(\epsilon_{\rho} = -7\times 10^{-3}\)</span> for {<span class="arithmatex">\(N_{scat} = 30, N_{sample} = 10\)</span>}. RR decreases CT, especially for small <span class="arithmatex">\(N_{depth}\)</span>, but increases the image variance. For {<span class="arithmatex">\(N_{scat}=100\)</span>, <span class="arithmatex">\(N_{sample}=50\)</span>], CT=18" if <span class="arithmatex">\(N_{depth}=10\)</span>,CT=24" if <span class="arithmatex">\(N_{depth}=20\)</span>, and CT=27" if <span class="arithmatex">\(N_{depth}=30\)</span>, whereas CT=34" without RR. CT tends to be proportional to <span class="arithmatex">\(N_{sample}\)</span>, and slowly increases with increase of <span class="arithmatex">\(N_{scat}\)</span>. The optimal parameters depend on the expected accuracy on <span class="arithmatex">\(\rho_{scene}\)</span> and Monte Carlo noise in images. Here, {<span class="arithmatex">\(N_{scat}=10^2\)</span>, <span class="arithmatex">\(N_{sample}=50\)</span>, <span class="arithmatex">\(N_{depth}=30\)</span>} can be a good choice.</li>
+</ul>
+<p><center><img src="./media/dart_lux_nadir.png"><p><em>DART-Lux nadir reflectance images. They are used as reference images. CT = 208".</em></p></img></center></p>
+<p><center><img src="./media/dart_lux_no_russian_roulette.png"><p><em>DART-Lux <span class="arithmatex">\(\overline{\rho}(N_{samples})\)</span> for <span class="arithmatex">\(N_{scat} = 10\)</span> to <span class="arithmatex">\(10^2\)</span>. a)<span class="arithmatex">\(\overline{\rho}_{0.56 \mu m}\)</span>. b) <span class="arithmatex">\(\overline{\rho}_{0.9 \mu m}\)</span>. c)<span class="arithmatex">\(\epsilon_{\overline{\rho}_{0.9 \mu m}}\)</span>. d) <span class="arithmatex">\(CT_{0.9 \mu m}\)</span>. No Russian Roulette</em></p></img></center></p>
+<p><center><img src="./media/dart_lux_images.png"><p><em>DART-Lux images. No RR: <span class="arithmatex">\(N_{scat}=10\)</span> , <span class="arithmatex">\(N_{samples} = 10\)</span> (a), 50 (b), 102 (c). RR: <span class="arithmatex">\(N_{samples} = 10\)</span> (d), 50 (e). <span class="arithmatex">\(\Delta r=0.05m\)</span>.</em></p></img></center></p>
+<h3 id="6-comparison-of-dart-methods-for-simulating-vegetation-wp6f">6) Comparison of DART methods for simulating vegetation: WP6F</h3>
+<p>DART-FT: vegetation is simulated with facets (triangles) or voxels filled with turbid medium (i.e., turbid voxels) that represent leaves and twigs. Conversely to turbid voxels, facets are independent of DART voxels, which simplifies multi-scale studies. Hence, for vegetation-facet, computation time (CT) depends mostly on the number of facets (<span class="arithmatex">\(N_{facets}\)</span>). For vegetation simulated with turbid voxels, CT depends mostly on the number of turbid voxels (<span class="arithmatex">\(N_{turbid\:voxels}\)</span>). A usual initial step is to determine the optimal vegetation simulation mode. It is a trade-off between "accuracy" and "CT and computer memory". It mostly depends on <span class="arithmatex">\(N_{facets}\)</span> and <span class="arithmatex">\(N_{turbid\: voxels}\)</span>.</p>
+<p>DART-Lux: no use of voxels, and great CT / RAM decrease, especially if fields of 3D objects are used.</p>
+<p><u><em>Scene:</em></u> 4 bands (<span class="arithmatex">\(0.4\mu m, 0.56\mu m, 0.68\mu m, 0.9\mu m\)</span>). 40mx40m horizontal ground. <span class="arithmatex">\(\Delta x=\Delta y=\Delta z=1m\)</span>. Tree at (20m, 20m). LAI = 2.14. <span class="arithmatex">\(\rho_{leaf} = \rho_{grass\:rye}\)</span>. Four tree simulation methods are considered.</p>
+<p>CT and scene reflectance <span class="arithmatex">\(\rho_{scene}\)</span> depend on the tree simulation mode (see below):</p>
+<ol>
+<li>Facet-tree (imported): cherry tree with scale factor 30. It has 2 groups: 'leaf' (15966 facets) and 'wood' (3628 facets). It is the best trade-off for "CT vs. accuracy", because <span class="arithmatex">\(N_{facets}\)</span> is small.</li>
+<li>Derived turbid-tree: group 'leaf' of facet-tree 'a' is transformed into 'turbid', keeping more or less its geometry.</li>
+<li>DART-created ellipsoidal turbid tree with dimensions of tree 'a' without trunk (<span class="arithmatex">\(\Phi_{trunk}=0m\)</span>): <span class="arithmatex">\(H_{trunk\: below\: crown}=1m\)</span>, <span class="arithmatex">\(H_{crown}=33m\)</span>, <span class="arithmatex">\(\Phi_{crown}=0m\)</span>. The trunk and branches are those of 3D tree 'a'.</li>
+<li>DART-created ellipsoidal turbid tree 'c' with crown randomly filled with <span class="arithmatex">\(0.03m^2 / 0.3m^2 / 3m^2\)</span> facets. If facets are very small (<span class="arithmatex">\(\implies\)</span> very large <span class="arithmatex">\(N_{facets}\)</span>), tree 'd' is equivalent to tree 'c' (i.e., <span class="arithmatex">\(\rho_{scene}(tree\; d) \approx \rho_{scene}(tree\; c)\)</span>), but CT can become huge. The ideal <span class="arithmatex">\(N_{facets}\)</span> is a trade-off between accuracy and CT. Here, with <span class="arithmatex">\(3m^2\)</span> leaves, CT decreases by a factor 20, while keeping the ρscene relative difference <span class="arithmatex">\(\approx 0.01\)</span>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>trees 'c' and 'd' cannot exactly mimic facet tree 'a'. For example, here, their dimensions are the extreme dimensions of the facet tree 'a', which is not optimal.</li>
+<li>facet tree 'd' can be more realistic than turbid tree 'c', although turbid tree 'c' is often considered as a reference.</li>
+</ul>
+</div>
+<p><center><img src="./media/four_tree_simulation_methods.png"><p><em>Four tree simulation methods. DART-FT. a) Cherry tree. b) Turbid tree derived from tree 'a'. c) Tree with dimensions of 'a' filled with turbid medium and with <span class="arithmatex">\(0.03m^2\)</span> (d), <span class="arithmatex">\(0.3m^2\)</span> (e) and <span class="arithmatex">\(3m^2\)</span> (f) facets.</em></p></img></center></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
