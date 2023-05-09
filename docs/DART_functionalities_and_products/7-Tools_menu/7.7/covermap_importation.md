@@ -1,0 +1,1 @@
+It creates ground / vegetation (turbid / facets) and fluid plots using a CoverMap (i.e., raster image), where a pixel value $P_i$ indicates the category of plot $pl_i$, and a text file that stores the parameters of $pl_i$. The tool stores plots either in the `plots.xml` file or in a text file `plots.txt` that is more convenient if there are many plots.

@@ -1,0 +1,130 @@
+site_name: DART User's Manual
+site_url: htpps://example.com
+
+nav:
+  - Home: index.md
+  - I. Remote sensing and radiative budget modeling of natural and urban surfaces:
+    - ./Remote_sensing/remote_sensing.md
+
+  - II. DART model :
+    - ./DART_model/dart_model.md
+
+  - III. DART functionalities and products:
+    - 1 - File Architecture:            ./DART_functionalities_and_products/1-File_architecture/file_architecture.md
+    - 2 - Graphical User Interface:     ./DART_functionalities_and_products/2-GUI/gui.md
+    - 3 - Editor of simulation:         ./DART_functionalities_and_products/3-Editor_of_simulation/editor_of_simulation.md
+    - 4 - RADIATIVE MODES, SUB-MODES, PARAMETERS and PRODUCTS:
+        - 4.1 Radiative parameters identical in 'Passive RS & RB' and 'LiDAR':      ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.1/radiative_parameters.md
+        - "4.2 Passive RS & RB: Forward mode (DART-FT)":                        ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.2/passive_rs_rb_dart_ft.md
+        - "4.3 Passive RS & RB: Bi-directionnal sub-mode (DART-Lux)":               ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.3/passive_rs_rb_dart_lux.md
+        - "4.4 Monte Carlo (DART-MC)":                                              ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.4/monte_carlo.md
+        - "4.5 LiDAR: Forward mode (DART-RC)":                                  ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.5/lidar_forward_dart_rc.md
+        - "4.6 LiDAR: Bi-directional sub-mode (DART-Lux LiDAR)":                    ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.6/lidar_bidirectional_dart_lux.md
+        - "4.7 Earth scene products":                                               ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.7/earth_scene_products.md
+        - "4.8 Direction of rays":                                                  ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.8/directions_of_rays.md
+        - "4.9 Optical and Temperatures properties":                                ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.9/optical_and_temperature_properties.md
+        - 4.10 The Earth scene:                                                     ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.10/earth_scene.md
+        - 4.11 Atmosphere:                                                          ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.11/atmosphere.md
+        - 4.12 Inversion (being removed):                                           ./DART_functionalities_and_products/4-Radiative_modes_sub_modes/4.12/inversion.md
+    - 5 - Run menu:
+        - 5.1 DART basic modules:           ./DART_functionalities_and_products/5-Run_menu/5.1/dart_basic_modules.md
+        - 5.2 The LUT:                      ./DART_functionalities_and_products/5-Run_menu/5.2/the_lut.md
+        - 5.3 Sequencer module:             ./DART_functionalities_and_products/5-Run_menu/5.3/sequencer_module.md
+        - 5.4 Python scripts to run DART:   ./DART_functionalities_and_products/5-Run_menu/5.4/python_scripts.md
+    - 6 - View menu:
+        - 6.1 View scene 3D and 2D:                           ./DART_functionalities_and_products/6-View_menu/6.1/view_scene_2d_3d.md
+        - 6.2 View image:                                     ./DART_functionalities_and_products/6-View_menu/6.2/view_image.md
+        - 6.3 3D object viewer:                               ./DART_functionalities_and_products/6-View_menu/6.3/3d_object_viewer.md
+        - 6.4 Directions 3D view:                             ./DART_functionalities_and_products/6-View_menu/6.4/directions_3d_view.md
+        - 6.5 Directional reflectance/Temperature 1D & 2D:    ./DART_functionalities_and_products/6-View_menu/6.5/directional_reflectance_temp.md
+        - 6.6 LiDAR:                                          ./DART_functionalities_and_products/6-View_menu/6.6/lidar.md
+        - 6.7 Surface radiative budget (RB):                  ./DART_functionalities_and_products/6-View_menu/6.7/surface_radiative_budget.md
+        - 6.8 LUT:                                            ./DART_functionalities_and_products/6-View_menu/6.8/lut.md
+        - 6.9 Report / data files:                            ./DART_functionalities_and_products/6-View_menu/6.9/report_data_files.md
+    - "7 - Tools menu: run DART tools":
+        - 7.1 SAIL model:                                         ./DART_functionalities_and_products/7-Tools_menu/7.1/sail_model.md
+        - 7.2 Leaf spectra inversion:                             ./DART_functionalities_and_products/7-Tools_menu/7.2/leaf_spectra_inversion.md
+        - 7.3 Computation of parametric model coefficients:       ./DART_functionalities_and_products/7-Tools_menu/7.3/computation_parametric_model_coef.md
+        - 7.4 Creation of 3D objects:                             ./DART_functionalities_and_products/7-Tools_menu/7.4/3d_objects_creation.md
+        - "7.5 LUT tools: BRF model inversion and noised LUT":    ./DART_functionalities_and_products/7-Tools_menu/7.5/lut_tools.md
+        - 7.6 Topography tools:                                   ./DART_functionalities_and_products/7-Tools_menu/7.6/topography_tools.md
+        - 7.7 CoverMap importation:                               ./DART_functionalities_and_products/7-Tools_menu/7.7/covermap_importation.md
+        - 7.8 Band calculation tools:                             ./DART_functionalities_and_products/7-Tools_menu/7.8/band_calculation_tools.md
+        - 7.9 Color composite:                                    ./DART_functionalities_and_products/7-Tools_menu/7.9/color_composite.md
+        - 7.10 3D Radiative budget extractor:                     ./DART_functionalities_and_products/7-Tools_menu/7.10/3d_radiative_budget_extractor.md
+        - 7.11 DART database manager:                             ./DART_functionalities_and_products/7-Tools_menu/7.11/dart_database_manager.md
+
+  - IV. Format of DART files :
+    - 1 - All DART modes:   ./Format_DART_files/1-All_dart_modes/all_dart_modes.md
+    - 2 - DART-FT:          ./Format_DART_files/2-DART_FT/dart_ft.md
+    - 3 - DART-RC:          ./Format_DART_files/3-DART_RC/dart_rc.md
+    - 4 - DART-Lux:         ./Format_DART_files/4-DART_LUX/dart_lux.md
+  
+  - V - General advices:
+    - ./General_advices/general_advices.md
+
+  - VI - Physical bases:
+    - ./Physical_bases/physical_bases.md
+  
+  - VII. Work packages:
+    - WP0 - DART Overview:                                                ./Tutorials/T0/t0.md
+    - WP1 - Reflectance:                                                  ./Tutorials/T1/t1.md
+    - WP2 - Temperature:                                                  ./Tutorials/T2/t2.md
+    - WP3 - House, Specular and polarized reflectance, atmosphere:        ./Tutorials/T3/t3.md
+    - WP4 - Radiative Budget (RB) and sun induced fluorescence (SIF):     ./Tutorials/T4/t4.md
+    - WP5 - Fluids and CoverMap importation:                              ./Tutorials/T5/t5.md
+    - WP6 - Trees - creation and importation:                             ./Tutorials/T6/t6.md
+    - WP7 - Topography:                                                   ./Tutorials/T7/t7.md
+    - WP8 - LiDAR:                                                        ./Tutorials/T8/t8.md
+    - WP9 - Airborne and in-situ sensors:                                 ./Tutorials/T9/t9.md
+    - WP10 - RAMI Experiment - run of DART using python scripts:          ./Tutorials/T10/t10.md
+    - WP11 - Mapping global sun radiometric quantities (out of date):     ./Tutorials/T11/t11.md
+    - WP12 - Satellite image inversion (under development):               ./Tutorials/T12/t12.md
+  
+  - Annexes:
+    - 'Annex 1: DART Python modules / scripts':                                             ./Annexes/Annex1/annex1.md
+    - 'Annex 2: DART Albedo and Ortho images':                                              ./Annexes/Annex2/annex2.md
+    - 'Annex 3: AERONET and ECMWF data':                                                    ./Annexes/Annex3/annex3.md
+    - 'Annex 4: Forest simulation with DART-Lux':                                           ./Annexes/Annex4/annex4.md
+    - 'Annex 5: Field of trees that are the clones of a DART created 3D (facet) tree':      ./Annexes/Annex5/annex5.md
+    - 'Annex 6: Optimal domain of leaf variables to get leaf optical properties':           ./Annexes/Annex6/annex6.md
+    - 'Annex 7: List of abbreviations':                                                     ./Annexes/Annex7/annex7.md
+
+
+
+# Allows to embed images with html (else relative paths wouldn't work and mkdoc wouldn't find the image)
+use_directory_urls: false
+
+theme:
+  # name: readthedocs
+  name: material
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch 
+        name: Switch to dark mode
+      primary: green
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+      primary: green
+    
+# Allows to embed LaTeX expression and footnotes
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - admonition
+  - abbr
+  - attr_list
+  - pymdownx.snippets
+  
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
